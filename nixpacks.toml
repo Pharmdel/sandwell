@@ -1,0 +1,23 @@
+# Railway build plan. Nixpacks detects Laravel on its own, but the PHP version
+# and the start command are pinned here so a deploy cannot drift.
+
+[phases.setup]
+nixPkgs = ["php83", "php83Packages.composer", "nodejs_20"]
+
+[phases.install]
+cmds = [
+  "composer install --no-dev --optimize-autoloader --no-interaction --prefer-dist",
+  "npm ci",
+]
+
+[phases.build]
+cmds = [
+  "npm run build",
+  "php artisan config:cache",
+  "php artisan route:cache",
+  "php artisan view:cache",
+]
+
+[start]
+# Migrate on boot so a fresh container always has its schema, then serve.
+cmd = "php artisan migrate --force && php artisan serve --host=0.0.0.0 --port=${PORT:-8080}"

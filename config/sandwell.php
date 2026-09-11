@@ -1,0 +1,468 @@
+<?php
+
+// Branch addresses, GPhC premises numbers, superintendents and operating companies
+// are taken from the group's published terms of service. Opening hours are still
+// placeholders to confirm per branch.
+//
+// lat/lon come from postcodes.io; map_x/map_y are the matching percentage positions
+// on public/images/branches-map.jpg, which is stitched from OpenStreetMap tiles.
+return [
+    'phone' => '0121 500 5756',
+    'phone_href' => 'tel:01215005756',
+    'reviews' => ['count' => 584, 'rating' => '4.9'],
+    'google_reviews_url' => 'https://www.google.com/maps/place/?q=place_id:ChIJJfS9-feXcEgReDf0CNE_jmA',
+    'free_delivery_threshold' => '£15',
+
+    'branches' => [
+        [
+            'slug' => 'lyng',
+            'name' => 'Lyng Pharmacy',
+            'short' => 'Lyng',
+            'town' => 'West Bromwich',
+            'area' => 'Lyng Lane',
+            'address' => '1 Lyng Lane, West Bromwich',
+            'postcode' => 'B70 7RW',
+            'hub' => false,
+            'closes' => '6pm',
+            'services' => ['Pharmacy First', 'Flu jabs', 'Weight loss clinic'],
+            'parking' => 'Free on-site parking, 12 spaces',
+            'access' => 'Step-free entrance · Hearing loop · Consultation room',
+            'gphc_premises' => '1092508',
+            'superintendent' => 'Jeetender Singh Sahota',
+            'superintendent_gphc' => '2048691',
+            'company' => 'Gurdal Ltd',
+            'company_no' => '07733909',
+            'lat' => 52.515946,
+            'lon' => -1.995898,
+            'map_x' => 77.53,
+            'map_y' => 33.36,
+        ],
+        [
+            'slug' => 'sandwell',
+            'name' => 'Sandwell Pharmacy',
+            'short' => 'Sandwell',
+            'town' => 'West Bromwich',
+            'area' => 'Church Vale',
+            'address' => '85 Church Vale, West Bromwich',
+            'postcode' => 'B71 4DH',
+            'hub' => true,
+            'closes' => '6pm',
+            'services' => ['Dispensing hub', 'Pharmacy First', 'Travel clinic'],
+            'parking' => 'Free customer parking',
+            'access' => 'Step-free entrance · Consultation room',
+            'gphc_premises' => '9011265',
+            'superintendent' => 'Jaqueline Pia Chang',
+            'superintendent_gphc' => '2032621',
+            'company' => 'Chempharm Ltd',
+            'company_no' => '02884816',
+            'lat' => 52.53095,
+            'lon' => -1.986551,
+            'map_x' => 83.14,
+            'map_y' => 22.33,
+        ],
+        [
+            'slug' => 'khaira',
+            'name' => 'Khaira Pharmacy',
+            'short' => 'Khaira',
+            'town' => 'West Bromwich',
+            'area' => 'High Street',
+            'address' => '6A High Street, West Bromwich',
+            'postcode' => 'B70 6JX',
+            'hub' => false,
+            'closes' => '6pm',
+            'services' => ['Pharmacy First', 'Blood pressure checks'],
+            'parking' => 'Pay & display nearby',
+            'access' => 'Step-free entrance · Consultation room',
+            'gphc_premises' => '1090208',
+            'superintendent' => 'Karmjit Kaur Mehat',
+            'superintendent_gphc' => '2064848',
+            'company' => 'Khaira Care Ltd',
+            'company_no' => '07114007',
+            'lat' => 52.512745,
+            'lon' => -1.98439,
+            'map_x' => 84.44,
+            'map_y' => 35.71,
+        ],
+        [
+            'slug' => 'stone-cross',
+            'name' => 'Stone Cross Pharmacy',
+            'short' => 'Stone Cross',
+            'town' => 'West Bromwich',
+            'area' => 'Walsall Road',
+            'address' => '150–152 Walsall Road, West Bromwich',
+            'postcode' => 'B71 3HP',
+            'hub' => false,
+            'closes' => '6pm',
+            'services' => ['Pharmacy First', 'Flu jabs'],
+            'parking' => 'Free on-street parking',
+            'access' => 'Step-free entrance · Consultation room',
+            'gphc_premises' => '1038551',
+            'superintendent' => 'Jeetender Singh Sahota',
+            'superintendent_gphc' => '2048691',
+            'company' => 'Warley Pharma Ltd',
+            'company_no' => '14324566',
+            'lat' => 52.544785,
+            'lon' => -1.984026,
+            'map_x' => 84.66,
+            'map_y' => 12.16,
+        ],
+        [
+            'slug' => 'smethwick',
+            'name' => 'Smethwick Pharmacy',
+            'short' => 'Smethwick',
+            'town' => 'Smethwick',
+            'area' => 'Tollgate Precinct',
+            'address' => 'Units 9–10 Tollgate Precinct, High Street, Smethwick',
+            'postcode' => 'B67 7RA',
+            'hub' => false,
+            'closes' => '6pm',
+            'services' => ['Pharmacy First', 'Contraception', 'Flu jabs'],
+            'parking' => 'Pay & display nearby',
+            'access' => 'Step-free entrance · Consultation room',
+            'gphc_premises' => '1091747',
+            'superintendent' => 'Jeetender Singh Sahota',
+            'superintendent_gphc' => '2048691',
+            'company' => 'Warley Pharma Ltd',
+            'company_no' => '14324566',
+            'lat' => 52.496048,
+            'lon' => -1.972347,
+            'map_x' => 91.67,
+            'map_y' => 47.97,
+        ],
+        [
+            'slug' => 'wychbury',
+            'name' => 'Wychbury Pharmacy',
+            'short' => 'Wychbury',
+            'town' => 'Stourbridge',
+            'area' => 'Wollescote',
+            'address' => 'Wychbury Medical Centre, 121 Oakfield Road, Wollescote, Stourbridge',
+            'postcode' => 'DY9 9DS',
+            'hub' => false,
+            'closes' => '6pm',
+            'services' => ['Pharmacy First', 'Travel clinic'],
+            'parking' => 'Free on-site parking',
+            'access' => 'Step-free entrance · Consultation room',
+            'gphc_premises' => '1038419',
+            'superintendent' => 'Jeetender Singh Sahota',
+            'superintendent_gphc' => '2048691',
+            'company' => 'LP SD Thirty Eight Limited',
+            'company_no' => '14821509',
+            'lat' => 52.441573,
+            'lon' => -2.110976,
+            'map_x' => 8.42,
+            'map_y' => 87.95,
+        ],
+    ],
+
+    // Hours and email taken from the group's published FAQs page.
+    'hours' => [
+        ['day' => 'Monday – Friday', 'time' => '8:30 – 18:00'],
+        ['day' => 'Saturday', 'time' => '9:00 – 13:00'],
+        ['day' => 'Sunday', 'time' => 'Closed'],
+        ['day' => 'Bank holidays', 'time' => 'Closed'],
+    ],
+    'email' => 'pharmacy.fcx28@nhs.net',
+
+    // Pharmacy First — the seven nationally commissioned conditions.
+    'pharmacy_first' => [
+        ['name' => 'Sore throat', 'ages' => '5 years and over', 'blurb' => 'Assessed and treated in branch, with antibiotics where appropriate.'],
+        ['name' => 'Earache', 'ages' => '1 to 17 years', 'blurb' => 'Examined with an otoscope and treated the same day.'],
+        ['name' => 'Sinusitis', 'ages' => '12 years and over', 'blurb' => 'Relief for blocked sinuses and facial pain.'],
+        ['name' => 'Uncomplicated UTI', 'ages' => 'Women 16 to 64', 'blurb' => 'Confidential assessment and treatment without a GP visit.'],
+        ['name' => 'Infected insect bites', 'ages' => '1 year and over', 'blurb' => 'Treatment for bites that have become infected.'],
+        ['name' => 'Shingles', 'ages' => '18 years and over', 'blurb' => 'Antivirals started quickly, when they work best.'],
+        ['name' => 'Impetigo', 'ages' => '1 year and over', 'blurb' => 'Topical or oral treatment for this contagious skin infection.'],
+    ],
+
+    'nhs_services' => [
+        'Repeat prescriptions & free delivery',
+        'Free treatment for 31 minor conditions',
+        'MDS blister packs',
+        'Emergency supply of medicines',
+        'New medicine service',
+        'Travel health advice',
+        'Stop smoking support',
+        'Discharge medicines service',
+    ],
+
+    'private_services' => [
+        'Period delay',
+        'Chickenpox vaccination',
+        'Travel vaccinations',
+        'Private flu jab',
+        'Ear wax removal',
+        'Emergency contraception',
+        'Malaria prevention',
+        'Private prescriptions',
+    ],
+
+    // Minor ailments scheme — free treatment for 31 everyday conditions.
+    'conditions' => [
+        'A' => ['Acne', 'Allergies', 'Athlete’s foot'],
+        'C' => ['Cold sores', 'Colic', 'Conjunctivitis', 'Constipation', 'Coughs', 'Cystitis'],
+        'D' => ['Dandruff', 'Diarrhoea', 'Dry eyes'],
+        'E' => ['Earache', 'Eczema'],
+        'H' => ['Hay fever', 'Headache', 'Head lice', 'Heartburn'],
+        'I' => ['Indigestion', 'Insect bites'],
+        'M' => ['Mouth ulcers'],
+        'N' => ['Nappy rash', 'Nasal congestion'],
+        'O' => ['Oral thrush'],
+        'S' => ['Scabies', 'Sore throat', 'Sprains'],
+        'T' => ['Teething', 'Threadworm'],
+        'V' => ['Vaginal thrush'],
+        'W' => ['Warts'],
+    ],
+
+    'shop_categories' => [
+        ['index' => '01', 'eyebrow' => 'Essential care', 'name' => 'Pain relief', 'blurb' => 'Targeted relief for headaches, migraine, aches and fever.'],
+        ['index' => '02', 'eyebrow' => 'Seasonal wellness', 'name' => 'Cold & flu', 'blurb' => 'Soothing lozenges, decongestants and everything for winter.'],
+        ['index' => '03', 'eyebrow' => 'Dermatology', 'name' => 'Skincare', 'blurb' => 'Emollients, cleansers and pharmacist-approved treatments.'],
+        ['index' => '04', 'eyebrow' => 'Daily health', 'name' => 'Vitamins & supplements', 'blurb' => 'Vitamin D, multivitamins and everyday supplements.'],
+        ['index' => '05', 'eyebrow' => 'Family & paediatric', 'name' => 'Baby & child', 'blurb' => 'Teething gels, nappy care and children’s medicines.'],
+    ],
+
+    'shop_more' => ['First aid', 'Eye care', 'Oral care', 'Allergy & hay fever', 'Sexual health', 'Travel', 'Mobility'],
+
+    'featured_products' => [
+        'Paracetamol 500mg, 32 tablets',
+        'Vitamin D3 1000IU, 90 capsules',
+        'Sudocrem 125g',
+        'Strepsils Honey & Lemon',
+        'Cetraben Cream 500g',
+        'Piriteze Allergy 30 tablets',
+    ],
+
+    'articles' => [
+        [
+            'slug' => 'flu-jabs-who-should-get-one',
+            'chip' => 'Flu season',
+            'title' => 'Flu jabs are back. Who should get one, and when.',
+            'blurb' => 'Who qualifies for a free NHS jab this winter, and what to do if you don’t.',
+            'read' => '4 min read',
+            'featured' => true,
+            'image' => 'flu-vaccine.jpg',
+            'body' => [
+                ['Who gets one free', 'The NHS funds a flu vaccination for people most likely to become seriously unwell: adults aged 65 and over, pregnant women, anyone with a long-term condition such as asthma, diabetes or heart disease, carers, and children in eligible school years. If you fall into one of those groups, it costs nothing at any of our branches.'],
+                ['If you are not eligible', 'A private flu jab is available to everyone else. It is the same vaccine and the same appointment — the only difference is who pays for it. Plenty of people book one simply because they cannot afford a week off work in January.'],
+                ['Timing matters more than people think', 'Protection takes about two weeks to build and wanes over the season. Late September to early November is the sweet spot. Later is still worthwhile — flu circulates well into March — but earlier gives you cover for the whole winter.'],
+                ['Having it alongside Covid-19', 'If you are eligible for both, they can usually be given at the same appointment, one in each arm. It saves a second trip and there is no evidence that either works less well.'],
+            ],
+        ],
+        [
+            'slug' => 'blood-pressure-monitoring',
+            'chip' => 'Blood pressure',
+            'title' => 'Why a 24-hour monitor beats a single reading',
+            'blurb' => 'One high reading rarely tells the whole story.',
+            'read' => '3 min read',
+            'image' => 'consult-room.jpg',
+            'body' => [
+                ['One reading is a snapshot', 'Blood pressure moves constantly — with stress, caffeine, a rushed walk to the pharmacy, even the conversation you had on the way in. A single high number is a reason to look closer, not a diagnosis.'],
+                ['White coat hypertension is real', 'A meaningful number of people read high in a clinical setting and normal everywhere else. Treating that number rather than the person can mean medication nobody needed.'],
+                ['What the 24-hour monitor does', 'You wear a small cuff that takes readings through the day and while you sleep. The overnight figures are particularly useful: blood pressure that stays high at night carries more risk than a daytime spike.'],
+                ['How to get one', 'Ask at any branch. The initial check is free on the NHS, and if the reading warrants it we can arrange the 24-hour monitor and send the results to your GP.'],
+            ],
+        ],
+        [
+            'slug' => 'adult-acne',
+            'chip' => 'Skin',
+            'title' => 'Acne in your 20s and 30s: what actually works',
+            'blurb' => 'Beyond the face washes — what a pharmacist can prescribe.',
+            'read' => '3 min read',
+            'image' => 'products.jpg',
+            'body' => [
+                ['Adult acne is not teenage acne', 'It tends to sit along the jaw and chin, flares with hormonal cycles and stress, and responds poorly to the aggressive drying products marketed at teenagers. Stripping the skin usually makes it worse.'],
+                ['Start with what is proven', 'Topical retinoids and benzoyl peroxide have the strongest evidence base. Both take eight to twelve weeks to show their full effect, which is roughly six weeks after most people give up on them.'],
+                ['When to escalate', 'If topical treatment has been used properly for three months without improvement, or if you are getting deep, painful cysts or any scarring, it is time for a prescriber. Scarring is permanent — do not wait it out.'],
+                ['What we can do', 'Our pharmacist prescribers can assess your skin and prescribe stronger topical and oral options in branch, without a GP referral.'],
+            ],
+        ],
+        [
+            'slug' => 'travel-vaccines',
+            'chip' => 'Travel',
+            'title' => 'Vaccines to book before you fly',
+            'blurb' => 'Timings matter — some courses need six weeks.',
+            'read' => '3 min read',
+            'image' => 'delivery-van.jpg',
+            'body' => [
+                ['Start six to eight weeks out', 'Some vaccines need more than one dose spaced weeks apart, and all of them need time to work. Booking a fortnight before departure limits what is possible.'],
+                ['It depends on more than the country', 'Rural travel, the season, your accommodation and how long you are staying all change the risk. A backpacking month in the north of a country can carry very different requirements to a week in a coastal resort.'],
+                ['Malaria is not a vaccine', 'Where malaria is a risk, prevention means antimalarial tablets started before you travel and continued after you return, alongside bite avoidance. Getting the timing wrong undoes the protection.'],
+                ['Come in for a travel consultation', 'Bring your itinerary and vaccination history. We will tell you what is genuinely needed and what is being oversold.'],
+            ],
+        ],
+        [
+            'slug' => 'pharmacy-first-explained',
+            'chip' => 'Pharmacy First',
+            'title' => 'Seven conditions you can treat without a GP',
+            'blurb' => 'What the Pharmacy First service covers and how to use it.',
+            'read' => '3 min read',
+            'image' => 'mother-toddler.jpg',
+            'body' => [
+                ['What it covers', 'Sore throat, earache, sinusitis, uncomplicated urinary tract infection, infected insect bites, shingles and impetigo. Each has its own age range, and for several of them a pharmacist can supply antibiotics where the assessment supports it.'],
+                ['It is a real consultation', 'You are seen in a private consultation room by a pharmacist working to the same national clinical pathways a GP would use. It is not advice over the counter with other customers listening.'],
+                ['How to use it', 'Walk in, or book a slot online. Bring your NHS number if you have it. There is no charge for the consultation, and no charge for treatment if you do not pay for prescriptions.'],
+                ['When we will send you elsewhere', 'If your symptoms fall outside the pathway or something looks more serious, we will say so and direct you to a GP, 111 or urgent care. Knowing when not to treat is part of the job.'],
+            ],
+        ],
+    ],
+
+    // Verbatim Google reviews as published on the group's own site.
+    'reviews_quotes' => [
+        [
+            'initial' => 'F',
+            'name' => 'Frank Smith',
+            'rating' => 5,
+            'quote' => 'I have been using Sandwell Pharmacy Group for years and have never had any issues with the service or the staff. I can honestly say they are friendly, helpful and above all professional.',
+        ],
+        [
+            'initial' => 'H',
+            'name' => 'Helen Hyland',
+            'rating' => 5,
+            'quote' => 'Always helpful and friendly. Fill prescriptions as quickly as possible. Deliver to my door.',
+        ],
+        [
+            'initial' => 'D',
+            'name' => 'D',
+            'rating' => 5,
+            'quote' => 'Good pharmacy, helps loads having delivery being disabled. Lovely lady that delivers our meds, bubbly & friendly, she’s a good un.',
+        ],
+        [
+            'initial' => 'P',
+            'name' => 'Peter Tait',
+            'rating' => 5,
+            'quote' => 'Delivery lady is realy friendly and helpful and she was realy good with my dad when he alive now sadly past away but she always maid time to speak to him witch was realy good.',
+        ],
+        [
+            'initial' => 'J',
+            'name' => 'Jan Sandhu',
+            'rating' => 4,
+            'quote' => 'Medication is delivered in time and safely. Happy with the service provided.',
+        ],
+        [
+            'initial' => 'I',
+            'name' => 'Inna Briga',
+            'rating' => 4,
+            'quote' => 'The service is always very good. All medications are on time.',
+        ],
+        [
+            'initial' => 'A',
+            'name' => 'Anna Czarnecka',
+            'rating' => 5,
+            'quote' => 'This is easily the most friendly and welcoming pharmacy I have ever visited! The entire team goes above and beyond with genuine care, patience, and a warm smile every single time. Outstanding customer service from truly wonderful people — highly recommended!',
+        ],
+        [
+            'initial' => 'P',
+            'name' => 'penelope bat',
+            'rating' => 5,
+            'quote' => 'I have been visiting Sandwell Pharmacy Group for many years and truly must say that the customer service, advice and care has truly been exceptional… staff take a genuine interest in serving. Very well managed and they actually look happy whilst in public view.',
+        ],
+        [
+            'initial' => 'C',
+            'name' => 'C Dickson',
+            'rating' => 5,
+            'quote' => 'Recently had an issue with a prescribed medication not being issued by the GP… the Sandwell Pharmacy Group staff were really helpful and the Pharmacist was able to issue my medication, despite me attending just before closing. Thanks for going the extra mile.',
+        ],
+    ],
+
+    // The five surfaced on the homepage, one per service area. The rest stay in
+    // 'faqs' below for the prescriptions page and future use.
+    'faqs_home' => [
+        'How do I nominate Sandwell Pharmacy Group for my NHS prescriptions?',
+        'Do you deliver prescriptions?',
+        'What is Pharmacy First?',
+        'What weight loss treatments do you offer?',
+        'What are your opening hours?',
+    ],
+
+    // Verbatim from the group's FAQs page.
+    'faqs' => [
+        [
+            'group' => 'Prescriptions & nominations',
+            'items' => [
+                [
+                    'How do I nominate Sandwell Pharmacy Group for my NHS prescriptions?',
+                    'Simply fill in our online nomination form — it takes under 2 minutes and is completely free. Once nominated, your GP sends your prescriptions directly to us electronically and we prepare them for collection or send them out by free local delivery.',
+                ],
+                [
+                    'Can I change my nominated pharmacy?',
+                    'Yes, you can change your nominated pharmacy at any time. You can do this online, through your GP surgery or by asking us directly.',
+                ],
+                [
+                    'How do I request a repeat prescription?',
+                    'Use our online repeat prescription request form. We will forward your request to your GP who will issue the prescription electronically. Please allow 2–3 working days, though timing depends on your GP.',
+                ],
+                [
+                    'Do you deliver prescriptions?',
+                    'Yes — all NHS prescription deliveries are completely free of charge to all of our delivery areas.',
+                ],
+                [
+                    'What areas do you deliver to?',
+                    'We deliver free to every address within roughly five miles of the pharmacy — West Bromwich, Wednesbury, Great Barr, Tipton, Tividale, Handsworth, Smethwick, Oldbury and Walsall. Deliveries go out with our own drivers, and we’ll let you know when your medication is on its way. Not sure if you’re covered? Give us a call.',
+                ],
+                [
+                    'Can I collect my prescription in store?',
+                    'We are a community pharmacy — you’re welcome to pop in and collect, or use our free local delivery if you can’t get to us.',
+                ],
+            ],
+        ],
+        [
+            'group' => 'Pharmacy First',
+            'items' => [
+                [
+                    'What is Pharmacy First?',
+                    'Pharmacy First is an NHS service that allows you to get treatment for seven common conditions directly from our pharmacist without needing a GP appointment. It is free to eligible patients.',
+                ],
+                [
+                    'Which conditions does Pharmacy First cover?',
+                    'Sore throat, sinusitis, earache in children, infected insect bites, impetigo, shingles, and uncomplicated urinary tract infections in women aged 16–64. Each pathway has its own age range, which our symptom check confirms in under a minute.',
+                ],
+                [
+                    'Do I need an appointment for Pharmacy First?',
+                    'No appointment is needed — walk into any branch, or use the symptom check on this site and we will call you to arrange a consultation.',
+                ],
+                [
+                    'Is Pharmacy First free?',
+                    'Yes, Pharmacy First is a fully funded NHS service. There is no charge for the consultation, and normal NHS prescription rules apply to any medicine supplied.',
+                ],
+            ],
+        ],
+        [
+            'group' => 'Weight loss clinic',
+            'items' => [
+                [
+                    'What weight loss treatments do you offer?',
+                    'We offer Mounjaro (tirzepatide) and Wegovy (semaglutide) injections, Wegovy Oral Tablets, and Alli (orlistat 60mg) daily capsules — all supervised by our pharmacist.',
+                ],
+                [
+                    'Am I eligible for weight loss treatment?',
+                    'You must have a BMI of 30 or above. If you are taking any medications our pharmacist will review these before starting treatment. Request a free consultation call and we will advise you.',
+                ],
+                [
+                    'How do I get started?',
+                    'Take the one-minute suitability check on our weight loss page. Our pharmacist will call you back to discuss your options, assess your suitability and advise on the best treatment for you.',
+                ],
+            ],
+        ],
+        [
+            'group' => 'General',
+            'items' => [
+                [
+                    'What are your opening hours?',
+                    'Monday to Friday 8:30am–6pm and Saturday 9am–1pm. We are closed on Sundays and bank holidays.',
+                ],
+                [
+                    'How do I contact you?',
+                    'Call us on 0121 500 5756 or email pharmacy.fcx28@nhs.net. Our team is available Monday to Friday 8:30am–6pm and Saturday 9am–1pm.',
+                ],
+                [
+                    'Are you an NHS pharmacy?',
+                    'Yes — we are a fully registered NHS community pharmacy, dispensing NHS prescriptions in store and delivering them free of charge locally across West Bromwich and the surrounding areas.',
+                ],
+                [
+                    'Do you offer MDS trays?',
+                    'Yes — we offer monitored dosage system blister packs for patients managing multiple medications. There is a waiting list for the free service, or you can access it immediately for £25 per month.',
+                ],
+            ],
+        ],
+    ],
+];
