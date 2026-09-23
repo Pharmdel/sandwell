@@ -1,7 +1,7 @@
 <x-layout title="Private services" hero description="Discreet, pharmacist-led private treatments — weight loss, hair loss, vitamin B12 and acne — assessed in branch or online.">
     <x-page-hero image="consult-room.jpg" alt="A patient in a private consultation with a pharmacist">
         <div class="max-w-3xl">
-            <p class="reveal text-[11px] font-bold uppercase tracking-[0.14em] text-brand-orange">Private services · Pharmacist-led</p>
+            <p class="reveal text-[11px] font-bold uppercase tracking-[0.14em] text-brand-moss">Private services · Pharmacist-led</p>
 
             <h1 class="mt-5 text-4xl leading-[1.05] text-white md:text-[66px]" data-lines>
                 <span class="line-mask"><span>Private care,</span></span>
@@ -43,7 +43,7 @@
                             Wegovy &amp; Mounjaro with weekly pharmacist check-ins and clinical monitoring throughout.
                         </p>
                         <p class="mt-4 text-xs text-brand-stone-light">Price confirmed at consultation</p>
-                        <span class="mt-auto inline-flex items-center gap-2 pt-6 text-sm font-semibold text-brand-orange">
+                        <span class="mt-auto inline-flex items-center gap-2 pt-6 text-sm font-semibold text-brand-moss">
                             Learn more
                             <svg class="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-width="2" d="M5 12h14m-5-5 5 5-5 5"/></svg>
                         </span>
@@ -62,7 +62,7 @@
                             <h3 class="mt-3 text-[26px] leading-tight">{{ $card['title'] }}</h3>
                             <p class="mt-3 text-sm leading-relaxed text-brand-stone">{{ $card['body'] }}</p>
                             <p class="mt-4 text-xs text-brand-stone-light">Price confirmed at consultation</p>
-                            <span class="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-brand-orange">
+                            <span class="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-brand-moss">
                                 Learn more
                                 <svg class="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-width="2" d="M5 12h14m-5-5 5 5-5 5"/></svg>
                             </span>
@@ -102,26 +102,26 @@
             <div class="mt-12 grid gap-x-12 sm:grid-cols-2" data-reveal-group>
                 @foreach ($listed as $service)
                     <a href="{{ $service['href'] }}"
-                        class="reveal group -mx-3 flex items-center justify-between gap-4 rounded-xl border-b border-brand-hairline px-3 py-4 transition-colors duration-200 hover:bg-brand-ivory focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange">
+                        class="reveal group -mx-3 flex items-center justify-between gap-4 rounded-xl border-b border-brand-hairline px-3 py-4 transition-colors duration-200 hover:bg-brand-ivory focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-moss">
                         <span class="flex min-w-0 items-center gap-3">
-                            <span class="h-1.5 w-1.5 shrink-0 rounded-full bg-brand-orange"></span>
+                            <span class="h-1.5 w-1.5 shrink-0 rounded-full bg-brand-moss"></span>
                             <span class="min-w-0">
-                                <span class="block text-[15px] text-brand-navy transition-colors duration-200 group-hover:text-brand-orange">{{ $service['name'] }}</span>
+                                <span class="block text-[15px] text-brand-forest transition-colors duration-200 group-hover:text-brand-moss">{{ $service['name'] }}</span>
                                 <span class="mt-0.5 block text-xs leading-snug text-brand-stone-light">{{ $service['summary'] }}</span>
                             </span>
                         </span>
-                        <svg class="h-4 w-4 shrink-0 -translate-x-1 text-brand-orange opacity-0 transition-all duration-200 group-hover:translate-x-0 group-hover:opacity-100" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+                        <svg class="h-4 w-4 shrink-0 -translate-x-1 text-brand-moss opacity-0 transition-all duration-200 group-hover:translate-x-0 group-hover:opacity-100" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
                     </a>
                 @endforeach
             </div>
-            <a href="{{ route('services') }}" class="reveal mt-8 inline-flex items-center gap-2 text-sm font-semibold text-brand-orange hover:underline">
+            <a href="{{ route('services') }}" class="reveal mt-8 inline-flex items-center gap-2 text-sm font-semibold text-brand-moss hover:underline">
                 See every service in one place
                 <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-5-5 5 5-5 5"/></svg>
             </a>
         </div>
     </section>
 
-    <section class="no-interact border-b border-brand-peach-line bg-brand-peach py-24 md:py-32">
+    <section class="no-interact border-b border-brand-pistachio-line bg-brand-pistachio py-24 md:py-32">
         <div class="mx-auto max-w-[1280px] px-6 text-center sm:px-8">
             <div class="reveal">
                 <x-eyebrow>How it works</x-eyebrow>
@@ -138,13 +138,13 @@
     <section class="no-interact bg-brand-ivory py-24 md:py-32">
         <div class="mx-auto grid max-w-[1280px] gap-14 px-6 sm:px-8 lg:grid-cols-2">
             <figure class="reveal">
-                <blockquote class="font-serif text-3xl italic leading-snug text-brand-navy">
+                <blockquote class="font-serif text-3xl italic leading-snug text-brand-forest">
                     “I'd put off sorting my skin for years. One consultation and I left with a proper plan — no GP wait, no lecture.”
                 </blockquote>
                 <figcaption class="mt-6 flex items-center gap-3">
-                    <span class="flex h-11 w-11 items-center justify-center rounded-full bg-brand-navy text-sm font-semibold text-white">A</span>
+                    <span class="flex h-11 w-11 items-center justify-center rounded-full bg-brand-forest text-sm font-semibold text-white">A</span>
                     <span>
-                        <span class="block text-sm font-semibold text-brand-navy">Aisha R.</span>
+                        <span class="block text-sm font-semibold text-brand-forest">Aisha R.</span>
                         <span class="block text-xs text-brand-stone-light">Smethwick branch</span>
                     </span>
                 </figcaption>

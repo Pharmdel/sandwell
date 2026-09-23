@@ -10,7 +10,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>{{ $title ? $title.' — Sandwell Pharmacy Group' : 'Sandwell Pharmacy Group — Your local pharmacy, without the wait' }}</title>
+    <title>{{ $title ? $title.' — Hollytree Pharmacy' : 'Hollytree Pharmacy — Your local pharmacy, without the wait' }}</title>
     <meta name="description" content="{{ $description }}">
     <link rel="icon" href="{{ asset('images/logo-nav.png') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -33,7 +33,7 @@
 <body class="bg-brand-ivory font-sans antialiased">
     <div id="scroll-progress"></div>
 
-    <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:z-[70] focus:m-4 focus:rounded-full focus:bg-brand-navy focus:px-5 focus:py-2.5 focus:text-sm focus:text-white">Skip to content</a>
+    <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:z-[70] focus:m-4 focus:rounded-full focus:bg-brand-forest focus:px-5 focus:py-2.5 focus:text-sm focus:text-white">Skip to content</a>
 
     <x-site-header :overlay="$hero === true" :overlay-light="$hero === 'light'" />
     <x-site-menu />
@@ -41,7 +41,7 @@
     {{-- The Menu button needs JS to open, so give non-JS visitors a plain nav. --}}
     <noscript>
         <nav aria-label="Site navigation" class="relative z-30 border-b border-brand-hairline bg-white px-6 py-5 pt-24 sm:px-8">
-            <ul class="mx-auto flex max-w-[1280px] flex-wrap gap-x-6 gap-y-2 text-sm text-brand-navy">
+            <ul class="mx-auto flex max-w-[1280px] flex-wrap gap-x-6 gap-y-2 text-sm text-brand-forest">
                 @foreach ([
                     ['Home', route('home')],
                     ['NHS services', route('nhs-services')],
@@ -56,7 +56,7 @@
                     ['Contact', route('contact')],
                     ['Sign in', route('sign-in')],
                 ] as [$label, $href])
-                    <li><a href="{{ $href }}" class="underline decoration-brand-hairline underline-offset-4 hover:decoration-brand-orange">{{ $label }}</a></li>
+                    <li><a href="{{ $href }}" class="underline decoration-brand-hairline underline-offset-4 hover:decoration-brand-moss">{{ $label }}</a></li>
                 @endforeach
             </ul>
         </nav>

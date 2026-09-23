@@ -1,8 +1,8 @@
 @props(['slug', 'form'])
 
 @php
-    $input = 'w-full rounded-xl border border-brand-hairline bg-white px-4 py-3 text-[15px] text-brand-navy placeholder:text-brand-stone-light transition focus:border-brand-orange focus:outline-none focus:ring-2 focus:ring-brand-orange/25';
-    $label = 'block text-sm font-semibold text-brand-navy';
+    $input = 'w-full rounded-xl border border-brand-hairline bg-white px-4 py-3 text-[15px] text-brand-forest placeholder:text-brand-stone-light transition focus:border-brand-moss focus:outline-none focus:ring-2 focus:ring-brand-moss/25';
+    $label = 'block text-sm font-semibold text-brand-forest';
 @endphp
 
 <section id="enquire" class="scroll-mt-24 border-b border-brand-hairline bg-brand-ivory py-24 md:py-28">
@@ -28,7 +28,7 @@
                     @php $id = $slug.'-'.$field['name']; $half = ! empty($field['half']); @endphp
                     <div class="{{ $half ? '' : 'sm:col-span-2' }}">
                         <label for="{{ $id }}" class="{{ $label }}">
-                            {{ $field['label'] }}@if (! empty($field['required']))<span class="text-brand-orange"> *</span>@endif
+                            {{ $field['label'] }}@if (! empty($field['required']))<span class="text-brand-moss"> *</span>@endif
                         </label>
 
                         @if ($field['type'] === 'select')
@@ -47,13 +47,13 @@
                                 @required(! empty($field['required'])) class="{{ $input }} mt-2">
                         @endif
 
-                        <p data-error-for="{{ $field['name'] }}" hidden class="mt-1.5 text-[13px] text-brand-orange"></p>
+                        <p data-error-for="{{ $field['name'] }}" hidden class="mt-1.5 text-[13px] text-brand-moss"></p>
                     </div>
                 @endforeach
             </div>
 
             <button type="submit" data-magnetic
-                class="mt-7 inline-flex w-full items-center justify-center gap-2.5 rounded-full bg-brand-orange px-7 py-4 text-[15px] font-semibold text-white transition-all duration-300 hover:bg-brand-orange-hover hover:shadow-orange-glow active:scale-[0.98] disabled:opacity-60 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange focus-visible:ring-offset-2">
+                class="mt-7 inline-flex w-full items-center justify-center gap-2.5 rounded-full bg-brand-moss px-7 py-4 text-[15px] font-semibold text-white transition-all duration-300 hover:bg-brand-moss-hover hover:shadow-moss-glow active:scale-[0.98] disabled:opacity-60 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-moss focus-visible:ring-offset-2">
                 <span data-form-label>{{ $form['button'] }}</span>
                 <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-5-5 5 5-5 5"/></svg>
             </button>
@@ -63,10 +63,10 @@
             </p>
 
             <div data-form-done hidden class="mt-6 rounded-2xl border border-brand-hairline bg-brand-ivory p-6 text-center">
-                <p class="font-serif text-xl text-brand-navy">Thank you — we have your details.</p>
+                <p class="font-serif text-xl text-brand-forest">Thank you — we have your details.</p>
                 <p class="mt-2 text-sm leading-relaxed text-brand-stone" data-form-message></p>
-                <a href="{{ config('sandwell.phone_href') }}" class="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-brand-orange hover:underline">
-                    Or call {{ config('sandwell.phone') }} now
+                <a href="{{ config('pharmacy.phone_href') }}" class="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-brand-moss hover:underline">
+                    Or call {{ config('pharmacy.phone') }} now
                 </a>
             </div>
         </form>

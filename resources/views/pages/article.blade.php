@@ -1,5 +1,5 @@
 @php
-    $related = collect(config('sandwell.articles'))->merge(config('weightloss.guides'))->where('slug', '!==', $article['slug'])->shuffle()->take(3);
+    $related = collect(config('pharmacy.articles'))->merge(config('weightloss.guides'))->where('slug', '!==', $article['slug'])->shuffle()->take(3);
     $isGuide = collect(config('weightloss.guides'))->contains('slug', $article['slug']);
 @endphp
 
@@ -26,7 +26,7 @@
 
         <div class="mx-auto max-w-3xl px-6 py-20 md:py-24">
             @foreach ($article['lead'] ?? [] as $para)
-                <p class="reveal mb-6 text-xl leading-[1.7] text-brand-navy">{{ $para }}</p>
+                <p class="reveal mb-6 text-xl leading-[1.7] text-brand-forest">{{ $para }}</p>
             @endforeach
 
             @foreach ($article['body'] as $section)
@@ -39,9 +39,9 @@
             @endforeach
 
             @if (! empty($article['cta']))
-                <aside class="reveal mt-14 rounded-[24px] bg-brand-navy p-8 text-white md:p-10">
+                <aside class="reveal mt-14 rounded-[24px] bg-brand-forest p-8 text-white md:p-10">
                     <h2 class="text-[26px] leading-snug text-white">{{ $article['cta'][0] }}</h2>
-                    <p class="mt-3 text-sm text-white/75">Free suitability check · Free consultation call · Nothing to pay until you begin treatment · {{ config('sandwell.phone') }}</p>
+                    <p class="mt-3 text-sm text-white/75">Free suitability check · Free consultation call · Nothing to pay until you begin treatment · {{ config('pharmacy.phone') }}</p>
                     <x-btn :href="route('weight-loss')" class="mt-6">{{ $article['cta'][1] }}</x-btn>
                 </aside>
             @endif
@@ -52,9 +52,9 @@
                     <div class="mt-6 divide-y divide-brand-hairline border-y border-brand-hairline">
                         @foreach ($article['faqs'] as [$q, $a])
                             <details class="wl-faq group py-1">
-                                <summary class="flex items-center justify-between gap-6 py-4 text-lg font-medium text-brand-navy">
+                                <summary class="flex items-center justify-between gap-6 py-4 text-lg font-medium text-brand-forest">
                                     {{ $q }}
-                                    <span class="wl-faq__icon flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-brand-hairline text-brand-orange transition-transform duration-300">
+                                    <span class="wl-faq__icon flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-brand-hairline text-brand-moss transition-transform duration-300">
                                         <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M12 5v14m-7-7h14"/></svg>
                                     </span>
                                 </summary>
@@ -70,7 +70,7 @@
                 <p class="mt-4 text-sm leading-relaxed text-brand-stone">
                     This is general information, not personal medical advice. If something about your own
                     health is worrying you, speak to a pharmacist at any branch or call
-                    <span class="font-semibold text-brand-navy">{{ config('sandwell.phone') }}</span>.
+                    <span class="font-semibold text-brand-forest">{{ config('pharmacy.phone') }}</span>.
                     For urgent medical advice, call 111.
                 </p>
             </aside>

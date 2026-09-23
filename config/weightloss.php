@@ -135,7 +135,7 @@ return [
             'updated' => 'August 2026',
             'lead' => [
                 'Weight loss injections have transformed what’s possible for people who’ve spent years fighting their weight. In clinical trials, patients lost around 15% of their body weight on Wegovy and around 20% on Mounjaro over a year — results that diet and willpower alone rarely deliver for people with a BMI over 30.',
-                'If you’re searching for weight loss support in West Bromwich, you don’t need to rely on an anonymous online-only provider. The Sandwell Pharmacy Group runs a pharmacist-led weight loss clinic at your local branch, combining the same medications with something the online clinics can’t offer: a local pharmacist who knows you and checks in with you face to face or by phone at every stage.',
+                'If you’re searching for weight loss support in West Bromwich, you don’t need to rely on an anonymous online-only provider. Hollytree Pharmacy runs a pharmacist-led weight loss clinic at your local branch, combining the same medications with something the online clinics can’t offer: a local pharmacist who knows you and checks in with you face to face or by phone at every stage.',
             ],
             'body' => [
                 [
@@ -161,12 +161,12 @@ return [
                     'Yes — your local branch runs a pharmacist-led weight loss clinic offering Mounjaro, Wegovy, Wegovy oral tablets and Alli, with free consultations.',
                 ],
                 [
-                    'Can I switch to Sandwell Pharmacy Group from an online provider?',
+                    'Can I switch to Hollytree Pharmacy from an online provider?',
                     'Yes. We match your current medication and dose and time the handover so you stay on schedule. Use the switch form on our weight loss page.',
                 ],
             ],
             'cta' => [
-                'Check your suitability across the Sandwell Pharmacy Group',
+                'Check your suitability across Hollytree Pharmacy',
                 'Check your suitability →',
             ],
         ],
@@ -181,7 +181,7 @@ return [
             'updated' => 'August 2026',
             'lead' => [
                 'Mounjaro (tirzepatide) is the most talked-about weight loss medicine in the UK right now — and with reason. It’s the first treatment to act on two appetite hormones at once, GLP-1 and GIP, and in trials patients lost around 20% of their body weight over a year, more than any other licensed option.',
-                'Across the Sandwell Pharmacy Group, Mounjaro is available through our pharmacist-led weight loss clinic — with a free consultation before you start and proper check-ins while you’re on it.',
+                'Across Hollytree Pharmacy, Mounjaro is available through our pharmacist-led weight loss clinic — with a free consultation before you start and proper check-ins while you’re on it.',
             ],
             'body' => [
                 [
@@ -200,7 +200,7 @@ return [
             'faqs' => [
                 [
                     'How much is Mounjaro in West Bromwich?',
-                    'Prices vary by dose strength. The Sandwell Pharmacy Group confirms exact pricing at your free consultation — start with the suitability check on our weight loss page.',
+                    'Prices vary by dose strength. Hollytree Pharmacy confirms exact pricing at your free consultation — start with the suitability check on our weight loss page.',
                 ],
                 [
                     'Do I qualify for Mounjaro?',
@@ -212,7 +212,7 @@ return [
                 ],
             ],
             'cta' => [
-                'Start with a free consultation across the Sandwell Pharmacy Group',
+                'Start with a free consultation across Hollytree Pharmacy',
                 'Start with a free consultation →',
             ],
         ],
@@ -227,7 +227,7 @@ return [
             'updated' => 'August 2026',
             'lead' => [
                 'Wegovy (semaglutide) is the weight loss injection that started the conversation. It has been used by millions of people worldwide, it has the longest real-world track record of any GLP-1 weight loss treatment, and in trials people lost around 15% of their body weight over 68 weeks alongside diet and activity changes.',
-                'Across the Sandwell Pharmacy Group, Wegovy is prescribed through our pharmacist-led weight loss clinic. That means a free consultation before you start, a proper medical and medication review, and real check-ins as your dose builds — not just a courier and a login.',
+                'Across Hollytree Pharmacy, Wegovy is prescribed through our pharmacist-led weight loss clinic. That means a free consultation before you start, a proper medical and medication review, and real check-ins as your dose builds — not just a courier and a login.',
             ],
             'body' => [
                 [
@@ -245,7 +245,7 @@ It is a once-weekly injection under the skin of the stomach, thigh or upper arm,
                     'Weight loss is steady rather than dramatic — typically 1–2lb a week once you are past the starting doses. The people who do best treat the injection as the thing that makes the other changes possible: eating enough protein, keeping fluids up, and moving most days. Muscle loss is the main risk of losing weight quickly on any GLP-1, which is why we talk about protein and resistance exercise at every check-in.',
                 ],
                 [
-                    'Starting across the Sandwell Pharmacy Group',
+                    'Starting across Hollytree Pharmacy',
                     'Take the one-minute suitability check on our weight loss clinic page. It works out your BMI — Wegovy is licensed from a BMI of 30, or 27 if you have a weight-related condition such as high blood pressure or prediabetes — and books your free consultation. Your pharmacist reviews your history and medicines, confirms Wegovy is appropriate, and arranges collection in store or free local delivery. Already on Wegovy elsewhere? We can take over your care at your current dose.',
                 ],
             ],
@@ -312,7 +312,7 @@ The honest answer to “which is better?” is: the one you’ll stay on, at a d
                 ],
                 [
                     'Can I switch from Wegovy to Mounjaro?',
-                    'Often yes — switches are planned by the pharmacist so dosing stays safe and effective. Book a free consultation across the Sandwell Pharmacy Group and bring your current dose details.',
+                    'Often yes — switches are planned by the pharmacist so dosing stays safe and effective. Book a free consultation across Hollytree Pharmacy and bring your current dose details.',
                 ],
                 [
                     'Are there tablet alternatives to injections?',
@@ -320,7 +320,7 @@ The honest answer to “which is better?” is: the one you’ll stay on, at a d
                 ],
             ],
             'cta' => [
-                'Get a personal recommendation across the Sandwell Pharmacy Group',
+                'Get a personal recommendation across Hollytree Pharmacy',
                 'Get a personal recommendation →',
             ],
         ],
@@ -335,7 +335,7 @@ The honest answer to “which is better?” is: the one you’ll stay on, at a d
             'updated' => 'August 2026',
             'lead' => [
                 'Not everyone wants a weekly injection. Oral semaglutide gives you the same active ingredient as Wegovy in a daily tablet — no needles, no pen, no fridge. For people who are needle-averse, or who travel constantly and would rather not think about a cold chain, it removes the single biggest barrier to starting treatment.',
-                'It is available through the pharmacist-led weight loss clinic across the Sandwell Pharmacy Group, with the same free consultation and check-ins as the injectable options.',
+                'It is available through the pharmacist-led weight loss clinic across Hollytree Pharmacy, with the same free consultation and check-ins as the injectable options.',
             ],
             'body' => [
                 [
@@ -351,7 +351,7 @@ The honest answer to “which is better?” is: the one you’ll stay on, at a d
                     'Oral semaglutide tends to work best for people with a genuine needle phobia, people who want to try a GLP-1 without committing to injections, and anyone whose mornings are already predictable. It is less suitable if you take several other morning medicines, if you cannot reliably leave a 30-minute gap before breakfast, or if you would simply rather deal with one injection a week than one tablet a day.',
                 ],
                 [
-                    'Starting across the Sandwell Pharmacy Group',
+                    'Starting across Hollytree Pharmacy',
                     'Use the suitability check on our weight loss clinic page and pick the oral option, or tell your pharmacist at the consultation that you would rather avoid injections. We will go through the timing rules properly, confirm none of your other medicines clash with that morning window, and arrange collection or free local delivery.',
                 ],
             ],
@@ -404,7 +404,7 @@ The honest answer to “which is better?” is: the one you’ll stay on, at a d
                     'Foundayo tends to appeal to people who ruled out weight loss treatment because of needles, people who found the empty-stomach rules of oral semaglutide unworkable, and anyone whose day is too unpredictable for a fixed morning routine. Because it is newer, its long-term real-world track record is shorter than semaglutide’s — something we will be straight with you about at your consultation rather than glossing over.',
                 ],
                 [
-                    'Starting across the Sandwell Pharmacy Group',
+                    'Starting across Hollytree Pharmacy',
                     'Availability of any new treatment moves quickly, so the honest answer on supply and price is the one your pharmacist gives you on the day. Start with the suitability check on our weight loss clinic page — it works out your BMI and books a free consultation, where we go through every option including the injectables and tell you which we would actually recommend for you. You can also register your interest on the clinic page and we will contact you the moment we can supply it.',
                 ],
             ],
@@ -455,7 +455,7 @@ The honest answer to “which is better?” is: the one you’ll stay on, at a d
                 ],
                 [
                     'Getting the best from it',
-                    'Take one capsule with each main meal containing fat (skip the dose for fat-free meals). Spread fat evenly across the day, take a multivitamin at bedtime since fat-soluble vitamin absorption drops slightly, and pair it with the food and activity changes that do the real long-term work. Across the Sandwell Pharmacy Group, Alli is part of our weight loss clinic, so you get pharmacist check-ins rather than just a box off a shelf.',
+                    'Take one capsule with each main meal containing fat (skip the dose for fat-free meals). Spread fat evenly across the day, take a multivitamin at bedtime since fat-soluble vitamin absorption drops slightly, and pair it with the food and activity changes that do the real long-term work. Across Hollytree Pharmacy, Alli is part of our weight loss clinic, so you get pharmacist check-ins rather than just a box off a shelf.',
                 ],
             ],
             'faqs' => [
@@ -473,7 +473,7 @@ The honest answer to “which is better?” is: the one you’ll stay on, at a d
                 ],
             ],
             'cta' => [
-                'Ask about Alli across the Sandwell Pharmacy Group',
+                'Ask about Alli across Hollytree Pharmacy',
                 'Ask about Alli →',
             ],
         ],
@@ -541,7 +541,7 @@ The honest answer to “which is better?” is: the one you’ll stay on, at a d
             'image' => 'hero-consult.jpg',
             'read' => '3 min read',
             'title' => 'What Weight Loss Treatment Actually Costs in West Bromwich',
-            'blurb' => 'How weight loss treatment pricing really works — why cost changes with dose, what is included, and why the consultation across the Sandwell Pharmacy Group is free.',
+            'blurb' => 'How weight loss treatment pricing really works — why cost changes with dose, what is included, and why the consultation across Hollytree Pharmacy is free.',
             'reviewed' => 'Clinically reviewed by Jeetender Singh Sahota, Superintendent Pharmacist (GPhC 2048691)',
             'updated' => 'August 2026',
             'lead' => [
@@ -584,7 +584,7 @@ The honest answer to “which is better?” is: the one you’ll stay on, at a d
                     'Alli (orlistat 60mg) is the lowest-cost treatment available directly from a pharmacy, though it works differently from the GLP-1 injections and suits a different person. Your pharmacist will tell you honestly whether it is likely to help in your case.',
                 ],
                 [
-                    'Can I switch to Sandwell Pharmacy Group without starting again at the lowest dose?',
+                    'Can I switch to Hollytree Pharmacy without starting again at the lowest dose?',
                     'Yes. If your current dose is established, we can continue at that dose after reviewing your history and medicines — use the switch request form on our weight loss page.',
                 ],
             ],

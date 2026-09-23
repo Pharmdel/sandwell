@@ -33,20 +33,20 @@ if (root) {
     }
 
     const labels = { sym: 'Symptoms', dur: 'How long', about: 'About you', pathway: 'Pathway', flags: 'Safety' };
-    const opt = 'wl-opt flex w-full items-center gap-3 rounded-2xl border border-brand-hairline bg-white px-5 py-4 text-left text-[15px] font-medium text-brand-navy hover:border-brand-navy/50';
-    const btnP = 'inline-flex items-center justify-center gap-2 rounded-full bg-brand-orange px-7 py-3.5 text-sm font-semibold text-white transition-all hover:bg-brand-orange-hover disabled:cursor-not-allowed disabled:opacity-40';
-    const btnO = 'inline-flex items-center justify-center rounded-full border border-brand-navy px-6 py-3.5 text-sm font-semibold text-brand-navy transition-all hover:bg-brand-navy hover:text-white';
+    const opt = 'wl-opt flex w-full items-center gap-3 rounded-2xl border border-brand-hairline bg-white px-5 py-4 text-left text-[15px] font-medium text-brand-forest hover:border-brand-forest/50';
+    const btnP = 'inline-flex items-center justify-center gap-2 rounded-full bg-brand-moss px-7 py-3.5 text-sm font-semibold text-white transition-all hover:bg-brand-moss-hover disabled:cursor-not-allowed disabled:opacity-40';
+    const btnO = 'inline-flex items-center justify-center rounded-full border border-brand-forest px-6 py-3.5 text-sm font-semibold text-brand-forest transition-all hover:bg-brand-forest hover:text-white';
 
     function progress() {
         return `<ol class="mb-8 flex flex-wrap gap-2" aria-label="Progress">${steps().map((k, i) => {
             const on = i === state.step, done = i < state.step;
-            return `<li class="flex items-center gap-2 rounded-full px-3 py-1.5 text-xs font-semibold ${on ? 'bg-brand-navy text-white' : done ? 'bg-emerald-50 text-emerald-700' : 'bg-brand-navy/5 text-brand-stone-light'}"><span>${done ? '✓' : i + 1}</span>${labels[k]}</li>`;
+            return `<li class="flex items-center gap-2 rounded-full px-3 py-1.5 text-xs font-semibold ${on ? 'bg-brand-forest text-white' : done ? 'bg-emerald-50 text-emerald-700' : 'bg-brand-forest/5 text-brand-stone-light'}"><span>${done ? '✓' : i + 1}</span>${labels[k]}</li>`;
         }).join('')}</ol>`;
     }
 
     function check(list, i, label, warn = false) {
         const on = list.includes(i);
-        return `<label class="${opt} ${warn ? 'border-red-200' : ''}" data-on="${on}"><input type="checkbox" class="h-4 w-4 accent-brand-orange" data-check="${i}" ${on ? 'checked' : ''}><span>${esc(label)}</span></label>`;
+        return `<label class="${opt} ${warn ? 'border-red-200' : ''}" data-on="${on}"><input type="checkbox" class="h-4 w-4 accent-brand-moss" data-check="${i}" ${on ? 'checked' : ''}><span>${esc(label)}</span></label>`;
     }
 
     function body() {
@@ -55,20 +55,20 @@ if (root) {
             return `<h3 class="text-2xl">Which of these do you have?</h3><p class="mt-2 text-sm text-brand-stone">Tick everything that applies. This helps our pharmacist see whether ${esc(cond.name.toLowerCase())} is the likely cause.</p><div class="mt-5 grid gap-2.5" data-group="sym">${cond.sym.map((s, i) => check(state.sym, i, s)).join('')}</div><p class="mt-3 text-xs text-brand-stone-light" data-count>${state.sym.length ? state.sym.length + ' selected' : 'Tick at least one to carry on'}</p>`;
         }
         if (k === 'dur') {
-            return `<h3 class="text-2xl">${esc(cond.dur.q)}</h3>${cond.dur.note ? `<p class="mt-2 text-sm text-brand-stone">${esc(cond.dur.note)}</p>` : ''}<div class="mt-5 grid gap-2.5" role="radiogroup">${cond.dur.opts.map((o, i) => `<button type="button" role="radio" aria-checked="${state.dur === i}" data-dur="${i}" class="wl-opt flex w-full rounded-2xl border border-brand-hairline bg-white px-5 py-4 text-left text-[15px] font-medium text-brand-navy hover:border-brand-navy/50">${esc(o)}</button>`).join('')}</div>`;
+            return `<h3 class="text-2xl">${esc(cond.dur.q)}</h3>${cond.dur.note ? `<p class="mt-2 text-sm text-brand-stone">${esc(cond.dur.note)}</p>` : ''}<div class="mt-5 grid gap-2.5" role="radiogroup">${cond.dur.opts.map((o, i) => `<button type="button" role="radio" aria-checked="${state.dur === i}" data-dur="${i}" class="wl-opt flex w-full rounded-2xl border border-brand-hairline bg-white px-5 py-4 text-left text-[15px] font-medium text-brand-forest hover:border-brand-forest/50">${esc(o)}</button>`).join('')}</div>`;
         }
         if (k === 'about') {
             const female = cond.sex === 'F';
             return `<h3 class="text-2xl">A couple of details</h3><p class="mt-2 text-sm text-brand-stone">${esc(cond.elig)}</p>
             <div class="mt-5 grid gap-4 sm:grid-cols-2">
-              <div><label class="mb-1.5 block text-xs font-semibold uppercase tracking-[0.08em] text-brand-stone-light" for="st_age">Patient’s age *</label><input id="st_age" type="number" min="0" max="120" inputmode="numeric" placeholder="e.g. 34" value="${esc(state.age)}" data-field="age" class="w-full rounded-xl border border-brand-hairline bg-brand-ivory px-4 py-3 text-[15px] text-brand-navy focus:border-brand-navy focus:outline-none focus:ring-2 focus:ring-brand-navy/20"></div>
-              ${female ? `<div><label class="mb-1.5 block text-xs font-semibold uppercase tracking-[0.08em] text-brand-stone-light" for="st_sex">Sex *</label><select id="st_sex" data-field="sex" class="w-full rounded-xl border border-brand-hairline bg-brand-ivory px-4 py-3 text-[15px] text-brand-navy"><option value="">Select…</option><option value="F" ${state.sex === 'F' ? 'selected' : ''}>Female</option><option value="M" ${state.sex === 'M' ? 'selected' : ''}>Male</option></select></div>
-              <div><label class="mb-1.5 block text-xs font-semibold uppercase tracking-[0.08em] text-brand-stone-light" for="st_preg">Are you pregnant?</label><select id="st_preg" data-field="preg" class="w-full rounded-xl border border-brand-hairline bg-brand-ivory px-4 py-3 text-[15px] text-brand-navy"><option value="no" ${state.preg === 'no' ? 'selected' : ''}>No</option><option value="yes" ${state.preg === 'yes' ? 'selected' : ''}>Yes</option></select></div>` : ''}
+              <div><label class="mb-1.5 block text-xs font-semibold uppercase tracking-[0.08em] text-brand-stone-light" for="st_age">Patient’s age *</label><input id="st_age" type="number" min="0" max="120" inputmode="numeric" placeholder="e.g. 34" value="${esc(state.age)}" data-field="age" class="w-full rounded-xl border border-brand-hairline bg-brand-ivory px-4 py-3 text-[15px] text-brand-forest focus:border-brand-forest focus:outline-none focus:ring-2 focus:ring-brand-forest/20"></div>
+              ${female ? `<div><label class="mb-1.5 block text-xs font-semibold uppercase tracking-[0.08em] text-brand-stone-light" for="st_sex">Sex *</label><select id="st_sex" data-field="sex" class="w-full rounded-xl border border-brand-hairline bg-brand-ivory px-4 py-3 text-[15px] text-brand-forest"><option value="">Select…</option><option value="F" ${state.sex === 'F' ? 'selected' : ''}>Female</option><option value="M" ${state.sex === 'M' ? 'selected' : ''}>Male</option></select></div>
+              <div><label class="mb-1.5 block text-xs font-semibold uppercase tracking-[0.08em] text-brand-stone-light" for="st_preg">Are you pregnant?</label><select id="st_preg" data-field="preg" class="w-full rounded-xl border border-brand-hairline bg-brand-ivory px-4 py-3 text-[15px] text-brand-forest"><option value="no" ${state.preg === 'no' ? 'selected' : ''}>No</option><option value="yes" ${state.preg === 'yes' ? 'selected' : ''}>Yes</option></select></div>` : ''}
             </div>`;
         }
         if (k === 'pathway') {
             const q = pathway[state.pathwayIndex];
-            return `<p class="text-[11px] font-bold uppercase tracking-[0.14em] text-brand-orange">NHS pathway check · ${state.pathwayIndex + 1} of ${pathway.length}</p><h3 class="mt-2 text-2xl">${esc(q.q)}</h3><div class="mt-5 grid gap-2.5" role="radiogroup">${q.options.map((o, i) => `<button type="button" role="radio" aria-checked="false" data-path="${i}" class="wl-opt flex w-full rounded-2xl border border-brand-hairline bg-white px-5 py-4 text-left text-[15px] font-medium text-brand-navy hover:border-brand-navy/50">${esc(o.text)}</button>`).join('')}</div>`;
+            return `<p class="text-[11px] font-bold uppercase tracking-[0.14em] text-brand-moss">NHS pathway check · ${state.pathwayIndex + 1} of ${pathway.length}</p><h3 class="mt-2 text-2xl">${esc(q.q)}</h3><div class="mt-5 grid gap-2.5" role="radiogroup">${q.options.map((o, i) => `<button type="button" role="radio" aria-checked="false" data-path="${i}" class="wl-opt flex w-full rounded-2xl border border-brand-hairline bg-white px-5 py-4 text-left text-[15px] font-medium text-brand-forest hover:border-brand-forest/50">${esc(o.text)}</button>`).join('')}</div>`;
         }
         return `<h3 class="text-2xl">Last thing — a safety check</h3><p class="mt-2 text-sm text-brand-stone">These are signs that need seeing sooner than a pharmacy visit. Most people won’t tick any.</p><div class="mt-5 grid gap-2.5" data-group="flags">${cond.flags.map((f, i) => check(state.flags, i, f, true)).join('')}</div>`;
     }
@@ -145,9 +145,9 @@ if (root) {
     }
 
     function card(kind, badge, title, html) {
-        const tones = { urgent: 'border-red-200 bg-red-50', no: 'border-brand-hairline bg-brand-ivory', maybe: 'border-brand-peach-line bg-brand-peach', yes: 'border-emerald-200 bg-emerald-50' };
-        const badgeTone = { urgent: 'bg-red-600 text-white', no: 'bg-brand-navy text-white', maybe: 'bg-brand-orange text-white', yes: 'bg-emerald-600 text-white' };
-        return `<div class="rounded-[24px] border p-8 ${tones[kind]}"><span class="inline-block rounded-full px-3 py-1 text-[10px] font-bold uppercase tracking-[0.08em] ${badgeTone[kind]}">${badge}</span><h3 class="mt-4 text-2xl">${title}</h3><div class="mt-3 space-y-3 text-[15px] leading-relaxed text-brand-stone">${html}</div><button type="button" data-restart class="mt-6 text-sm font-semibold text-brand-navy underline decoration-brand-hairline underline-offset-4 hover:decoration-brand-orange">Start again</button></div>`;
+        const tones = { urgent: 'border-red-200 bg-red-50', no: 'border-brand-hairline bg-brand-ivory', maybe: 'border-brand-pistachio-line bg-brand-pistachio', yes: 'border-emerald-200 bg-emerald-50' };
+        const badgeTone = { urgent: 'bg-red-600 text-white', no: 'bg-brand-forest text-white', maybe: 'bg-brand-moss text-white', yes: 'bg-emerald-600 text-white' };
+        return `<div class="rounded-[24px] border p-8 ${tones[kind]}"><span class="inline-block rounded-full px-3 py-1 text-[10px] font-bold uppercase tracking-[0.08em] ${badgeTone[kind]}">${badge}</span><h3 class="mt-4 text-2xl">${title}</h3><div class="mt-3 space-y-3 text-[15px] leading-relaxed text-brand-stone">${html}</div><button type="button" data-restart class="mt-6 text-sm font-semibold text-brand-forest underline decoration-brand-hairline underline-offset-4 hover:decoration-brand-moss">Start again</button></div>`;
     }
 
     function result(forced) {
@@ -158,7 +158,7 @@ if (root) {
         const pregnant = cond.sex === 'F' && state.preg === 'yes';
         const tooYoung = age < cond.min, tooOld = age > cond.max;
         const name = esc(cond.name);
-        const recap = `<p class="mb-5 rounded-2xl bg-white/70 px-4 py-3 text-sm text-brand-stone"><b class="text-brand-navy">What you told us:</b> ${state.sym.map((i) => esc(cond.sym[i])).join(' · ')}${cond.dur && state.dur !== null ? ' · ' + esc(cond.dur.opts[state.dur]) : ''}${isNaN(age) ? '' : ' · age ' + age}</p>`;
+        const recap = `<p class="mb-5 rounded-2xl bg-white/70 px-4 py-3 text-sm text-brand-stone"><b class="text-brand-forest">What you told us:</b> ${state.sym.map((i) => esc(cond.sym[i])).join(' · ')}${cond.dur && state.dur !== null ? ' · ' + esc(cond.dur.opts[state.dur]) : ''}${isNaN(age) ? '' : ' · age ' + age}</p>`;
         let html;
         let eligible = false;
 

@@ -5,7 +5,7 @@
 <x-layout :title="$branch['name']" hero :description="$branch['name'].' — an NHS community pharmacy in '.$branch['town'].'. Pharmacy First, repeat prescriptions, vaccinations and free delivery.'">
     <x-page-hero image="hero-consult.jpg" :alt="'Inside '.$branch['name']">
         <div class="max-w-3xl">
-            <p class="reveal text-[11px] font-bold uppercase tracking-[0.14em] text-brand-orange">
+            <p class="reveal text-[11px] font-bold uppercase tracking-[0.14em] text-brand-moss">
                 Our branches · {{ $branch['town'] }}
             </p>
 
@@ -44,9 +44,9 @@
                 <div class="p-7">
                     <p class="text-[11px] font-semibold uppercase tracking-[0.1em] text-brand-stone-light">Opening hours</p>
                     <div class="mt-4 space-y-2">
-                        @foreach (config('sandwell.hours') as $row)
+                        @foreach (config('pharmacy.hours') as $row)
                             <div class="flex justify-between gap-3 text-sm">
-                                <span class="text-brand-navy">{{ $row['day'] }}</span>
+                                <span class="text-brand-forest">{{ $row['day'] }}</span>
                                 <span class="text-brand-stone">{{ $row['time'] }}</span>
                             </div>
                         @endforeach
@@ -54,7 +54,7 @@
                 </div>
                 <div class="p-7">
                     <p class="text-[11px] font-semibold uppercase tracking-[0.1em] text-brand-stone-light">Contact</p>
-                    <p class="mt-4 font-serif text-2xl text-brand-navy">{{ config('sandwell.phone') }}</p>
+                    <p class="mt-4 font-serif text-2xl text-brand-forest">{{ config('pharmacy.phone') }}</p>
                     <p class="mt-2 text-sm text-brand-stone">Ask for the {{ $branch['short'] }} branch.</p>
                 </div>
                 <div class="p-7">
@@ -86,7 +86,7 @@
                         ['MDS blister packs', 'nhs'], ['Acne treatment', 'private'],
                     ] as [$service, $kind])
                         <div class="flex items-center justify-between gap-3 border-b border-brand-hairline py-3.5">
-                            <span class="text-[15px] text-brand-navy">{{ $service }}</span>
+                            <span class="text-[15px] text-brand-forest">{{ $service }}</span>
                             <x-chip :tone="$kind === 'nhs' ? 'nhs' : 'quiet'">{{ $kind === 'nhs' ? 'NHS' : 'Private' }}</x-chip>
                         </div>
                     @endforeach
@@ -107,7 +107,7 @@
     </section>
 
     {{-- Team --}}
-    <section class="no-interact border-b border-brand-peach-line bg-brand-peach py-24 md:py-32">
+    <section class="no-interact border-b border-brand-pistachio-line bg-brand-pistachio py-24 md:py-32">
         <div class="mx-auto grid max-w-[1280px] items-center gap-14 px-6 sm:px-8 lg:grid-cols-2">
             <div class="reveal clip-reveal overflow-hidden rounded-[28px] shadow-editorial-card">
                 <img src="{{ asset('images/team.jpg') }}" alt="The pharmacy team behind the counter" class="h-80 w-full object-cover">
@@ -119,7 +119,7 @@
                     The same pharmacists and dispensers work at {{ $branch['short'] }} week in, week out — so
                     you are not explaining your history from scratch every time you come in.
                 </p>
-                <p class="mt-6 text-sm text-brand-stone">Superintendent pharmacist: <span class="font-semibold text-brand-navy">{{ $branch['superintendent'] }}</span> <span class="text-brand-stone-light">(GPhC {{ $branch['superintendent_gphc'] }})</span></p>
+                <p class="mt-6 text-sm text-brand-stone">Superintendent pharmacist: <span class="font-semibold text-brand-forest">{{ $branch['superintendent'] }}</span> <span class="text-brand-stone-light">(GPhC {{ $branch['superintendent_gphc'] }})</span></p>
                 <p class="mt-2 text-xs text-brand-stone-light">GPhC registered premises {{ $branch['gphc_premises'] }} · Operated by {{ $branch['company'] }}, company no. {{ $branch['company_no'] }}</p>
             </div>
         </div>
@@ -140,7 +140,7 @@
                         ['On foot', 'Step-free from the street, with a consultation room on the ground floor.'],
                     ] as $row)
                         <div class="border-b border-brand-hairline py-4 last:border-0">
-                            <p class="text-sm font-semibold text-brand-navy">{{ $row[0] }}</p>
+                            <p class="text-sm font-semibold text-brand-forest">{{ $row[0] }}</p>
                             <p class="mt-1 text-sm leading-relaxed text-brand-stone">{{ $row[1] }}</p>
                         </div>
                     @endforeach

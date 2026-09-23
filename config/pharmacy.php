@@ -38,9 +38,9 @@ return [
             'map_y' => 33.36,
         ],
         [
-            'slug' => 'sandwell',
-            'name' => 'Sandwell Pharmacy',
-            'short' => 'Sandwell',
+            'slug' => 'hollytree',
+            'name' => 'Hollytree Pharmacy',
+            'short' => 'Hollytree',
             'town' => 'West Bromwich',
             'area' => 'Church Vale',
             'address' => '85 Church Vale, West Bromwich',
@@ -312,7 +312,7 @@ return [
             'initial' => 'F',
             'name' => 'Frank Smith',
             'rating' => 5,
-            'quote' => 'I have been using Sandwell Pharmacy Group for years and have never had any issues with the service or the staff. I can honestly say they are friendly, helpful and above all professional.',
+            'quote' => 'I have been using Hollytree Pharmacy for years and have never had any issues with the service or the staff. I can honestly say they are friendly, helpful and above all professional.',
         ],
         [
             'initial' => 'H',
@@ -354,20 +354,20 @@ return [
             'initial' => 'P',
             'name' => 'penelope bat',
             'rating' => 5,
-            'quote' => 'I have been visiting Sandwell Pharmacy Group for many years and truly must say that the customer service, advice and care has truly been exceptional… staff take a genuine interest in serving. Very well managed and they actually look happy whilst in public view.',
+            'quote' => 'I have been visiting Hollytree Pharmacy for many years and truly must say that the customer service, advice and care has truly been exceptional… staff take a genuine interest in serving. Very well managed and they actually look happy whilst in public view.',
         ],
         [
             'initial' => 'C',
             'name' => 'C Dickson',
             'rating' => 5,
-            'quote' => 'Recently had an issue with a prescribed medication not being issued by the GP… the Sandwell Pharmacy Group staff were really helpful and the Pharmacist was able to issue my medication, despite me attending just before closing. Thanks for going the extra mile.',
+            'quote' => 'Recently had an issue with a prescribed medication not being issued by the GP… Hollytree Pharmacy staff were really helpful and the Pharmacist was able to issue my medication, despite me attending just before closing. Thanks for going the extra mile.',
         ],
     ],
 
     // The five surfaced on the homepage, one per service area. The rest stay in
     // 'faqs' below for the prescriptions page and future use.
     'faqs_home' => [
-        'How do I nominate Sandwell Pharmacy Group for my NHS prescriptions?',
+        'How do I nominate Hollytree Pharmacy for my NHS prescriptions?',
         'Do you deliver prescriptions?',
         'What is Pharmacy First?',
         'What weight loss treatments do you offer?',
@@ -380,7 +380,7 @@ return [
             'group' => 'Prescriptions & nominations',
             'items' => [
                 [
-                    'How do I nominate Sandwell Pharmacy Group for my NHS prescriptions?',
+                    'How do I nominate Hollytree Pharmacy for my NHS prescriptions?',
                     'Simply fill in our online nomination form — it takes under 2 minutes and is completely free. Once nominated, your GP sends your prescriptions directly to us electronically and we prepare them for collection or send them out by free local delivery.',
                 ],
                 [

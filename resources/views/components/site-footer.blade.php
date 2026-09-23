@@ -1,6 +1,6 @@
 @php
-    $branches = config('sandwell.branches');
-    $phone = config('sandwell.phone');
+    $branches = config('pharmacy.branches');
+    $phone = config('pharmacy.phone');
 
     $services = [
         ['Repeat prescriptions', route('repeat-prescriptions')],
@@ -29,7 +29,7 @@
 @endphp
 
 <footer class="grain relative overflow-hidden bg-footer text-footer-text">
-    <div class="pointer-events-none absolute -top-40 left-1/2 h-[520px] w-[900px] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(26,31,78,0.6),transparent_70%)]"></div>
+    <div class="pointer-events-none absolute -top-40 left-1/2 h-[520px] w-[900px] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(24,70,41,0.6),transparent_70%)]"></div>
 
     <div class="relative mx-auto max-w-[1280px] px-6 sm:px-8">
         {{-- Brand + phone --}}
@@ -38,8 +38,8 @@
                 <div class="flex items-center gap-3.5">
                     <img src="{{ asset('images/logo-nav.png') }}" alt="" width="54" height="54" class="h-[54px] w-[54px] rounded-full bg-white/95 p-0.5">
                     <span class="wordmark text-[20px]">
-                        <span class="wordmark__name text-white">SANDWELL</span>
-                        <span class="wordmark__sub text-footer-link">Pharmacy Group</span>
+                        <span class="wordmark__name text-white">HOLLYTREE</span>
+                        <span class="wordmark__sub text-footer-link">Pharmacy</span>
                     </span>
                 </div>
                 <p class="mt-6 font-serif text-2xl leading-snug text-white">
@@ -62,13 +62,13 @@
 
             <div class="shrink-0 rounded-3xl border border-white/[0.14] bg-white/[0.08] p-7 backdrop-blur md:min-w-[300px]">
                 <p class="text-[11px] font-semibold uppercase tracking-[0.14em] text-footer-link">Talk to a pharmacist</p>
-                <a href="{{ config('sandwell.phone_href') }}"
+                <a href="{{ config('pharmacy.phone_href') }}"
                     class="mt-3 block font-serif text-[34px] leading-none text-white transition-colors hover:text-footer-link">{{ $phone }}</a>
                 <p class="mt-3 text-xs leading-relaxed text-footer-meta">
-                    Mon–Fri 8:30–18:00 · Sat 9:00–13:00<br>Free delivery on orders over {{ config('sandwell.free_delivery_threshold') }}
+                    Mon–Fri 8:30–18:00 · Sat 9:00–13:00<br>Free delivery on orders over {{ config('pharmacy.free_delivery_threshold') }}
                 </p>
                 <a href="{{ route('branches') }}"
-                    class="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full border border-white/25 px-5 py-3 text-sm font-semibold text-white transition-all hover:bg-white hover:text-brand-navy">
+                    class="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full border border-white/25 px-5 py-3 text-sm font-semibold text-white transition-all hover:bg-white hover:text-brand-forest">
                     Six branches — find yours
                 </a>
             </div>
@@ -152,7 +152,7 @@
                     <li class="no-interact text-footer-text/45">{{ $item }}</li>
                 @endforeach
             </ul>
-            <p class="text-xs text-footer-copy">© {{ date('Y') }} Sandwell Pharmacy Group Ltd. All rights reserved.</p>
+            <p class="text-xs text-footer-copy">© {{ date('Y') }} Hollytree Pharmacy Ltd. All rights reserved.</p>
         </div>
 
         <p class="no-interact border-t border-white/[0.12] py-6 text-center text-[11px] leading-relaxed text-footer-text/60">

@@ -1,4 +1,4 @@
-# Sandwell Pharmacy Group — website
+# Hollytree Pharmacy — website
 
 Laravel 13 rebuild of sandwellpharmacygroup.co.uk.
 

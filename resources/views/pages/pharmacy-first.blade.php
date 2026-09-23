@@ -79,7 +79,7 @@
                     @endphp
                     <a href="{{ route('conditions.show', $c['slug']) }}"
                         data-condition="{{ strtolower($c['name'].' '.implode(' ', $c['az']).' '.$c['kw'].' '.implode(' ', $c['sym'])) }}"
-                        class="reveal tilt group flex flex-col overflow-hidden rounded-[20px] border border-brand-hairline bg-white p-4 shadow-editorial-card transition-all duration-[250ms] hover:-translate-y-1 hover:shadow-editorial-hover focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange">
+                        class="reveal tilt group flex flex-col overflow-hidden rounded-[20px] border border-brand-hairline bg-white p-4 shadow-editorial-card transition-all duration-[250ms] hover:-translate-y-1 hover:shadow-editorial-hover focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-moss">
                         <span class="block overflow-hidden rounded-2xl">
                             <img src="{{ asset('images/'.$c['icon']) }}" alt="" loading="lazy"
                                 class="{{ $crop }} w-full object-cover transition-transform duration-[600ms] group-hover:scale-[1.06]">
@@ -88,11 +88,11 @@
                             <span @class([
                                 'mt-4 inline-block rounded-full px-3 py-1 text-[10px] font-bold uppercase tracking-[0.1em]',
                                 'bg-brand-nhs-blue/10 text-brand-nhs-blue' => $isPf,
-                                'bg-brand-peach text-brand-orange' => ! $isPf,
+                                'bg-brand-pistachio text-brand-moss' => ! $isPf,
                             ])>{{ $isPf ? 'Pharmacy First' : 'Minor ailments' }}</span>
                             <h3 class="mt-3 text-xl leading-snug">{{ $c['name'] }}</h3>
                             <p class="mt-1 text-xs text-brand-stone-light">{{ $c['age_label'] }} · free on the NHS</p>
-                            <span class="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-brand-orange">
+                            <span class="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-brand-moss">
                                 Check my symptoms
                                 <svg class="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-5-5 5 5-5 5"/></svg>
                             </span>
@@ -103,13 +103,13 @@
 
             <p class="reveal mt-10 text-sm text-brand-stone">
                 Not listed? We treat {{ $all->count() }} conditions in total —
-                <a href="#a-z" class="font-semibold text-brand-orange hover:underline">see the full A–Z</a>.
+                <a href="#a-z" class="font-semibold text-brand-moss hover:underline">see the full A–Z</a>.
             </p>
         </div>
     </section>
 
     {{-- 2. How it works --}}
-    <section class="no-interact border-y border-brand-peach-line bg-brand-peach py-24 md:py-32">
+    <section class="no-interact border-y border-brand-pistachio-line bg-brand-pistachio py-24 md:py-32">
         <div class="mx-auto max-w-[1280px] px-6 text-center sm:px-8">
             <div class="reveal">
                 <x-eyebrow>How it works</x-eyebrow>
@@ -150,7 +150,7 @@
                         'Bring your NHS number if you have it, though we can usually look it up',
                     ] as $line)
                         <li class="flex gap-3 text-[15px] leading-relaxed text-brand-stone">
-                            <span class="mt-[9px] h-1.5 w-1.5 shrink-0 rounded-full bg-brand-orange"></span>{{ $line }}
+                            <span class="mt-[9px] h-1.5 w-1.5 shrink-0 rounded-full bg-brand-moss"></span>{{ $line }}
                         </li>
                     @endforeach
                 </ul>
@@ -158,7 +158,7 @@
                     If the scheme is not right for you there is usually another route — our pharmacist
                     will tell you which, rather than sell you something that will not help.
                 </p>
-                <a href="#enquire-minor-ailments" class="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-brand-orange hover:underline">
+                <a href="#enquire" class="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-brand-moss hover:underline">
                     Check if I am eligible
                     <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-5-5 5 5-5 5"/></svg>
                 </a>
@@ -178,13 +178,13 @@
             <div class="mt-12 grid gap-x-10 gap-y-8 sm:grid-cols-2 lg:grid-cols-4">
                 @foreach ($az as $letter => $items)
                     <div data-az-group>
-                        <p class="mb-3 font-serif text-2xl text-brand-orange">{{ $letter }}</p>
+                        <p class="mb-3 font-serif text-2xl text-brand-moss">{{ $letter }}</p>
                         <ul class="space-y-2">
                             @foreach ($items as $it)
                                 <li data-condition="{{ $it['search'] }}">
-                                    <a href="{{ route('conditions.show', $it['slug']) }}" class="group flex items-center justify-between gap-3 border-b border-brand-hairline pb-2.5 text-[15px] text-brand-navy transition hover:text-brand-orange">
+                                    <a href="{{ route('conditions.show', $it['slug']) }}" class="group flex items-center justify-between gap-3 border-b border-brand-hairline pb-2.5 text-[15px] text-brand-forest transition hover:text-brand-moss">
                                         {{ $it['name'] }}
-                                        <span class="text-[10px] uppercase tracking-wide text-brand-stone-light group-hover:text-brand-orange">{{ $it['tag'] === 'Pharmacy First' ? 'NHS' : ($it['tag'] === 'Minor Ailments' ? 'Free NHS' : 'Advice') }}</span>
+                                        <span class="text-[10px] uppercase tracking-wide text-brand-stone-light group-hover:text-brand-moss">{{ $it['tag'] === 'Pharmacy First' ? 'NHS' : ($it['tag'] === 'Minor Ailments' ? 'Free NHS' : 'Advice') }}</span>
                                     </a>
                                 </li>
                             @endforeach
@@ -193,7 +193,7 @@
                 @endforeach
             </div>
 
-            <p id="condition-empty" hidden class="mt-10 rounded-2xl bg-white p-6 text-sm text-brand-stone">No matches — try a different word, or call us on {{ config('sandwell.phone') }} and we’ll point you the right way.</p>
+            <p id="condition-empty" hidden class="mt-10 rounded-2xl bg-white p-6 text-sm text-brand-stone">No matches — try a different word, or call us on {{ config('pharmacy.phone') }} and we’ll point you the right way.</p>
 
             <p class="reveal mt-10 font-serif text-sm italic text-brand-stone-light">
                 Bring your NHS number — treatment is free if you don’t pay for prescriptions.

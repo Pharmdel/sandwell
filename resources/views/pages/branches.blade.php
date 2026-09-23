@@ -1,7 +1,7 @@
 <x-layout title="Our branches" hero description="Six NHS community pharmacies across West Bromwich, Smethwick and Stourbridge — same team, same standards.">
     <x-page-hero image="team.jpg" alt="The pharmacy team behind the counter">
         <div class="max-w-3xl">
-            <p class="reveal text-[11px] font-bold uppercase tracking-[0.14em] text-brand-orange">Where to find us</p>
+            <p class="reveal text-[11px] font-bold uppercase tracking-[0.14em] text-brand-moss">Where to find us</p>
 
             <h1 class="mt-5 text-4xl leading-[1.05] text-white md:text-[66px]" data-lines>
                 <span class="line-mask"><span>Six branches.</span></span>
@@ -29,9 +29,9 @@
             </div>
 
             <div class="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3" data-reveal-group>
-                @foreach (config('sandwell.branches') as $branch)
+                @foreach (config('pharmacy.branches') as $branch)
                     <a href="{{ route('branches.show', $branch['slug']) }}"
-                        class="reveal tilt group flex flex-col overflow-hidden rounded-[20px] border bg-white p-6 shadow-editorial-card transition-all duration-[250ms] hover:-translate-y-1 hover:shadow-editorial-hover {{ $branch['hub'] ? 'border-brand-orange/40' : 'border-brand-hairline' }}">
+                        class="reveal tilt group flex flex-col overflow-hidden rounded-[20px] border bg-white p-6 shadow-editorial-card transition-all duration-[250ms] hover:-translate-y-1 hover:shadow-editorial-hover {{ $branch['hub'] ? 'border-brand-moss/40' : 'border-brand-hairline' }}">
                         <img src="{{ asset('images/hero-consult.jpg') }}" alt="" class="h-40 w-full rounded-2xl object-cover">
                         <div class="mt-5 flex flex-1 flex-col">
                             <div class="flex items-start justify-between gap-2">
@@ -40,7 +40,7 @@
                             </div>
                             <p class="mt-2 text-sm text-brand-stone">{{ $branch['address'] }}</p>
                             <p class="mt-1 text-sm text-brand-stone-light">{{ $branch['postcode'] }}</p>
-                            <p class="mt-3 flex items-center gap-1.5 text-xs font-medium text-brand-orange">
+                            <p class="mt-3 flex items-center gap-1.5 text-xs font-medium text-brand-moss">
                                 <span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span>
                                 Open until {{ $branch['closes'] }}
                             </p>
@@ -49,7 +49,7 @@
                                     <x-chip tone="quiet">{{ $service }}</x-chip>
                                 @endforeach
                             </div>
-                            <span class="mt-auto inline-flex items-center gap-2 pt-5 text-sm font-semibold text-brand-orange">
+                            <span class="mt-auto inline-flex items-center gap-2 pt-5 text-sm font-semibold text-brand-moss">
                                 View branch
                                 <svg class="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-width="2" d="M5 12h14m-5-5 5 5-5 5"/></svg>
                             </span>
@@ -60,7 +60,7 @@
         </div>
     </section>
 
-    <section class="no-interact border-y border-brand-peach-line bg-brand-peach py-24 md:py-32">
+    <section class="no-interact border-y border-brand-pistachio-line bg-brand-pistachio py-24 md:py-32">
         <div class="mx-auto max-w-[1280px] px-6 sm:px-8">
             <div class="reveal max-w-2xl">
                 <x-eyebrow>At every branch</x-eyebrow>
@@ -75,7 +75,7 @@
                 ] as $item)
                     <div class="reveal">
                         <span class="flex h-12 w-12 items-center justify-center rounded-full bg-white">
-                            <svg class="h-5 w-5 text-brand-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M5 13l4 4L19 7"/></svg>
+                            <svg class="h-5 w-5 text-brand-moss" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M5 13l4 4L19 7"/></svg>
                         </span>
                         <h3 class="mt-5 text-lg leading-snug">{{ $item[0] }}</h3>
                         <p class="mt-2 text-sm leading-relaxed text-brand-stone">{{ $item[1] }}</p>
@@ -90,9 +90,9 @@
             <div class="reveal">
                 <h2 class="text-[28px] leading-tight">Typical opening <span class="editorial-highlight">hours.</span></h2>
                 <div class="mt-6">
-                    @foreach (config('sandwell.hours') as $row)
+                    @foreach (config('pharmacy.hours') as $row)
                         <div class="flex items-center justify-between border-b border-brand-hairline py-4">
-                            <span class="text-[15px] text-brand-navy">{{ $row['day'] }}</span>
+                            <span class="text-[15px] text-brand-forest">{{ $row['day'] }}</span>
                             <span class="text-sm text-brand-stone">{{ $row['time'] }}</span>
                         </div>
                     @endforeach
@@ -102,7 +102,7 @@
 
             <div class="reveal rounded-[20px] border border-brand-hairline bg-white p-8 shadow-editorial-card">
                 <h3 class="text-[22px]">General enquiries</h3>
-                <p class="mt-4 font-serif text-3xl text-brand-navy">{{ config('sandwell.phone') }}</p>
+                <p class="mt-4 font-serif text-3xl text-brand-forest">{{ config('pharmacy.phone') }}</p>
                 <p class="mt-2 text-sm text-brand-stone">Monday to Friday, 9:00 – 18:00</p>
                 <p class="mt-6 border-t border-brand-hairline pt-6 text-sm text-brand-stone">Prefer to talk in person? Ask in branch — there is always a pharmacist available.</p>
             </div>

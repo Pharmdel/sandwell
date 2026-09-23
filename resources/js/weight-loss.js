@@ -106,9 +106,9 @@ const checker = (() => {
     function renderRec() {
         state.rec = recommend();
         if (!state.rec) {
-            recWrap.innerHTML = `<div class="rounded-2xl bg-gradient-to-br from-[#7c3d0d] to-brand-orange-hover p-6 text-white"><h3 class="font-serif text-2xl text-white">Let’s talk it through</h3><p class="mt-2 text-sm leading-relaxed text-white/85">Weight-loss medicines are licensed for a BMI of 30 or above. Based on your BMI, a chat with our pharmacist about diet, activity and other support is the right next step — leave your details and we’ll call you.</p></div>`;
+            recWrap.innerHTML = `<div class="rounded-2xl bg-gradient-to-br from-[#7c3d0d] to-brand-moss-hover p-6 text-white"><h3 class="font-serif text-2xl text-white">Let’s talk it through</h3><p class="mt-2 text-sm leading-relaxed text-white/85">Weight-loss medicines are licensed for a BMI of 30 or above. Based on your BMI, a chat with our pharmacist about diet, activity and other support is the right next step — leave your details and we’ll call you.</p></div>`;
         } else {
-            recWrap.innerHTML = `<div class="rounded-2xl bg-brand-navy p-6 text-white"><span class="inline-block rounded-full bg-white/15 px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.08em]">${state.rec.tag}</span><h3 class="mt-3 font-serif text-2xl text-white">We recommend: ${state.rec.name}</h3><p class="mt-2 text-sm leading-relaxed text-white/85">${state.rec.why} Our pharmacist will confirm suitability at your free consultation.</p></div>`;
+            recWrap.innerHTML = `<div class="rounded-2xl bg-brand-forest p-6 text-white"><span class="inline-block rounded-full bg-white/15 px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.08em]">${state.rec.tag}</span><h3 class="mt-3 font-serif text-2xl text-white">We recommend: ${state.rec.name}</h3><p class="mt-2 text-sm leading-relaxed text-white/85">${state.rec.why} Our pharmacist will confirm suitability at your free consultation.</p></div>`;
         }
     }
 
@@ -118,7 +118,7 @@ const checker = (() => {
         steps.forEach((s) => (s.hidden = s.dataset.step !== key));
         dots.forEach((d, i) => {
             d.hidden = i >= keys.length;
-            d.classList.toggle('bg-brand-orange', i <= state.pos);
+            d.classList.toggle('bg-brand-moss', i <= state.pos);
             d.classList.toggle('bg-brand-hairline', i > state.pos);
         });
         back.style.visibility = state.pos ? 'visible' : 'hidden';
@@ -253,7 +253,7 @@ const checker = (() => {
                 recommended: state.rec ? state.rec.name : 'none - BMI below 30',
             });
             state.sent = true;
-            root.querySelector('[data-body]').innerHTML = `<div class="px-2 py-8 text-center"><div class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-emerald-50 text-emerald-700"><svg class="h-8 w-8" fill="none" stroke="currentColor" stroke-width="2.6" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M20 6L9 17l-5-5"/></svg></div><h3 class="mt-5 font-serif text-3xl text-brand-navy">Consultation call booked</h3><p class="mx-auto mt-3 max-w-md text-sm leading-relaxed text-brand-stone">Our pharmacist will call you ${bestTime ? '(' + bestTime.toLowerCase() + ') ' : ''}to confirm suitability and get you started — the call is free and there’s nothing to pay today.</p><button type="button" data-modal-close class="mt-7 rounded-full bg-brand-orange px-8 py-3.5 text-sm font-semibold text-white hover:bg-brand-orange-hover">Done</button></div>`;
+            root.querySelector('[data-body]').innerHTML = `<div class="px-2 py-8 text-center"><div class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-emerald-50 text-emerald-700"><svg class="h-8 w-8" fill="none" stroke="currentColor" stroke-width="2.6" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M20 6L9 17l-5-5"/></svg></div><h3 class="mt-5 font-serif text-3xl text-brand-forest">Consultation call booked</h3><p class="mx-auto mt-3 max-w-md text-sm leading-relaxed text-brand-stone">Our pharmacist will call you ${bestTime ? '(' + bestTime.toLowerCase() + ') ' : ''}to confirm suitability and get you started — the call is free and there’s nothing to pay today.</p><button type="button" data-modal-close class="mt-7 rounded-full bg-brand-moss px-8 py-3.5 text-sm font-semibold text-white hover:bg-brand-moss-hover">Done</button></div>`;
             root.querySelector('[data-body] [data-modal-close]').addEventListener('click', () => close(root));
         } catch (err) {
             next.disabled = false;
@@ -292,7 +292,7 @@ if (switchForm) {
         btn.textContent = 'Sending…';
         try {
             await post(switchForm.action, data);
-            switchForm.closest('[data-body]').innerHTML = `<div class="px-2 py-8 text-center"><div class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-emerald-50 text-emerald-700"><svg class="h-8 w-8" fill="none" stroke="currentColor" stroke-width="2.6" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M20 6L9 17l-5-5"/></svg></div><h3 class="mt-5 font-serif text-3xl text-brand-navy">Switch request sent</h3><p class="mx-auto mt-3 max-w-md text-sm leading-relaxed text-brand-stone">Our pharmacist will call to confirm your dose history and time the handover so you never miss a week.</p><button type="button" data-modal-close class="mt-7 rounded-full bg-brand-orange px-8 py-3.5 text-sm font-semibold text-white hover:bg-brand-orange-hover">Done</button></div>`;
+            switchForm.closest('[data-body]').innerHTML = `<div class="px-2 py-8 text-center"><div class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-emerald-50 text-emerald-700"><svg class="h-8 w-8" fill="none" stroke="currentColor" stroke-width="2.6" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M20 6L9 17l-5-5"/></svg></div><h3 class="mt-5 font-serif text-3xl text-brand-forest">Switch request sent</h3><p class="mx-auto mt-3 max-w-md text-sm leading-relaxed text-brand-stone">Our pharmacist will call to confirm your dose history and time the handover so you never miss a week.</p><button type="button" data-modal-close class="mt-7 rounded-full bg-brand-moss px-8 py-3.5 text-sm font-semibold text-white hover:bg-brand-moss-hover">Done</button></div>`;
             document.querySelector('#wl-switch [data-body] [data-modal-close]').addEventListener('click', () => close(document.getElementById('wl-switch')));
         } catch (err) {
             btn.disabled = false;
@@ -338,7 +338,7 @@ if (waitForm) {
             await post(waitForm.action, data);
             const first = data.name.split(' ')[0].replace(/[<>&]/g, '');
             const via = data.contact_pref === 'email' ? 'email' : data.contact_pref === 'either' ? 'phone or email' : 'phone';
-            waitForm.closest('[data-body]').innerHTML = `<h3 class="font-serif text-3xl text-brand-navy">You’re on the list</h3><p class="mt-3 text-sm leading-relaxed text-brand-stone">Thanks ${first}. We’ll be in touch as soon as Foundayo is available to us — by ${via}.</p><div class="mt-5 rounded-2xl bg-brand-peach p-4 text-sm leading-relaxed text-brand-orange-hover">In the meantime, if you’d like to start something now, our pharmacist can talk you through Mounjaro, Wegovy or Alli. Call <b>0121 500 5756</b> or use the suitability check on this page.</div><button type="button" data-modal-close class="mt-6 w-full rounded-full bg-brand-orange px-8 py-3.5 text-sm font-semibold text-white hover:bg-brand-orange-hover">Close</button>`;
+            waitForm.closest('[data-body]').innerHTML = `<h3 class="font-serif text-3xl text-brand-forest">You’re on the list</h3><p class="mt-3 text-sm leading-relaxed text-brand-stone">Thanks ${first}. We’ll be in touch as soon as Foundayo is available to us — by ${via}.</p><div class="mt-5 rounded-2xl bg-brand-pistachio p-4 text-sm leading-relaxed text-brand-moss-hover">In the meantime, if you’d like to start something now, our pharmacist can talk you through Mounjaro, Wegovy or Alli. Call <b>0121 500 5756</b> or use the suitability check on this page.</div><button type="button" data-modal-close class="mt-6 w-full rounded-full bg-brand-moss px-8 py-3.5 text-sm font-semibold text-white hover:bg-brand-moss-hover">Close</button>`;
             document.querySelector('#wl-waitlist [data-body] [data-modal-close]').addEventListener('click', () => close(document.getElementById('wl-waitlist')));
         } catch (err) {
             btn.disabled = false;

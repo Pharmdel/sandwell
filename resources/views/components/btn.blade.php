@@ -3,10 +3,10 @@
 @php
     $base = 'inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold transition-all duration-200 active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2';
     $variants = [
-        'primary' => 'bg-brand-orange text-white hover:bg-brand-orange-hover hover:-translate-y-0.5 hover:shadow-orange-glow focus-visible:ring-brand-orange',
-        'outline' => 'border border-brand-navy text-brand-navy hover:bg-brand-navy hover:text-white focus-visible:ring-brand-navy',
-        'light' => 'border border-white/25 text-white hover:bg-white hover:text-brand-navy focus-visible:ring-white',
-        'white' => 'border border-brand-hairline bg-white text-brand-navy hover:border-brand-navy focus-visible:ring-brand-navy',
+        'primary' => 'bg-brand-moss text-white hover:bg-brand-moss-hover hover:-translate-y-0.5 hover:shadow-moss-glow focus-visible:ring-brand-moss',
+        'outline' => 'border border-brand-forest text-brand-forest hover:bg-brand-forest hover:text-white focus-visible:ring-brand-forest',
+        'light' => 'border border-white/25 text-white hover:bg-white hover:text-brand-forest focus-visible:ring-white',
+        'white' => 'border border-brand-hairline bg-white text-brand-forest hover:border-brand-forest focus-visible:ring-brand-forest',
     ];
 @endphp
 

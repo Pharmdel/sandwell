@@ -92,20 +92,20 @@ if (bpCheck) {
 
         const option = (price, title, note) => `
             <div class="flex items-start gap-4 rounded-2xl border border-brand-hairline bg-white p-4">
-                <span class="shrink-0 font-serif text-xl text-brand-orange">${price}</span>
-                <span><b class="block text-[15px] text-brand-navy">${title}</b>
+                <span class="shrink-0 font-serif text-xl text-brand-moss">${price}</span>
+                <span><b class="block text-[15px] text-brand-forest">${title}</b>
                 <small class="text-[13px] text-brand-stone">${note}</small></span>
             </div>`;
 
         output.innerHTML = free
-            ? `<p class="rounded-2xl bg-brand-peach p-5 text-[15px] leading-relaxed text-brand-navy">
+            ? `<p class="rounded-2xl bg-brand-pistachio p-5 text-[15px] leading-relaxed text-brand-forest">
                  <b>Good news — you qualify for a free NHS check.</b><br>
                  No appointment needed: walk in any time during opening hours and it takes about five minutes.</p>
                <div class="mt-4 space-y-3">
                  ${option('Free', 'Walk in today', 'Mon–Fri 8:30am–6pm · Sat 9am–1pm')}
                  ${option('£50', '24-hour monitoring (ABPM)', 'A full day and night of readings — no referral needed')}
                </div>`
-            : `<p class="rounded-2xl bg-brand-ivory p-5 text-[15px] leading-relaxed text-brand-navy">
+            : `<p class="rounded-2xl bg-brand-ivory p-5 text-[15px] leading-relaxed text-brand-forest">
                  <b>Not this time — ${why}.</b><br>You can still get checked today. Here are your options:</p>
                <div class="mt-4 space-y-3">
                  ${option('£5', 'Private check — today', 'Walk in, five minutes, results and advice on the spot')}
@@ -151,9 +151,9 @@ if (fluCheck) {
 
     const card = (tone, title, body) => `
         <div class="rounded-2xl border p-5 ${tone === 'yes'
-            ? 'border-brand-peach-line bg-brand-peach'
+            ? 'border-brand-pistachio-line bg-brand-pistachio'
             : 'border-brand-hairline bg-white'}">
-            <b class="block text-[15px] text-brand-navy">${title}</b>
+            <b class="block text-[15px] text-brand-forest">${title}</b>
             <span class="mt-1 block text-[14px] leading-relaxed text-brand-stone">${body}</span>
         </div>`;
 
@@ -197,7 +197,7 @@ if (fluCheck) {
         }
 
         output.innerHTML = `<div class="space-y-3">${parts.join('')}</div>
-            <a href="/book" class="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full border border-brand-navy px-6 py-3.5 text-sm font-semibold text-brand-navy transition-all duration-200 hover:bg-brand-navy hover:text-white">
+            <a href="/book" class="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full border border-brand-forest px-6 py-3.5 text-sm font-semibold text-brand-forest transition-all duration-200 hover:bg-brand-forest hover:text-white">
                 Book your appointment
                 <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-5-5 5 5-5 5"/></svg>
             </a>`;
@@ -228,8 +228,8 @@ if (mdsCheck) {
         const heavy = answers.items === '7+' || answers.miss === 'often';
 
         output.innerHTML = `
-            <div class="rounded-2xl border p-5 ${priority ? 'border-brand-peach-line bg-brand-peach' : 'border-brand-hairline bg-white'}">
-                <b class="block text-[15px] text-brand-navy">${priority
+            <div class="rounded-2xl border p-5 ${priority ? 'border-brand-pistachio-line bg-brand-pistachio' : 'border-brand-hairline bg-white'}">
+                <b class="block text-[15px] text-brand-forest">${priority
                     ? 'Priority setup — you can start right away'
                     : 'Free NHS route — we’ll add you to the list'}</b>
                 <span class="mt-1 block text-[14px] leading-relaxed text-brand-stone">${priority
@@ -239,7 +239,7 @@ if (mdsCheck) {
             ${heavy ? `<p class="mt-3 text-[13px] leading-relaxed text-brand-stone">
                 Based on your answers, trays are likely to make a real difference day to day —
                 mention that when we call and our pharmacist will prioritise the review.</p>` : ''}
-            <a href="#enquire" class="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full bg-brand-orange px-6 py-3.5 text-sm font-semibold text-white transition-all duration-300 hover:bg-brand-orange-hover">
+            <a href="#enquire" class="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full bg-brand-moss px-6 py-3.5 text-sm font-semibold text-white transition-all duration-300 hover:bg-brand-moss-hover">
                 Continue to the form
                 <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-5-5 5 5-5 5"/></svg>
             </a>`;
@@ -287,9 +287,9 @@ if (postcodeCheck) {
     const box = (tone, title, body) => {
         output.innerHTML = `
             <div class="rounded-2xl border p-5 ${tone === 'yes'
-                ? 'border-brand-peach-line bg-brand-peach'
+                ? 'border-brand-pistachio-line bg-brand-pistachio'
                 : 'border-brand-hairline bg-brand-ivory'}">
-                <b class="block text-[15px] text-brand-navy">${title}</b>
+                <b class="block text-[15px] text-brand-forest">${title}</b>
                 <span class="mt-1 block text-[14px] leading-relaxed text-brand-stone">${body}</span>
             </div>`;
     };

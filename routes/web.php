@@ -21,7 +21,7 @@ Route::view('/sign-in', 'pages.sign-in')->name('sign-in');
 Route::view('/terms', 'pages.terms')->name('terms');
 
 Route::get('/health-hub/{slug}', function (string $slug) {
-    $article = collect(config('sandwell.articles'))
+    $article = collect(config('pharmacy.articles'))
         ->merge(config('weightloss.guides'))
         ->firstWhere('slug', $slug);
 
@@ -43,7 +43,7 @@ Route::get('/services/{slug}', function (string $slug) {
 })->name('services.show');
 
 Route::get('/branches/{slug}', function (string $slug) {
-    $branch = collect(config('sandwell.branches'))->firstWhere('slug', $slug);
+    $branch = collect(config('pharmacy.branches'))->firstWhere('slug', $slug);
 
     abort_if(! $branch, 404);
 

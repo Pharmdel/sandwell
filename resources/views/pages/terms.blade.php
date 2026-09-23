@@ -1,9 +1,9 @@
-@php $branches = config('sandwell.branches'); @endphp
+@php $branches = config('pharmacy.branches'); @endphp
 
-<x-layout title="Terms of Service" hero description="The terms that apply when you use the Sandwell Pharmacy Group website and services, with our registered premises and superintendent pharmacists.">
+<x-layout title="Terms of Service" hero description="The terms that apply when you use Hollytree Pharmacy website and services, with our registered premises and superintendent pharmacists.">
     <x-page-hero image="team.jpg" alt="The pharmacy team" size="short">
         <div class="max-w-3xl">
-            <p class="reveal text-[11px] font-bold uppercase tracking-[0.14em] text-brand-orange">Legal</p>
+            <p class="reveal text-[11px] font-bold uppercase tracking-[0.14em] text-brand-moss">Legal</p>
             <h1 class="mt-5 text-4xl leading-[1.05] text-white md:text-[62px]" data-lines>
                 <span class="line-mask"><span>Terms of <span class="editorial-highlight">service.</span></span></span>
             </h1>
@@ -18,7 +18,7 @@
         <section id="about-us" class="reveal scroll-mt-28">
             <h2 class="text-[28px] leading-snug">About us</h2>
             <p class="mt-4 text-lg leading-[1.7] text-brand-stone">
-                This website is operated by the Sandwell Pharmacy Group, a group of six registered pharmacies.
+                This website is operated by Hollytree Pharmacy, a group of six registered pharmacies.
                 Each branch is operated by the company shown below, and each is separately registered with the
                 General Pharmaceutical Council.
             </p>
@@ -40,7 +40,7 @@
                     <tbody class="divide-y divide-brand-hairline">
                         @foreach ($branches as $b)
                             <tr>
-                                <td class="px-5 py-4 font-semibold text-brand-navy">{{ $b['name'] }}</td>
+                                <td class="px-5 py-4 font-semibold text-brand-forest">{{ $b['name'] }}</td>
                                 <td class="px-5 py-4 text-brand-stone">{{ $b['address'] }} {{ $b['postcode'] }}</td>
                                 <td class="px-5 py-4 text-brand-stone">{{ $b['gphc_premises'] }}</td>
                                 <td class="px-5 py-4 text-brand-stone">{{ $b['superintendent'] }}<br><span class="text-xs text-brand-stone-light">GPhC {{ $b['superintendent_gphc'] }}</span></td>

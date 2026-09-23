@@ -1,9 +1,9 @@
 @push('scripts') @vite('resources/js/services.js') @endpush
 
-<x-layout title="Repeat prescriptions & nominate us" hero description="Nominate any Sandwell Pharmacy Group branch and we'll prepare your repeat prescriptions and deliver them free to your door.">
+<x-layout title="Repeat prescriptions & nominate us" hero description="Nominate any Hollytree Pharmacy branch and we'll prepare your repeat prescriptions and deliver them free to your door.">
     <x-page-hero image="delivery-door.jpg" alt="A delivery driver handing a pharmacy bag to a customer at their door">
         <div class="max-w-3xl">
-            <p class="reveal text-[11px] font-bold uppercase tracking-[0.14em] text-brand-orange">NHS repeat prescriptions</p>
+            <p class="reveal text-[11px] font-bold uppercase tracking-[0.14em] text-brand-moss">NHS repeat prescriptions</p>
 
             <h1 class="mt-5 text-5xl leading-[1.02] text-white md:text-[76px]" data-lines>
                 <span class="line-mask"><span>Getting your medicines,</span></span>
@@ -11,7 +11,7 @@
             </h1>
 
             <p class="reveal mt-8 max-w-xl text-lg leading-relaxed text-white/80" style="--reveal-delay:340ms">
-                Nominate any Sandwell Pharmacy Group branch and we'll prepare your repeat prescriptions,
+                Nominate any Hollytree Pharmacy branch and we'll prepare your repeat prescriptions,
                 text you when they're ready, and deliver them free to your door.
             </p>
 
@@ -21,21 +21,21 @@
             </div>
 
             <div class="no-interact reveal mt-12 flex flex-wrap gap-x-6 gap-y-2 border-t border-white/15 pt-7 text-[11px] font-semibold uppercase tracking-[0.1em] text-white/60" style="--reveal-delay:540ms">
-                <span>Free delivery over {{ config('sandwell.free_delivery_threshold') }}</span>
+                <span>Free delivery over {{ config('pharmacy.free_delivery_threshold') }}</span>
                 <span>Text reminders</span>
                 <span>Six branches</span>
             </div>
         </div>
     </x-page-hero>
 
-    <section class="no-interact border-y border-brand-peach-line bg-brand-peach py-24 md:py-32">
+    <section class="no-interact border-y border-brand-pistachio-line bg-brand-pistachio py-24 md:py-32">
         <div class="mx-auto max-w-[1280px] px-6 text-center sm:px-8">
             <div class="reveal">
                 <x-eyebrow>Simple by design</x-eyebrow>
                 <h2 class="mx-auto mt-3 max-w-2xl text-4xl leading-tight md:text-[42px]">Three steps, <span class="editorial-highlight">then it just happens.</span></h2>
             </div>
             <x-steps :items="[
-                ['title' => 'Nominate us', 'body' => 'Choose any Sandwell branch in the NHS App, or let us set it up for you.'],
+                ['title' => 'Nominate us', 'body' => 'Choose any Hollytree branch in the NHS App, or let us set it up for you.'],
                 ['title' => 'We prepare it', 'body' => 'Your GP sends the script straight to us and our team dispenses it.'],
                 ['title' => 'Delivered to your door', 'body' => 'Tracked, free, and with a text when it is on its way.'],
             ]" />
@@ -60,7 +60,7 @@
                 </div>
 
                 @foreach ([
-                    ['At your GP surgery', 'Tell reception you would like Sandwell Pharmacy Group as your nominated pharmacy.'],
+                    ['At your GP surgery', 'Tell reception you would like Hollytree Pharmacy as your nominated pharmacy.'],
                     ['Let us do it', 'Pop in or call and we will set it up for you in under a minute.'],
                 ] as $way)
                     <div class="reveal rounded-[20px] border border-brand-hairline bg-white p-6 shadow-editorial-card">
@@ -83,11 +83,11 @@
                 <h2 class="mt-3 text-[32px] leading-tight md:text-[42px]">Delivered by <span class="editorial-highlight">our own drivers.</span></h2>
                 <div class="mt-8">
                     @foreach ([
-                        'Free delivery on orders over '.config('sandwell.free_delivery_threshold'),
+                        'Free delivery on orders over '.config('pharmacy.free_delivery_threshold'),
                         'Tracked, with a text when it is on its way',
                         'Covering West Bromwich, Smethwick, Oldbury and Stourbridge',
                     ] as $row)
-                        <p class="border-b border-brand-hairline py-4 text-[15px] text-brand-navy last:border-0">{{ $row }}</p>
+                        <p class="border-b border-brand-hairline py-4 text-[15px] text-brand-forest last:border-0">{{ $row }}</p>
                     @endforeach
                 </div>
             </div>
@@ -102,7 +102,7 @@
         </div>
     </section>
 
-    <section id="blister-packs" class="no-interact scroll-mt-24 border-b border-brand-peach-line bg-brand-peach py-24 md:py-32">
+    <section id="blister-packs" class="no-interact scroll-mt-24 border-b border-brand-pistachio-line bg-brand-pistachio py-24 md:py-32">
         <div class="mx-auto grid max-w-[1280px] items-center gap-14 px-6 sm:px-8 lg:grid-cols-2">
             <div class="reveal clip-reveal overflow-hidden rounded-[28px] shadow-editorial-card">
                 <img src="{{ asset('images/blister-pack.jpg') }}" alt="A weekly blister pack on a kitchen table" class="h-80 w-full object-cover">
@@ -115,7 +115,7 @@
                     into clearly labelled weekly trays — morning, noon, evening and night — so there's never
                     any doubt about what has been taken.
                 </p>
-                <p class="mt-6 text-sm font-semibold text-brand-navy">Ask in branch to get started.</p>
+                <p class="mt-6 text-sm font-semibold text-brand-forest">Ask in branch to get started.</p>
             </div>
         </div>
     </section>
@@ -131,9 +131,9 @@
                 <div class="flex flex-col gap-3 sm:flex-row">
                     <label for="delivery-postcode" class="sr-only">Your postcode</label>
                     <input id="delivery-postcode" data-postcode-input type="text" inputmode="text" autocomplete="postal-code" placeholder="e.g. B70 7RW"
-                        class="w-full rounded-full border border-brand-hairline bg-white px-6 py-3.5 text-[15px] uppercase text-brand-navy placeholder:normal-case placeholder:text-brand-stone-light focus:border-brand-orange focus:outline-none focus:ring-2 focus:ring-brand-orange/25">
+                        class="w-full rounded-full border border-brand-hairline bg-white px-6 py-3.5 text-[15px] uppercase text-brand-forest placeholder:normal-case placeholder:text-brand-stone-light focus:border-brand-moss focus:outline-none focus:ring-2 focus:ring-brand-moss/25">
                     <button type="button" data-postcode-run
-                        class="shrink-0 rounded-full bg-brand-navy px-7 py-3.5 text-sm font-semibold text-white transition-all duration-300 hover:bg-brand-orange active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange">
+                        class="shrink-0 rounded-full bg-brand-forest px-7 py-3.5 text-sm font-semibold text-white transition-all duration-300 hover:bg-brand-moss active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-moss">
                         Check
                     </button>
                 </div>

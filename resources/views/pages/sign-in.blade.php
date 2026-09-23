@@ -8,11 +8,11 @@
                     srcset="{{ asset('images/hero/nhs-app-1600.jpg') }} 1600w, {{ asset('images/hero/nhs-app-2600.jpg') }} 2600w"
                     sizes="(min-width: 1024px) 50vw, 100vw" alt="" class="h-full w-full object-cover">
             </div>
-            <div class="pointer-events-none absolute inset-0 bg-gradient-to-br from-brand-navy-deep/95 via-brand-navy-deep/85 to-brand-navy-deep/70"></div>
+            <div class="pointer-events-none absolute inset-0 bg-gradient-to-br from-brand-forest-deep/95 via-brand-forest-deep/85 to-brand-forest-deep/70"></div>
 
             <div class="relative w-full max-w-lg">
-                <span class="reveal inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.14em] text-brand-orange">
-                    <span class="h-1.5 w-1.5 animate-pulsing-dot rounded-full bg-brand-orange"></span>
+                <span class="reveal inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.14em] text-brand-moss">
+                    <span class="h-1.5 w-1.5 animate-pulsing-dot rounded-full bg-brand-moss"></span>
                     My account
                 </span>
 
@@ -32,7 +32,7 @@
                     ] as $row)
                         <div class="reveal flex items-center gap-4 border-b border-white/15 py-4">
                             <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white/10 backdrop-blur">
-                                <svg class="h-5 w-5 text-brand-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="{{ $row[1] }}"/></svg>
+                                <svg class="h-5 w-5 text-brand-moss" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="{{ $row[1] }}"/></svg>
                             </span>
                             <span class="text-[15px] font-medium text-white">{{ $row[0] }}</span>
                         </div>
@@ -40,7 +40,7 @@
                 </div>
 
                 <div class="no-interact reveal mt-8 flex items-center gap-3 rounded-2xl border border-white/15 bg-white/10 p-4 backdrop-blur">
-                    <span class="flex h-10 w-10 items-center justify-center rounded-full bg-brand-orange text-xs font-semibold text-white">LP</span>
+                    <span class="flex h-10 w-10 items-center justify-center rounded-full bg-brand-moss text-xs font-semibold text-white">LP</span>
                     <span>
                         <span class="block text-xs text-white/60">Nominated NHS dispensing hub</span>
                         <span class="block text-sm font-semibold text-white">Signed in as a patient of Lyng Pharmacy</span>
@@ -59,14 +59,14 @@
                         <div>
                             <label for="email" class="mb-2 block text-xs font-semibold uppercase tracking-[0.08em] text-brand-stone-light">Email address</label>
                             <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.co.uk"
-                                class="w-full rounded-xl border border-brand-hairline bg-brand-ivory px-4 py-3 text-[15px] text-brand-navy transition placeholder:text-brand-stone-light focus:border-brand-navy focus:outline-none focus:ring-2 focus:ring-brand-navy/20">
+                                class="w-full rounded-xl border border-brand-hairline bg-brand-ivory px-4 py-3 text-[15px] text-brand-forest transition placeholder:text-brand-stone-light focus:border-brand-forest focus:outline-none focus:ring-2 focus:ring-brand-forest/20">
                         </div>
 
                         <div>
                             <label for="password" class="mb-2 block text-xs font-semibold uppercase tracking-[0.08em] text-brand-stone-light">Password</label>
                             <div class="relative">
                                 <input id="password" name="password" type="password" autocomplete="current-password"
-                                    class="w-full rounded-xl border border-brand-hairline bg-brand-ivory px-4 py-3 pr-12 text-[15px] text-brand-navy transition focus:border-brand-navy focus:outline-none focus:ring-2 focus:ring-brand-navy/20">
+                                    class="w-full rounded-xl border border-brand-hairline bg-brand-ivory px-4 py-3 pr-12 text-[15px] text-brand-forest transition focus:border-brand-forest focus:outline-none focus:ring-2 focus:ring-brand-forest/20">
                                 <span class="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-brand-stone-light" aria-hidden="true">
                                     <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3" stroke-width="1.6"/></svg>
                                 </span>
@@ -74,13 +74,13 @@
                         </div>
 
                         <div class="flex justify-end">
-                            <a href="{{ route('contact') }}" class="text-sm text-brand-stone underline decoration-brand-hairline underline-offset-4 transition hover:text-brand-navy hover:decoration-brand-orange">
+                            <a href="{{ route('contact') }}" class="text-sm text-brand-stone underline decoration-brand-hairline underline-offset-4 transition hover:text-brand-forest hover:decoration-brand-moss">
                                 Forgot your password?
                             </a>
                         </div>
 
                         <button type="submit"
-                            class="w-full rounded-full bg-brand-orange px-7 py-3.5 text-sm font-semibold text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-brand-orange-hover hover:shadow-orange-glow active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange focus-visible:ring-offset-2">
+                            class="w-full rounded-full bg-brand-moss px-7 py-3.5 text-sm font-semibold text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-brand-moss-hover hover:shadow-moss-glow active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-moss focus-visible:ring-offset-2">
                             Sign in
                         </button>
                     </form>
@@ -92,14 +92,14 @@
                     </div>
 
                     <a href="{{ route('sign-in') }}"
-                        class="flex w-full items-center justify-center gap-3 rounded-full border border-brand-hairline bg-white px-7 py-3.5 text-sm font-semibold text-brand-navy transition hover:border-brand-navy focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-navy">
+                        class="flex w-full items-center justify-center gap-3 rounded-full border border-brand-hairline bg-white px-7 py-3.5 text-sm font-semibold text-brand-forest transition hover:border-brand-forest focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-forest">
                         <span class="rounded bg-brand-nhs-blue px-1.5 py-0.5 text-[10px] font-bold tracking-wide text-white">NHS</span>
                         Continue with NHS login
                     </a>
 
-                    <p class="mt-8 text-center text-sm text-brand-stone">New to Sandwell Pharmacy Group?</p>
+                    <p class="mt-8 text-center text-sm text-brand-stone">New to Hollytree Pharmacy?</p>
                     <a href="{{ route('contact') }}"
-                        class="mt-3 flex w-full items-center justify-center rounded-full border border-brand-navy px-7 py-3.5 text-sm font-semibold text-brand-navy transition hover:bg-brand-navy hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-navy">
+                        class="mt-3 flex w-full items-center justify-center rounded-full border border-brand-forest px-7 py-3.5 text-sm font-semibold text-brand-forest transition hover:bg-brand-forest hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-forest">
                         Create an account
                     </a>
                 </div>

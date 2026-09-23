@@ -3,10 +3,10 @@
 @php
     $tones = [
         'nhs' => 'bg-brand-nhs-blue text-white',
-        'peach' => 'bg-brand-peach text-brand-orange-hover',
-        'navy' => 'bg-brand-navy text-white',
-        'orange' => 'bg-brand-orange text-white',
-        'quiet' => 'bg-brand-navy/5 text-brand-navy',
+        'peach' => 'bg-brand-pistachio text-brand-moss-hover',
+        'navy' => 'bg-brand-forest text-white',
+        'orange' => 'bg-brand-moss text-white',
+        'quiet' => 'bg-brand-forest/5 text-brand-forest',
     ];
 @endphp
 

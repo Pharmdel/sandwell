@@ -35,7 +35,7 @@ const PAGES = [
         live: [
             ['card images all load', `[...document.querySelectorAll('a[data-condition] img')].every(i => i.complete && i.naturalWidth > 0)`],
             ['Pharmacy First tag is NHS blue', `getComputedStyle([...document.querySelectorAll('a[data-condition] span')].find(s => s.textContent.trim() === 'Pharmacy First')).color === 'rgb(0, 94, 184)'`],
-            ['minor ailment tag is brand orange', `getComputedStyle([...document.querySelectorAll('a[data-condition] span')].find(s => s.textContent.trim() === 'Minor ailments')).color === 'rgb(251, 120, 8)'`],
+            ['minor ailment tag is the brand accent', `getComputedStyle([...document.querySelectorAll('a[data-condition] span')].find(s => s.textContent.trim() === 'Minor ailments')).color === 'rgb(63, 125, 58)'`],
             ['search filters the A–Z', `(() => { const i = document.getElementById('condition-search'); i.value = 'earache'; i.dispatchEvent(new Event('input', { bubbles: true })); return [...document.querySelectorAll('li[data-condition]')].filter(e => !e.hidden).length < 5; })()`],
         ],
     },

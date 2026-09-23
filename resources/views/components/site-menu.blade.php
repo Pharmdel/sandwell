@@ -30,7 +30,7 @@
             ['Track an order', route('repeat-prescriptions').'#delivery'],
             ['MDS blister packs', route('services.show', 'mds-trays')],
         ]],
-        ['no' => '04', 'title' => 'Branches', 'links' => collect(config('sandwell.branches'))
+        ['no' => '04', 'title' => 'Branches', 'links' => collect(config('pharmacy.branches'))
             ->map(fn ($b) => [$b['short'].($b['hub'] ? ' (Dispensing hub)' : ''), route('branches.show', $b['slug'])])
             ->all()],
         ['no' => '05', 'title' => 'Health Hub', 'links' => [
@@ -52,7 +52,7 @@
 
 <div id="site-menu" hidden
     class="fixed inset-0 z-50 opacity-0 transition-opacity duration-[250ms] [&.is-open]:opacity-100">
-    <div class="absolute inset-0 bg-brand-navy-deep/30 backdrop-blur-sm" data-menu-close aria-hidden="true"></div>
+    <div class="absolute inset-0 bg-brand-forest-deep/30 backdrop-blur-sm" data-menu-close aria-hidden="true"></div>
 
     <div role="dialog" aria-modal="true" aria-label="Site menu"
         class="grain absolute inset-0 overflow-y-auto bg-brand-ivory sm:inset-4 sm:rounded-3xl sm:shadow-editorial-hover">
@@ -60,17 +60,17 @@
             <a href="{{ route('home') }}" class="flex items-center gap-3.5">
                 <img src="{{ asset('images/logo-nav.png') }}" alt="" width="48" height="48" class="h-12 w-12">
                 <span class="wordmark text-[18px]">
-                    <span class="wordmark__name text-brand-navy">SANDWELL</span>
-                    <span class="wordmark__sub text-brand-orange">Pharmacy Group</span>
+                    <span class="wordmark__name text-brand-forest">HOLLYTREE</span>
+                    <span class="wordmark__sub text-brand-moss">Pharmacy</span>
                 </span>
             </a>
             <div class="flex items-center gap-3">
-                <a href="{{ config('sandwell.phone_href') }}"
-                    class="hidden items-center gap-2 rounded-full bg-brand-orange px-5 py-2.5 text-sm font-medium text-white transition-all hover:bg-brand-orange-hover hover:shadow-orange-glow sm:inline-flex">
-                    Call {{ config('sandwell.phone') }}
+                <a href="{{ config('pharmacy.phone_href') }}"
+                    class="hidden items-center gap-2 rounded-full bg-brand-moss px-5 py-2.5 text-sm font-medium text-white transition-all hover:bg-brand-moss-hover hover:shadow-moss-glow sm:inline-flex">
+                    Call {{ config('pharmacy.phone') }}
                 </a>
                 <button type="button" data-menu-close aria-label="Close menu"
-                    class="flex h-11 w-11 items-center justify-center rounded-full bg-brand-navy text-white transition-transform hover:scale-105 active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange">
+                    class="flex h-11 w-11 items-center justify-center rounded-full bg-brand-forest text-white transition-transform hover:scale-105 active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-moss">
                     <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                         <path stroke-linecap="round" stroke-width="2" d="M6 6l12 12M18 6L6 18" />
                     </svg>
@@ -83,17 +83,17 @@
                 @foreach ($groups as $group)
                     <div>
                         <div class="mb-3 flex items-center gap-2">
-                            <span class="text-[11px] font-bold tracking-[0.14em] text-brand-orange">{{ $group['no'] }}</span>
-                            <span class="h-px w-6 bg-brand-orange/40"></span>
+                            <span class="text-[11px] font-bold tracking-[0.14em] text-brand-moss">{{ $group['no'] }}</span>
+                            <span class="h-px w-6 bg-brand-moss/40"></span>
                         </div>
                         <h2 class="mb-4 text-3xl">{{ $group['title'] }}</h2>
                         <ul class="space-y-3 border-t border-brand-hairline pt-4">
                             @foreach ($group['links'] as [$label, $href])
                                 <li>
                                     <a href="{{ $href }}"
-                                        class="group inline-flex items-center text-[17px] text-brand-stone transition-all duration-200 hover:translate-x-1 hover:text-brand-navy">
+                                        class="group inline-flex items-center text-[17px] text-brand-stone transition-all duration-200 hover:translate-x-1 hover:text-brand-forest">
                                         {{ $label }}
-                                        <span class="ml-2 h-px w-0 bg-brand-orange transition-all duration-200 group-hover:w-4"></span>
+                                        <span class="ml-2 h-px w-0 bg-brand-moss transition-all duration-200 group-hover:w-4"></span>
                                     </a>
                                 </li>
                             @endforeach
@@ -106,17 +106,17 @@
                 <div class="overflow-hidden rounded-3xl border border-brand-hairline bg-white p-6 shadow-editorial-card">
                     <div class="relative overflow-hidden rounded-2xl">
                         <img src="{{ asset('images/flu-vaccine.jpg') }}" alt="A pharmacist preparing a flu vaccine" class="h-56 w-full object-cover">
-                        <span class="absolute left-4 top-4 inline-flex items-center gap-2 rounded-full bg-white/95 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.1em] text-brand-navy">
-                            <span class="h-1.5 w-1.5 animate-pulsing-dot rounded-full bg-brand-orange"></span>
+                        <span class="absolute left-4 top-4 inline-flex items-center gap-2 rounded-full bg-white/95 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.1em] text-brand-forest">
+                            <span class="h-1.5 w-1.5 animate-pulsing-dot rounded-full bg-brand-moss"></span>
                             Now booking
                         </span>
                     </div>
-                    <h2 class="mt-6 text-[28px] leading-tight">Flu &amp; Covid-19 jabs,<br><span class="editorial-highlight text-brand-orange">walk in or book.</span></h2>
+                    <h2 class="mt-6 text-[28px] leading-tight">Flu &amp; Covid-19 jabs,<br><span class="editorial-highlight text-brand-moss">walk in or book.</span></h2>
                     <p class="mt-3 text-sm leading-relaxed text-brand-stone">
                         Check your eligibility in under a minute, then book across all six branches.
                     </p>
                     <a href="{{ route('services.show', 'flu-covid-vaccinations') }}"
-                        class="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-brand-orange px-6 py-3.5 text-sm font-semibold text-white transition-all hover:bg-brand-orange-hover hover:shadow-orange-glow">
+                        class="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-brand-moss px-6 py-3.5 text-sm font-semibold text-white transition-all hover:bg-brand-moss-hover hover:shadow-moss-glow">
                         Check eligibility
                         <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                             <path stroke-linecap="round" stroke-width="2" d="M5 12h14m-5-5 5 5-5 5" />
@@ -127,9 +127,9 @@
         </div>
 
         <div class="no-interact mx-auto flex max-w-[1280px] flex-col items-center justify-between gap-3 border-t border-brand-hairline px-6 py-6 text-[11px] uppercase tracking-[0.1em] text-brand-stone-light sm:flex-row sm:px-10">
-            <span>Open Mon–Sat · Free delivery over {{ config('sandwell.free_delivery_threshold') }}</span>
-            <span class="text-sm font-semibold normal-case tracking-normal text-brand-navy">{{ config('sandwell.phone') }}</span>
-            <span>Privacy · <a href="{{ route('terms') }}" class="underline decoration-brand-hairline underline-offset-4 hover:text-brand-navy hover:decoration-brand-orange">Terms</a> · Cookies</span>
+            <span>Open Mon–Sat · Free delivery over {{ config('pharmacy.free_delivery_threshold') }}</span>
+            <span class="text-sm font-semibold normal-case tracking-normal text-brand-forest">{{ config('pharmacy.phone') }}</span>
+            <span>Privacy · <a href="{{ route('terms') }}" class="underline decoration-brand-hairline underline-offset-4 hover:text-brand-forest hover:decoration-brand-moss">Terms</a> · Cookies</span>
         </div>
     </div>
 </div>
