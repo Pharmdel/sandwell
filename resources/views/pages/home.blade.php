@@ -17,28 +17,28 @@
 
     <x-page-hero image="hero-consult.jpg" alt="A pharmacist talking with a patient at the counter">
         <div class="max-w-3xl">
-            <h1 class="text-5xl leading-[1.02] text-white md:text-[82px]" data-lines>
+            <h1 class="text-5xl leading-[1.02] text-brand-forest md:text-[82px]" data-lines>
                 <span class="line-mask"><span>Your local pharmacy,</span></span>
                 <span class="line-mask"><span class="editorial-highlight">without the wait.</span></span>
             </h1>
 
-            <p class="reveal mt-8 max-w-xl text-lg leading-relaxed text-white/80" style="--reveal-delay:340ms">
+            <p class="reveal mt-8 max-w-xl text-lg leading-relaxed text-brand-stone-dark" style="--reveal-delay:340ms">
                 Six neighbourhood pharmacies across Sandwell and Stourbridge. NHS and private care,
                 same-day pharmacist consultations, and free prescription delivery to your door.
             </p>
 
             <div class="reveal mt-10 flex flex-wrap gap-3" style="--reveal-delay:440ms">
-                <x-btn :href="route('book')" data-magnetic>Book an appointment</x-btn>
-                <x-btn :href="route('repeat-prescriptions')" variant="light" data-magnetic>Order repeat prescription</x-btn>
+                <x-btn variant="dark" :href="route('book')" data-magnetic>Book an appointment</x-btn>
+                <x-btn :href="route('repeat-prescriptions')" variant="ghost" data-magnetic>Order repeat prescription</x-btn>
             </div>
 
-            <div class="no-interact reveal mt-12 flex flex-wrap items-center gap-x-6 gap-y-3 border-t border-white/15 pt-7" style="--reveal-delay:540ms">
-                <span class="font-serif text-3xl text-white" data-count="{{ $reviews['rating'] }}">{{ $reviews['rating'] }}</span>
+            <div class="no-interact reveal mt-12 flex flex-wrap items-center gap-x-6 gap-y-3 border-t border-brand-forest/20 pt-7" style="--reveal-delay:540ms">
+                <span class="font-serif text-3xl text-brand-forest" data-count="{{ $reviews['rating'] }}">{{ $reviews['rating'] }}</span>
                 <span class="flex gap-0.5 text-brand-moss" aria-hidden="true">
                     @for ($i = 0; $i < 5; $i++)<svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8-5.3-2.8-5.3 2.8 1-5.8L1.5 7.7l5.9-.9z"/></svg>@endfor
                 </span>
-                <span class="text-sm text-white/70"><span data-count="{{ $reviews['count'] }}">{{ $reviews['count'] }}</span> Google reviews</span>
-                <span class="text-sm text-white/70">Free delivery over {{ config('pharmacy.free_delivery_threshold') }}</span>
+                <span class="text-sm text-brand-stone-dark"><span data-count="{{ $reviews['count'] }}">{{ $reviews['count'] }}</span> Google reviews</span>
+                <span class="text-sm text-brand-stone-dark">Free delivery over {{ config('pharmacy.free_delivery_threshold') }}</span>
             </div>
         </div>
 
@@ -58,7 +58,7 @@
                             ['products.jpg', 'Online shop', 'Pharmacy essentials, free delivery over £15', 'Shop', 'shop', route('shop')],
                         ] as [$img, $service, $line, $type, $tone, $href])
                             @php
-                                $toneClass = ['nhs' => 'text-[#8cc2ef]', 'private' => 'text-brand-moss', 'shop' => 'text-white/55'][$tone];
+                                $toneClass = ['nhs' => 'text-brand-nhs-blue', 'private' => 'text-brand-moss', 'shop' => 'text-brand-stone-light'][$tone];
                             @endphp
                             <a href="{{ $href }}" data-carousel-item @if ($pass) aria-hidden="true" tabindex="-1" @endif
                                 class="group relative aspect-[4/5] w-[78vw] shrink-0 overflow-hidden rounded-[28px] shadow-editorial-hover focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-moss focus-visible:ring-inset sm:w-[400px] lg:w-[413px]">
@@ -66,11 +66,11 @@
                                     srcset="{{ asset('images/hero/'.str($img)->beforeLast('.').'-1600.jpg') }} 1600w, {{ asset('images/hero/'.str($img)->beforeLast('.').'-2600.jpg') }} 2600w"
                                     sizes="(min-width: 640px) 413px, 78vw" alt=""
                                     class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.05]" @if ($pass) loading="lazy" @endif>
-                                <span class="absolute inset-x-0 bottom-0 flex h-1/2 flex-col justify-center bg-brand-forest px-8">
+                                <span class="absolute inset-x-0 bottom-0 flex h-1/2 flex-col justify-center border-t-[3px] border-brand-primary bg-white px-8">
                                     <span class="text-[11px] font-bold uppercase tracking-[0.14em] {{ $toneClass }}">{!! $type !!}</span>
-                                    <span class="mt-2 font-serif text-[28px] leading-tight text-white">{!! $service !!}</span>
-                                    <span class="mt-2 text-sm leading-relaxed text-white/70">{{ $line }}</span>
-                                    <span class="mt-3 inline-flex items-center gap-1.5 text-[13px] font-semibold text-white/50 transition-colors duration-300 group-hover:text-white group-focus-visible:text-white">
+                                    <span class="mt-2 font-serif text-[28px] leading-tight text-brand-forest">{!! $service !!}</span>
+                                    <span class="mt-2 text-sm leading-relaxed text-brand-stone">{{ $line }}</span>
+                                    <span class="mt-3 inline-flex items-center gap-1.5 text-[13px] font-semibold text-brand-moss transition-colors duration-300 group-hover:text-brand-moss-hover group-focus-visible:text-brand-moss-hover">
                                         View service
                                         <svg class="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
                                     </span>
@@ -82,7 +82,7 @@
 
                 @foreach ([['prev', 'Previous services', 'left-3 sm:left-5', 'M15 19l-7-7 7-7'], ['next', 'More services', 'right-3 sm:right-5', 'M9 5l7 7-7 7']] as [$dir, $label, $pos, $path])
                     <button type="button" data-rail-{{ $dir }} aria-label="{{ $label }}"
-                        class="absolute top-1/2 z-20 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/25 bg-brand-forest-deep/70 text-white backdrop-blur transition-all duration-200 hover:scale-105 hover:bg-brand-moss hover:border-brand-moss active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-moss {{ $pos }}">
+                        class="absolute top-1/2 z-20 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-brand-forest/20 bg-white/90 text-brand-forest shadow-editorial-card backdrop-blur transition-all duration-200 hover:scale-105 hover:border-brand-primary hover:bg-brand-primary active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-moss {{ $pos }}">
                         <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="{{ $path }}" /></svg>
                     </button>
                 @endforeach
@@ -133,7 +133,7 @@
                 </a>
 
                 @foreach ([
-                    ['href' => route('weight-loss'), 'chip' => 'Private clinic', 'tone' => 'peach', 'title' => 'Weight loss clinic', 'body' => 'Wegovy & Mounjaro with weekly pharmacist support and clinical monitoring.', 'img' => 'weightloss-outdoor.jpg', 'cta' => 'Learn more'],
+                    ['href' => route('weight-loss'), 'chip' => 'Private clinic', 'tone' => 'soft', 'title' => 'Weight loss clinic', 'body' => 'Wegovy & Mounjaro with weekly pharmacist support and clinical monitoring.', 'img' => 'weightloss-outdoor.jpg', 'cta' => 'Learn more'],
                     ['href' => route('shop'), 'chip' => 'Home delivery', 'tone' => 'quiet', 'title' => 'Online shop', 'body' => 'Essentials delivered, free over '.config('pharmacy.free_delivery_threshold').'. Vitamins, remedies and everyday healthcare.', 'img' => 'parcel-doorstep.jpg', 'cta' => 'Shop essentials'],
                 ] as $card)
                     <a href="{{ $card['href'] }}"
@@ -225,13 +225,13 @@
                             class="reveal group flex flex-col rounded-2xl border bg-white p-5 shadow-editorial-card transition-all duration-[250ms] hover:-translate-y-1 hover:border-brand-moss hover:shadow-editorial-hover focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-moss {{ $branch['hub'] ? 'border-brand-moss/40' : 'border-brand-hairline' }}">
                             <div class="flex items-start justify-between gap-2">
                                 <h3 class="text-lg leading-snug">{{ $branch['name'] }}</h3>
-                                @if ($branch['hub'])<x-chip tone="peach">Hub</x-chip>@endif
+                                @if ($branch['hub'])<x-chip tone="soft">Hub</x-chip>@endif
                             </div>
                             <p class="mt-1 text-xs leading-relaxed text-brand-stone">{{ $branch['address'] }}</p>
                             <p class="text-xs text-brand-stone-light">{{ $branch['postcode'] }}</p>
                             <div class="mt-auto flex items-center justify-between gap-2 pt-3">
                                 <p class="flex items-center gap-1.5 text-xs font-medium text-brand-moss">
-                                    <span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span>
+                                    <span class="h-1.5 w-1.5 rounded-full bg-brand-moss"></span>
                                     Open until {{ $branch['closes'] }}
                                 </p>
                                 <span class="text-brand-stone-light transition-transform duration-200 group-hover:translate-x-1 group-hover:text-brand-moss">→</span>
@@ -357,12 +357,12 @@
         </div>
     </section>
 
-    {{-- FAQs — five most asked, on the footer's ground so the page closes into it. --}}
-    <section id="faqs" class="scroll-mt-24 border-t border-white/10 bg-footer py-16 text-footer-text md:py-20">
+    {{-- FAQs — five most asked, on a pistachio band that leads into the brand-coloured footer. --}}
+    <section id="faqs" class="scroll-mt-24 border-t border-brand-pistachio-line bg-brand-pistachio py-16 text-brand-stone md:py-20">
         <div class="mx-auto max-w-[720px] px-6 sm:px-8">
             <div class="text-center">
-                <x-eyebrow class="!text-footer-link">Frequently asked</x-eyebrow>
-                <h2 class="reveal mt-2.5 text-[30px] leading-tight text-white md:text-[36px]">
+                <x-eyebrow>Frequently asked</x-eyebrow>
+                <h2 class="reveal mt-2.5 text-[30px] leading-tight text-brand-forest md:text-[36px]">
                     Everything you <span class="editorial-highlight">wanted to ask.</span>
                 </h2>
             </div>
@@ -370,28 +370,28 @@
             {{-- The list reveals as one block: an item scrolled out of this container is
                  clipped, so a per-item observer would never fire for it. --}}
             <div class="faq-scroll reveal mt-8 pr-3" style="--reveal-delay:140ms">
-                <div class="divide-y divide-white/[0.12] border-y border-white/[0.12]">
+                <div class="divide-y divide-brand-pistachio-line border-y border-brand-pistachio-line">
                     @foreach ($homeFaqs as [$q, $a])
                         <details class="wl-faq group py-0.5">
-                            <summary class="flex items-center justify-between gap-5 py-4 text-[15px] font-medium leading-snug text-white transition-colors duration-200 hover:text-footer-link">
+                            <summary class="flex items-center justify-between gap-5 py-4 text-[15px] font-medium leading-snug text-brand-forest transition-colors duration-200 hover:text-brand-moss">
                                 {{ $q }}
-                                <span class="wl-faq__icon flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-white/25 text-footer-link transition-transform duration-300">
+                                <span class="wl-faq__icon flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-brand-forest/25 bg-white/60 text-brand-moss transition-transform duration-300">
                                     <svg class="h-3.5 w-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M12 5v14m-7-7h14"/></svg>
                                 </span>
                             </summary>
-                            <div class="pb-5 pr-0 text-[14px] leading-relaxed text-footer-text sm:pr-10">{{ $a }}</div>
+                            <div class="pb-5 pr-0 text-[14px] leading-relaxed text-brand-stone sm:pr-10">{{ $a }}</div>
                         </details>
                     @endforeach
                 </div>
             </div>
 
-            <p class="reveal mt-7 text-center text-[13px] text-footer-meta">
+            <p class="reveal mt-7 text-center text-[13px] text-brand-stone">
                 Still have a question? Call
                 <a href="{{ config('pharmacy.phone_href') }}"
-                    class="text-footer-link underline decoration-footer-link/40 underline-offset-4 transition hover:text-white hover:decoration-white">{{ config('pharmacy.phone') }}</a>
+                    class="text-brand-moss underline decoration-brand-moss/40 underline-offset-4 transition hover:text-brand-moss-hover hover:decoration-brand-moss-hover">{{ config('pharmacy.phone') }}</a>
                 or email
                 <a href="mailto:{{ config('pharmacy.email') }}"
-                    class="text-footer-link underline decoration-footer-link/40 underline-offset-4 transition hover:text-white hover:decoration-white">{{ config('pharmacy.email') }}</a>
+                    class="text-brand-moss underline decoration-brand-moss/40 underline-offset-4 transition hover:text-brand-moss-hover hover:decoration-brand-moss-hover">{{ config('pharmacy.email') }}</a>
             </p>
         </div>
     </section>

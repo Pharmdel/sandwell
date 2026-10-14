@@ -35,7 +35,7 @@
 
     <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:z-[70] focus:m-4 focus:rounded-full focus:bg-brand-forest focus:px-5 focus:py-2.5 focus:text-sm focus:text-white">Skip to content</a>
 
-    <x-site-header :overlay="$hero === true" :overlay-light="$hero === 'light'" />
+    <x-site-header :overlay="(bool) $hero" />
     <x-site-menu />
 
     {{-- The Menu button needs JS to open, so give non-JS visitors a plain nav. --}}

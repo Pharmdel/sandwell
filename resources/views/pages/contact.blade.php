@@ -3,11 +3,11 @@
         <div class="max-w-3xl">
             <p class="reveal text-[11px] font-bold uppercase tracking-[0.14em] text-brand-moss">Contact</p>
 
-            <h1 class="mt-5 text-4xl leading-[1.05] text-white md:text-[62px]" data-lines>
+            <h1 class="mt-5 text-4xl leading-[1.05] text-brand-forest md:text-[62px]" data-lines>
                 <span class="line-mask"><span>We're <span class="editorial-highlight">here to help.</span></span></span>
             </h1>
 
-            <p class="reveal mt-6 max-w-xl text-lg leading-relaxed text-white/80" style="--reveal-delay:300ms">
+            <p class="reveal mt-6 max-w-xl text-lg leading-relaxed text-brand-stone-dark" style="--reveal-delay:300ms">
                 Questions about a prescription, a service or an order? Call, message, or drop into any
                 branch — a pharmacist is always on hand.
             </p>
@@ -35,13 +35,13 @@
                                     <label for="name" class="mb-2 block text-xs font-semibold uppercase tracking-[0.08em] text-brand-stone-light">Full name</label>
                                     <input id="name" name="name" type="text" required value="{{ old('name') }}"
                                         class="w-full rounded-xl border border-brand-hairline bg-brand-ivory px-4 py-3 text-[15px] text-brand-forest transition focus:border-brand-forest focus:outline-none focus:ring-2 focus:ring-brand-forest/20">
-                                    @error('name')<p class="mt-1.5 text-xs text-red-600">{{ $message }}</p>@enderror
+                                    @error('name')<p class="mt-1.5 text-xs text-brand-danger">{{ $message }}</p>@enderror
                                 </div>
                                 <div>
                                     <label for="email" class="mb-2 block text-xs font-semibold uppercase tracking-[0.08em] text-brand-stone-light">Email address</label>
                                     <input id="email" name="email" type="email" required value="{{ old('email') }}"
                                         class="w-full rounded-xl border border-brand-hairline bg-brand-ivory px-4 py-3 text-[15px] text-brand-forest transition focus:border-brand-forest focus:outline-none focus:ring-2 focus:ring-brand-forest/20">
-                                    @error('email')<p class="mt-1.5 text-xs text-red-600">{{ $message }}</p>@enderror
+                                    @error('email')<p class="mt-1.5 text-xs text-brand-danger">{{ $message }}</p>@enderror
                                 </div>
                                 <div>
                                     <label for="phone" class="mb-2 block text-xs font-semibold uppercase tracking-[0.08em] text-brand-stone-light">Phone <span class="normal-case tracking-normal text-brand-stone-light">(optional)</span></label>
@@ -64,7 +64,7 @@
                                 <label for="message" class="mb-2 block text-xs font-semibold uppercase tracking-[0.08em] text-brand-stone-light">Your message</label>
                                 <textarea id="message" name="message" rows="5" required
                                     class="w-full rounded-xl border border-brand-hairline bg-brand-ivory px-4 py-3 text-[15px] text-brand-forest transition focus:border-brand-forest focus:outline-none focus:ring-2 focus:ring-brand-forest/20">{{ old('message') }}</textarea>
-                                @error('message')<p class="mt-1.5 text-xs text-red-600">{{ $message }}</p>@enderror
+                                @error('message')<p class="mt-1.5 text-xs text-brand-danger">{{ $message }}</p>@enderror
                             </div>
 
                             <div class="flex flex-col items-start gap-4 pt-2 sm:flex-row sm:items-center sm:justify-between">
@@ -72,7 +72,7 @@
                                     We reply within one working day.<br>For urgent medical advice call 111.
                                 </p>
                                 <button type="submit"
-                                    class="inline-flex items-center justify-center gap-2 rounded-full bg-brand-moss px-7 py-3.5 text-sm font-semibold text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-brand-moss-hover hover:shadow-moss-glow active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-moss focus-visible:ring-offset-2">
+                                    class="inline-flex items-center justify-center gap-2 rounded-full bg-brand-primary px-7 py-3.5 text-sm font-semibold text-brand-forest transition-all duration-200 hover:-translate-y-0.5 hover:bg-brand-primary-hover hover:shadow-primary-glow active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-moss focus-visible:ring-offset-2">
                                     Send message
                                 </button>
                             </div>

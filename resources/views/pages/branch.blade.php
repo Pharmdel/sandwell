@@ -9,27 +9,27 @@
                 Our branches · {{ $branch['town'] }}
             </p>
 
-            <h1 class="mt-5 text-5xl leading-[1.02] text-white md:text-[72px]" data-lines>
+            <h1 class="mt-5 text-5xl leading-[1.02] text-brand-forest md:text-[72px]" data-lines>
                 <span class="line-mask"><span>{{ str($branch['name'])->before(' Pharmacy') }}</span></span>
                 <span class="line-mask"><span class="editorial-highlight">Pharmacy.</span></span>
             </h1>
 
-            <address class="no-interact reveal mt-7 text-lg not-italic leading-relaxed text-white/80" style="--reveal-delay:340ms">
+            <address class="no-interact reveal mt-7 text-lg not-italic leading-relaxed text-brand-stone-dark" style="--reveal-delay:340ms">
                 {{ $branch['address'] }}<br>{{ $branch['postcode'] }}
             </address>
 
-            <p class="no-interact reveal mt-4 flex items-center gap-2 text-sm font-medium text-white" style="--reveal-delay:390ms">
-                <span class="h-2 w-2 animate-pulsing-dot rounded-full bg-emerald-400"></span>
+            <p class="no-interact reveal mt-4 flex items-center gap-2 text-sm font-medium text-brand-forest" style="--reveal-delay:390ms">
+                <span class="h-2 w-2 animate-pulsing-dot rounded-full bg-brand-moss"></span>
                 Open now · until {{ $branch['closes'] }}
             </p>
 
             <div class="reveal mt-10 flex flex-wrap gap-3" style="--reveal-delay:440ms">
-                <x-btn :href="route('book')" data-magnetic>Book an appointment here</x-btn>
-                <x-btn href="https://www.google.com/maps/search/?api=1&query={{ $mapQuery }}" variant="light"
+                <x-btn variant="dark" :href="route('book')" data-magnetic>Book an appointment here</x-btn>
+                <x-btn href="https://www.google.com/maps/search/?api=1&query={{ $mapQuery }}" variant="ghost"
                     target="_blank" rel="noopener" data-magnetic>Get directions</x-btn>
             </div>
 
-            <div class="no-interact reveal mt-12 flex flex-wrap gap-x-6 gap-y-2 border-t border-white/15 pt-7 text-[11px] font-semibold uppercase tracking-[0.1em] text-white/60" style="--reveal-delay:540ms">
+            <div class="no-interact reveal mt-12 flex flex-wrap gap-x-6 gap-y-2 border-t border-brand-forest/20 pt-7 text-[11px] font-semibold uppercase tracking-[0.1em] text-brand-stone-dark" style="--reveal-delay:540ms">
                 <span>NHS community pharmacy</span>
                 @if ($branch['hub'])<span>Dispensing hub</span>@endif
                 <span>Step-free access</span>

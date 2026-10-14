@@ -1,11 +1,11 @@
-@props(['tone' => 'peach'])
+@props(['tone' => 'soft'])
 
 @php
     $tones = [
         'nhs' => 'bg-brand-nhs-blue text-white',
-        'peach' => 'bg-brand-pistachio text-brand-moss-hover',
-        'navy' => 'bg-brand-forest text-white',
-        'orange' => 'bg-brand-moss text-white',
+        'soft' => 'bg-brand-pistachio text-brand-moss',
+        'ink' => 'bg-brand-forest text-white',
+        'primary' => 'bg-brand-primary text-brand-forest',
         'quiet' => 'bg-brand-forest/5 text-brand-forest',
     ];
 @endphp

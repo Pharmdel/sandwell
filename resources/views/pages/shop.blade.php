@@ -3,21 +3,21 @@
         <div class="max-w-3xl">
             <p class="reveal text-[11px] font-bold uppercase tracking-[0.14em] text-brand-moss">Online shop · Delivered by our own drivers</p>
 
-            <h1 class="mt-5 text-4xl leading-[1.05] text-white md:text-[66px]" data-lines>
+            <h1 class="mt-5 text-4xl leading-[1.05] text-brand-forest md:text-[66px]" data-lines>
                 <span class="line-mask"><span>Pharmacy essentials,</span></span>
                 <span class="line-mask"><span class="editorial-highlight">delivered to your door.</span></span>
             </h1>
 
-            <p class="reveal mt-7 max-w-xl text-lg leading-relaxed text-white/80" style="--reveal-delay:340ms">
+            <p class="reveal mt-7 max-w-xl text-lg leading-relaxed text-brand-stone-dark" style="--reveal-delay:340ms">
                 Everything you'd find on our shelves — pharmacist-approved, dispatched from our dispensing
                 hub, and free to deliver on orders over {{ config('pharmacy.free_delivery_threshold') }}.
             </p>
 
             <div class="reveal mt-10" style="--reveal-delay:440ms">
-                <x-btn href="#categories" data-magnetic>Browse all products</x-btn>
+                <x-btn variant="dark" href="#categories" data-magnetic>Browse all products</x-btn>
             </div>
 
-            <div class="no-interact reveal mt-12 flex flex-wrap gap-x-6 gap-y-2 border-t border-white/15 pt-7 text-[11px] font-semibold uppercase tracking-[0.1em] text-white/60" style="--reveal-delay:540ms">
+            <div class="no-interact reveal mt-12 flex flex-wrap gap-x-6 gap-y-2 border-t border-brand-forest/20 pt-7 text-[11px] font-semibold uppercase tracking-[0.1em] text-brand-stone-dark" style="--reveal-delay:540ms">
                 <span>Free delivery over {{ config('pharmacy.free_delivery_threshold') }}</span>
                 <span>Same-day dispatch before 2pm</span>
                 <span>Pharmacist advice on every order</span>

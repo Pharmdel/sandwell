@@ -29,12 +29,12 @@
         <div class="max-w-3xl">
             <div class="reveal"><x-chip tone="nhs">NHS Pharmacy First &amp; minor illness</x-chip></div>
 
-            <h1 class="mt-6 text-4xl leading-[1.05] text-white md:text-[66px]" data-lines>
+            <h1 class="mt-6 text-4xl leading-[1.05] text-brand-forest md:text-[66px]" data-lines>
                 <span class="line-mask"><span>See a pharmacist,</span></span>
                 <span class="line-mask"><span class="editorial-highlight">not a waiting room.</span></span>
             </h1>
 
-            <p class="reveal mt-7 max-w-xl text-lg leading-relaxed text-white/80" style="--reveal-delay:340ms">
+            <p class="reveal mt-7 max-w-xl text-lg leading-relaxed text-brand-stone-dark" style="--reveal-delay:340ms">
                 Free same-day treatment for seven common conditions — including antibiotics where
                 appropriate — plus free medicines for everyday ailments. No GP appointment either way.
             </p>
@@ -43,10 +43,10 @@
                 <label for="condition-search" class="sr-only">Search symptoms or conditions</label>
                 <input id="condition-search" type="search"
                     placeholder="Search a symptom or condition — e.g. itchy scalp, burning wee, earache"
-                    class="w-full rounded-full border border-white/25 bg-white/10 px-6 py-4 text-[15px] text-white backdrop-blur placeholder:text-white/50 focus:border-white focus:outline-none focus:ring-2 focus:ring-white/30">
+                    class="w-full rounded-full border border-brand-forest/20 bg-white/60 px-6 py-4 text-[15px] text-brand-forest backdrop-blur placeholder:text-brand-stone-dark focus:border-brand-forest focus:outline-none focus:ring-2 focus:ring-brand-forest/25">
             </div>
 
-            <div class="no-interact reveal mt-10 flex flex-wrap gap-x-6 gap-y-2 border-t border-white/15 pt-7 text-[11px] font-semibold uppercase tracking-[0.1em] text-white/60" style="--reveal-delay:540ms">
+            <div class="no-interact reveal mt-10 flex flex-wrap gap-x-6 gap-y-2 border-t border-brand-forest/20 pt-7 text-[11px] font-semibold uppercase tracking-[0.1em] text-brand-stone-dark" style="--reveal-delay:540ms">
                 <span>Free on the NHS</span>
                 <span>No appointment needed</span>
                 <span>All six branches</span>

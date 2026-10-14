@@ -239,7 +239,7 @@ if (mdsCheck) {
             ${heavy ? `<p class="mt-3 text-[13px] leading-relaxed text-brand-stone">
                 Based on your answers, trays are likely to make a real difference day to day —
                 mention that when we call and our pharmacist will prioritise the review.</p>` : ''}
-            <a href="#enquire" class="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full bg-brand-moss px-6 py-3.5 text-sm font-semibold text-white transition-all duration-300 hover:bg-brand-moss-hover">
+            <a href="#enquire" class="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full bg-brand-primary px-6 py-3.5 text-sm font-semibold text-brand-forest transition-all duration-300 hover:bg-brand-primary-hover">
                 Continue to the form
                 <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-5-5 5 5-5 5"/></svg>
             </a>`;

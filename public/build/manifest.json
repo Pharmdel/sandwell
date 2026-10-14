@@ -12,7 +12,7 @@
     "src": "node_modules/leaflet/dist/images/marker-icon.png"
   },
   "resources/css/app.css": {
-    "file": "assets/app-CMwwDiw1.css",
+    "file": "assets/app-BCvfeAhE.css",
     "src": "resources/css/app.css",
     "isEntry": true,
     "name": "app",
@@ -41,19 +41,19 @@
     ]
   },
   "resources/js/conditions.js": {
-    "file": "assets/conditions-CgII7H3b.js",
+    "file": "assets/conditions-B6lwpmDS.js",
     "name": "conditions",
     "src": "resources/js/conditions.js",
     "isEntry": true
   },
   "resources/js/services.js": {
-    "file": "assets/services-OIfQScoP.js",
+    "file": "assets/services-D_xrEEmj.js",
     "name": "services",
     "src": "resources/js/services.js",
     "isEntry": true
   },
   "resources/js/weight-loss.js": {
-    "file": "assets/weight-loss-C1NOkNZp.js",
+    "file": "assets/weight-loss-CAuFIiz0.js",
     "name": "weight-loss",
     "src": "resources/js/weight-loss.js",
     "isEntry": true

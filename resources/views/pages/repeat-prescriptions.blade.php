@@ -5,22 +5,22 @@
         <div class="max-w-3xl">
             <p class="reveal text-[11px] font-bold uppercase tracking-[0.14em] text-brand-moss">NHS repeat prescriptions</p>
 
-            <h1 class="mt-5 text-5xl leading-[1.02] text-white md:text-[76px]" data-lines>
+            <h1 class="mt-5 text-5xl leading-[1.02] text-brand-forest md:text-[76px]" data-lines>
                 <span class="line-mask"><span>Getting your medicines,</span></span>
                 <span class="line-mask"><span class="editorial-highlight">sorted.</span></span>
             </h1>
 
-            <p class="reveal mt-8 max-w-xl text-lg leading-relaxed text-white/80" style="--reveal-delay:340ms">
+            <p class="reveal mt-8 max-w-xl text-lg leading-relaxed text-brand-stone-dark" style="--reveal-delay:340ms">
                 Nominate any Hollytree Pharmacy branch and we'll prepare your repeat prescriptions,
                 text you when they're ready, and deliver them free to your door.
             </p>
 
             <div class="reveal mt-10 flex flex-wrap gap-3" style="--reveal-delay:440ms">
-                <x-btn href="#nominate" data-magnetic>Nominate us now</x-btn>
-                <x-btn :href="route('book')" variant="light" data-magnetic>Order a repeat prescription</x-btn>
+                <x-btn variant="dark" href="#nominate" data-magnetic>Nominate us now</x-btn>
+                <x-btn :href="route('book')" variant="ghost" data-magnetic>Order a repeat prescription</x-btn>
             </div>
 
-            <div class="no-interact reveal mt-12 flex flex-wrap gap-x-6 gap-y-2 border-t border-white/15 pt-7 text-[11px] font-semibold uppercase tracking-[0.1em] text-white/60" style="--reveal-delay:540ms">
+            <div class="no-interact reveal mt-12 flex flex-wrap gap-x-6 gap-y-2 border-t border-brand-forest/20 pt-7 text-[11px] font-semibold uppercase tracking-[0.1em] text-brand-stone-dark" style="--reveal-delay:540ms">
                 <span>Free delivery over {{ config('pharmacy.free_delivery_threshold') }}</span>
                 <span>Text reminders</span>
                 <span>Six branches</span>

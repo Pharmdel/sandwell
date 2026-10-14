@@ -3,21 +3,21 @@
         <div class="max-w-3xl">
             <p class="reveal text-[11px] font-bold uppercase tracking-[0.14em] text-brand-moss">Private services · Pharmacist-led</p>
 
-            <h1 class="mt-5 text-4xl leading-[1.05] text-white md:text-[66px]" data-lines>
+            <h1 class="mt-5 text-4xl leading-[1.05] text-brand-forest md:text-[66px]" data-lines>
                 <span class="line-mask"><span>Private care,</span></span>
                 <span class="line-mask"><span class="editorial-highlight">without the waiting list.</span></span>
             </h1>
 
-            <p class="reveal mt-7 max-w-xl text-lg leading-relaxed text-white/80" style="--reveal-delay:340ms">
+            <p class="reveal mt-7 max-w-xl text-lg leading-relaxed text-brand-stone-dark" style="--reveal-delay:340ms">
                 Discreet, clinically-led treatments from our pharmacist prescribers — assessed in branch
                 or online, with medication dispensed by our own team.
             </p>
 
             <div class="reveal mt-10" style="--reveal-delay:440ms">
-                <x-btn :href="route('book')" data-magnetic>Book a private consultation</x-btn>
+                <x-btn variant="dark" :href="route('book')" data-magnetic>Book a private consultation</x-btn>
             </div>
 
-            <div class="no-interact reveal mt-12 flex flex-wrap gap-x-6 gap-y-2 border-t border-white/15 pt-7 text-[11px] font-semibold uppercase tracking-[0.1em] text-white/60" style="--reveal-delay:540ms">
+            <div class="no-interact reveal mt-12 flex flex-wrap gap-x-6 gap-y-2 border-t border-brand-forest/20 pt-7 text-[11px] font-semibold uppercase tracking-[0.1em] text-brand-stone-dark" style="--reveal-delay:540ms">
                 <span>GPhC-registered prescribers</span>
                 <span>Same-week appointments</span>
                 <span>Discreet packaging</span>
@@ -37,7 +37,7 @@
                     class="reveal tilt group flex flex-col overflow-hidden rounded-[20px] border border-brand-hairline bg-white p-6 shadow-editorial-card transition-all duration-[250ms] hover:-translate-y-1 hover:shadow-editorial-hover lg:row-span-2">
                     <img src="{{ asset('images/weightloss-outdoor.jpg') }}" alt="" class="h-56 w-full rounded-2xl object-cover">
                     <div class="mt-6 flex flex-1 flex-col">
-                        <x-chip tone="peach" class="self-start">Most popular</x-chip>
+                        <x-chip tone="soft" class="self-start">Most popular</x-chip>
                         <h3 class="mt-3 text-[26px] leading-tight">Weight loss clinic</h3>
                         <p class="mt-3 text-sm leading-relaxed text-brand-stone">
                             Wegovy &amp; Mounjaro with weekly pharmacist check-ins and clinical monitoring throughout.

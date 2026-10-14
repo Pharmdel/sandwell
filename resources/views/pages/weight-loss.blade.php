@@ -3,9 +3,11 @@
     $reviews = config('pharmacy.reviews');
     $phone = config('pharmacy.phone');
     $btn = 'inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold transition-all duration-200 active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2';
-    $btnPrimary = $btn.' bg-brand-moss text-white hover:-translate-y-0.5 hover:bg-brand-moss-hover hover:shadow-moss-glow focus-visible:ring-brand-moss';
+    $btnPrimary = $btn.' bg-brand-primary text-brand-forest hover:-translate-y-0.5 hover:bg-brand-primary-hover hover:shadow-primary-glow focus-visible:ring-brand-moss';
+    // On the green hero the brand-coloured button would vanish into its ground.
+    $btnDark = $btn.' bg-brand-forest text-white hover:-translate-y-0.5 hover:bg-brand-moss focus-visible:ring-brand-forest';
     $btnOutline = $btn.' border border-brand-forest text-brand-forest hover:bg-brand-forest hover:text-white focus-visible:ring-brand-forest';
-    $btnLight = $btn.' border border-white/25 text-white hover:bg-white hover:text-brand-forest focus-visible:ring-white';
+    $btnLight = $btn.' border border-brand-forest/35 bg-white/55 text-brand-forest backdrop-blur hover:border-brand-forest hover:bg-white focus-visible:ring-brand-forest';
     $input = 'w-full rounded-xl border border-brand-hairline bg-brand-ivory px-4 py-3 text-[15px] text-brand-forest transition placeholder:text-brand-stone-light focus:border-brand-forest focus:outline-none focus:ring-2 focus:ring-brand-forest/20';
     $label = 'mb-1.5 block text-xs font-semibold uppercase tracking-[0.08em] text-brand-stone-light';
     $opt = 'wl-opt flex w-full flex-col items-start rounded-2xl border border-brand-hairline bg-white px-5 py-4 text-left text-[15px] font-medium text-brand-forest hover:border-brand-forest/50';
@@ -23,20 +25,20 @@
         <div class="max-w-3xl">
             <p class="reveal text-[11px] font-bold uppercase tracking-[0.14em] text-brand-moss">Weight loss clinic · West Bromwich</p>
 
-            <h1 class="mt-5 text-5xl leading-[1.02] text-white md:text-[76px]" data-lines>
+            <h1 class="mt-5 text-5xl leading-[1.02] text-brand-forest md:text-[76px]" data-lines>
                 <span class="line-mask"><span>Pharmacist-led</span></span>
                 <span class="line-mask"><span class="editorial-highlight">weight loss.</span></span>
             </h1>
 
-            <p class="reveal mt-8 max-w-xl text-lg leading-relaxed text-white/80" style="--reveal-delay:340ms">
+            <p class="reveal mt-8 max-w-xl text-lg leading-relaxed text-brand-stone-dark" style="--reveal-delay:340ms">
                 Get help losing weight with safe, effective treatments — Wegovy, Mounjaro and Alli, all with
                 regular check-ins from our pharmacist in West Bromwich.
             </p>
 
-            <ul class="reveal mt-7 space-y-2.5 text-[15px] font-medium text-white" style="--reveal-delay:400ms">
+            <ul class="reveal mt-7 space-y-2.5 text-[15px] font-medium text-brand-forest" style="--reveal-delay:400ms">
                 @foreach (['GPhC-registered pharmacist care', 'Free 1-minute suitability check', 'All licensed treatments — injections & tablets'] as $li)
                     <li class="flex items-center gap-3">
-                        <span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-emerald-400/20 text-emerald-300">
+                        <span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-white/70 text-brand-moss">
                             <svg class="h-3.5 w-3.5" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
                         </span>
                         {{ $li }}
@@ -45,12 +47,12 @@
             </ul>
 
             <div class="reveal mt-10 flex flex-wrap gap-3" style="--reveal-delay:460ms">
-                <button type="button" data-modal-open="wl-checker" data-magnetic class="{{ $btnPrimary }}">Start your free suitability check</button>
+                <button type="button" data-modal-open="wl-checker" data-magnetic class="{{ $btnDark }}">Start your free suitability check</button>
                 <a href="#switch" class="{{ $btnLight }}" data-magnetic>Already on treatment? Switch to us</a>
             </div>
 
-            <div class="no-interact reveal mt-12 flex flex-wrap items-center gap-x-4 gap-y-2 border-t border-white/15 pt-7 text-sm text-white/80" style="--reveal-delay:540ms">
-                <span class="text-[11px] font-bold uppercase tracking-[0.12em] text-white">Highly rated</span>
+            <div class="no-interact reveal mt-12 flex flex-wrap items-center gap-x-4 gap-y-2 border-t border-brand-forest/20 pt-7 text-sm text-brand-stone-dark" style="--reveal-delay:540ms">
+                <span class="text-[11px] font-bold uppercase tracking-[0.12em] text-brand-forest">Highly rated</span>
                 <span class="flex gap-0.5 text-brand-moss" aria-hidden="true">
                     @for ($i = 0; $i < 5; $i++)<svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8-5.3-2.8-5.3 2.8 1-5.8L1.5 7.7l5.9-.9z"/></svg>@endfor
                 </span>
@@ -75,7 +77,7 @@
                 @foreach ($wl['treatments'] as $t)
                     <article class="reveal tilt relative flex flex-col rounded-[20px] border border-brand-hairline bg-white p-6 shadow-editorial-card {{ $t['badge'] ? 'ring-1 ring-brand-moss/40' : '' }}">
                         @if ($t['badge'])
-                            <x-chip tone="orange" class="absolute right-5 top-5">{{ $t['badge'] }}</x-chip>
+                            <x-chip tone="primary" class="absolute right-5 top-5">{{ $t['badge'] }}</x-chip>
                         @endif
                         <div class="flex h-40 items-center justify-center rounded-2xl bg-brand-ivory p-4">
                             <img src="{{ asset('images/'.$t['image']) }}" alt="{{ $t['name'] }}" class="max-h-full max-w-full object-contain">
@@ -99,7 +101,7 @@
             <article class="reveal mt-6 grid gap-8 rounded-[24px] border border-brand-hairline bg-white p-8 shadow-editorial-card lg:grid-cols-12 lg:items-center">
                 <div class="lg:col-span-8">
                     <div class="flex flex-wrap items-center gap-2">
-                        <x-chip tone="navy">Coming soon</x-chip>
+                        <x-chip tone="ink">Coming soon</x-chip>
                         <span class="text-[11px] font-semibold uppercase tracking-[0.1em] text-brand-stone-light">From the makers of Mounjaro</span>
                     </div>
                     <h3 class="mt-3 text-[28px] leading-tight">{{ $wl['foundayo']['name'] }}</h3>
@@ -205,7 +207,7 @@
                 <ul class="mt-6 space-y-3">
                     @foreach ($wl['switch']['bullets'] as $b)
                         <li class="flex items-center gap-3 text-[15px] font-medium text-brand-forest">
-                            <span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-emerald-50 text-emerald-600">
+                            <span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-brand-pistachio text-brand-moss">
                                 <svg class="h-3.5 w-3.5" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
                             </span>
                             {{ $b }}
@@ -288,13 +290,13 @@
     </section>
 
     {{-- Final CTA --}}
-    <section class="grain relative overflow-hidden bg-brand-forest-deep py-24 text-center md:py-32">
-        <div class="pointer-events-none absolute left-1/2 top-1/2 h-[600px] w-[900px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(31,79,45,0.55),transparent_70%)]"></div>
+    <section class="grain relative overflow-hidden bg-brand-pistachio py-24 text-center md:py-32">
+        <div class="pointer-events-none absolute left-1/2 top-1/2 h-[600px] w-[900px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(136,231,136,0.55),transparent_70%)]"></div>
         <div class="reveal relative mx-auto max-w-3xl px-6">
-            <h2 class="text-4xl leading-tight text-white md:text-[52px]">Start your journey <span class="editorial-highlight">this week.</span></h2>
-            <p class="mx-auto mt-5 max-w-xl text-base leading-relaxed text-slate-300">A free one-minute check, a free consultation call, and nothing to pay until you begin treatment.</p>
+            <h2 class="text-4xl leading-tight text-brand-forest md:text-[52px]">Start your journey <span class="editorial-highlight">this week.</span></h2>
+            <p class="mx-auto mt-5 max-w-xl text-base leading-relaxed text-brand-stone">A free one-minute check, a free consultation call, and nothing to pay until you begin treatment.</p>
             <button type="button" data-modal-open="wl-checker" data-magnetic class="{{ $btnPrimary }} mt-9">Start your free suitability check</button>
-            <p class="mt-5 text-sm text-slate-400">Or call <span class="font-semibold text-white">{{ $phone }}</span></p>
+            <p class="mt-5 text-sm text-brand-stone">Or call <span class="font-semibold text-brand-forest">{{ $phone }}</span></p>
         </div>
     </section>
 
@@ -332,8 +334,8 @@
                     <button type="button" data-toggle-hw aria-expanded="false" class="{{ $opt }} mt-3">I don’t know my BMI<span class="wl-opt__sub text-xs font-normal text-brand-stone">We’ll work it out from your height &amp; weight</span></button>
                     <div data-hw hidden class="mt-4 rounded-2xl border border-brand-hairline bg-brand-ivory p-5">
                         <div class="flex gap-2" role="group" aria-label="Units">
-                            <button type="button" data-unit="metric" aria-pressed="true" class="rounded-full border border-brand-forest px-4 py-1.5 text-xs font-semibold text-brand-forest aria-pressed:bg-brand-forest aria-pressed:text-white">cm / kg</button>
-                            <button type="button" data-unit="imperial" aria-pressed="false" class="rounded-full border border-brand-forest px-4 py-1.5 text-xs font-semibold text-brand-forest aria-pressed:bg-brand-forest aria-pressed:text-white">ft &amp; in / st &amp; lb</button>
+                            <button type="button" data-unit="metric" aria-pressed="true" class="rounded-full border border-brand-forest px-4 py-1.5 text-xs font-semibold text-brand-forest aria-pressed:bg-brand-primary aria-pressed:text-brand-forest">cm / kg</button>
+                            <button type="button" data-unit="imperial" aria-pressed="false" class="rounded-full border border-brand-forest px-4 py-1.5 text-xs font-semibold text-brand-forest aria-pressed:bg-brand-primary aria-pressed:text-brand-forest">ft &amp; in / st &amp; lb</button>
                         </div>
                         <div data-units="metric" class="mt-4">
                             <div data-unit-group="metric" class="grid gap-3 sm:grid-cols-2">

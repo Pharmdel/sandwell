@@ -2,7 +2,7 @@
     $c = $condition;
     $phone = config('pharmacy.phone');
     $free = in_array($c['tag'], ['Pharmacy First', 'Minor Ailments']);
-    $btnPrimary = 'inline-flex items-center justify-center gap-2 rounded-full bg-brand-moss px-7 py-3.5 text-sm font-semibold text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-brand-moss-hover hover:shadow-moss-glow active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-moss focus-visible:ring-offset-2';
+    $btnPrimary = 'inline-flex items-center justify-center gap-2 rounded-full bg-brand-primary px-7 py-3.5 text-sm font-semibold text-brand-forest transition-all duration-200 hover:-translate-y-0.5 hover:bg-brand-primary-hover hover:shadow-primary-glow active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-moss focus-visible:ring-offset-2';
     $input = 'w-full rounded-xl border border-brand-hairline bg-brand-ivory px-4 py-3 text-[15px] text-brand-forest transition placeholder:text-brand-stone-light focus:border-brand-forest focus:outline-none focus:ring-2 focus:ring-brand-forest/20';
     $label = 'mb-1.5 block text-xs font-semibold uppercase tracking-[0.08em] text-brand-stone-light';
     $related = collect(config('conditions.list'))->where('slug', '!==', $c['slug'])->where('tag', $c['tag'])->shuffle()->take(4);
@@ -19,20 +19,20 @@
     <x-page-hero image="mother-toddler.jpg" alt="A pharmacist in a consultation room" size="short">
         <div class="max-w-3xl">
             <div class="reveal flex flex-wrap items-center gap-2">
-                <x-chip :tone="$c['tag'] === 'Pharmacy First' ? 'nhs' : ($free ? 'orange' : 'quiet')">{{ $c['tag'] }}</x-chip>
-                <span class="text-[11px] font-semibold uppercase tracking-[0.1em] text-white/70">{{ $c['age_label'] }}{{ $free ? ' · free on the NHS' : '' }}</span>
+                <x-chip :tone="$c['tag'] === 'Pharmacy First' ? 'nhs' : ($free ? 'primary' : 'quiet')">{{ $c['tag'] }}</x-chip>
+                <span class="text-[11px] font-semibold uppercase tracking-[0.1em] text-brand-stone-dark">{{ $c['age_label'] }}{{ $free ? ' · free on the NHS' : '' }}</span>
             </div>
-            <h1 class="mt-5 text-4xl leading-[1.05] text-white md:text-[62px]" data-lines>
+            <h1 class="mt-5 text-4xl leading-[1.05] text-brand-forest md:text-[62px]" data-lines>
                 <span class="line-mask"><span>{{ $c['name'] }}</span></span>
             </h1>
-            <p class="reveal mt-6 max-w-xl text-lg leading-relaxed text-white/80" style="--reveal-delay:300ms">{{ $c['intro'] }}</p>
-            <ul class="reveal mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm font-medium text-white" style="--reveal-delay:380ms">
+            <p class="reveal mt-6 max-w-xl text-lg leading-relaxed text-brand-stone-dark" style="--reveal-delay:300ms">{{ $c['intro'] }}</p>
+            <ul class="reveal mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm font-medium text-brand-forest" style="--reveal-delay:380ms">
                 @foreach ([$free ? 'Free NHS treatment' : 'Expert pharmacist advice', '1-minute symptom check', 'No GP appointment needed'] as $li)
                     <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-brand-moss"></span>{{ $li }}</li>
                 @endforeach
             </ul>
             <div class="reveal mt-9" style="--reveal-delay:460ms">
-                <a href="#symptom-test" class="{{ $btnPrimary }}" data-magnetic>Check my symptoms →</a>
+                <x-btn variant="dark" href="#symptom-test" data-magnetic>Check my symptoms →</x-btn>
             </div>
         </div>
     </x-page-hero>
@@ -73,10 +73,10 @@
                         @if ($c['image'])
                             <div class="overflow-hidden rounded-3xl border border-brand-hairline shadow-editorial-card"><img src="{{ asset('images/'.$c['image']) }}" alt="" class="h-56 w-full object-cover"></div>
                         @endif
-                        <div class="no-interact rounded-[20px] border border-red-200 bg-red-50 p-6">
-                            <p class="text-[11px] font-bold uppercase tracking-[0.1em] text-red-700">Get help today instead if you have</p>
+                        <div class="no-interact rounded-[20px] border border-brand-danger-line bg-brand-danger-soft p-6">
+                            <p class="text-[11px] font-bold uppercase tracking-[0.1em] text-brand-danger">Get help today instead if you have</p>
                             <ul class="mt-3 space-y-2 text-sm leading-relaxed text-brand-forest">
-                                @foreach ($c['flags'] as $f)<li class="flex gap-2.5"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-red-500"></span>{{ $f }}</li>@endforeach
+                                @foreach ($c['flags'] as $f)<li class="flex gap-2.5"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-danger"></span>{{ $f }}</li>@endforeach
                             </ul>
                             <p class="mt-4 text-xs text-brand-stone">Call us on {{ $phone }}, your GP, or NHS 111. In an emergency call 999.</p>
                         </div>
