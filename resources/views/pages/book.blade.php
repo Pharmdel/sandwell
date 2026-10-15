@@ -13,11 +13,11 @@
         <div class="max-w-3xl">
             <p class="reveal text-[11px] font-bold uppercase tracking-[0.14em] text-brand-moss">Book online · About 2 minutes</p>
 
-            <h1 class="mt-5 text-4xl leading-[1.05] text-brand-forest md:text-[62px]" data-lines>
+            <h1 class="mt-5 text-4xl leading-[1.05] text-white md:text-[62px]" data-lines>
                 <span class="line-mask"><span>Book your <span class="editorial-highlight">appointment.</span></span></span>
             </h1>
 
-            <p class="reveal mt-6 max-w-xl text-lg leading-relaxed text-brand-stone-dark" style="--reveal-delay:300ms">
+            <p class="reveal mt-6 max-w-xl text-lg leading-relaxed text-white/80" style="--reveal-delay:300ms">
                 Choose a service, check eligibility, pick a branch and time. You'll get a text
                 confirmation straight away.
             </p>
@@ -53,10 +53,10 @@
 
                         <div class="mt-8 grid gap-4 sm:grid-cols-2">
                             @foreach ($services as $i => $service)
-                                <label class="group relative flex cursor-pointer flex-col rounded-[20px] border border-brand-hairline p-6 transition-all duration-200 hover:border-brand-forest/40 has-[:checked]:border-2 has-[:checked]:border-brand-forest has-[:checked]:bg-brand-primary-soft">
+                                <label class="group relative flex cursor-pointer flex-col rounded-[20px] border border-brand-hairline p-6 transition-all duration-200 hover:border-brand-forest/40 has-[:checked]:border-2 has-[:checked]:border-brand-forest">
                                     <input type="radio" name="service" value="{{ $service['value'] }}" @checked($i === 0)
                                         class="peer sr-only">
-                                    <span class="absolute right-5 top-5 hidden h-5 w-5 items-center justify-center rounded-full bg-brand-primary text-brand-forest peer-checked:flex">
+                                    <span class="absolute right-5 top-5 hidden h-5 w-5 items-center justify-center rounded-full bg-brand-moss text-white peer-checked:flex">
                                         <svg class="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
                                     </span>
                                     <span class="flex h-11 w-11 items-center justify-center rounded-full bg-brand-pistachio">
@@ -72,7 +72,7 @@
                         <div class="mt-8 flex flex-col items-start gap-5 border-t border-brand-hairline pt-6 sm:flex-row sm:items-center sm:justify-between">
                             <p class="text-sm text-brand-stone">Walk-ins are also welcome at all six branches.</p>
                             <button type="submit"
-                                class="inline-flex items-center justify-center gap-2 rounded-full bg-brand-primary px-7 py-3.5 text-sm font-semibold text-brand-forest transition-all duration-200 hover:-translate-y-0.5 hover:bg-brand-primary-hover hover:shadow-primary-glow active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-moss focus-visible:ring-offset-2">
+                                class="inline-flex items-center justify-center gap-2 rounded-full bg-brand-moss px-7 py-3.5 text-sm font-semibold text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-brand-moss-hover hover:shadow-moss-glow active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-moss focus-visible:ring-offset-2">
                                 Continue
                                 <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-width="2" d="M5 12h14m-5-5 5 5-5 5"/></svg>
                             </button>

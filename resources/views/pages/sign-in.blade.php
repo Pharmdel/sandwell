@@ -1,4 +1,4 @@
-{{-- No overlay header here: the right half is white, so the header keeps its own ivory ground. --}}
+{{-- No overlay header here: the right half is white, so white header text would disappear. --}}
 <x-layout title="Sign in" description="Track deliveries, manage repeat prescriptions and keep your basket in one place.">
     <section data-hero class="grid min-h-[calc(100svh-5rem)] lg:grid-cols-2">
         {{-- Left editorial panel, full-bleed image behind --}}
@@ -8,7 +8,7 @@
                     srcset="{{ asset('images/hero/nhs-app-1600.jpg') }} 1600w, {{ asset('images/hero/nhs-app-2600.jpg') }} 2600w"
                     sizes="(min-width: 1024px) 50vw, 100vw" alt="" class="h-full w-full object-cover">
             </div>
-            <div class="pointer-events-none absolute inset-0 bg-gradient-to-br from-brand-primary/95 via-brand-primary/90 to-brand-primary/75"></div>
+            <div class="pointer-events-none absolute inset-0 bg-gradient-to-br from-brand-forest-deep/95 via-brand-forest-deep/85 to-brand-forest-deep/70"></div>
 
             <div class="relative w-full max-w-lg">
                 <span class="reveal inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.14em] text-brand-moss">
@@ -16,11 +16,11 @@
                     My account
                 </span>
 
-                <h1 class="mt-5 text-5xl leading-[1.02] text-brand-forest md:text-[68px]" data-lines>
+                <h1 class="mt-5 text-5xl leading-[1.02] text-white md:text-[68px]" data-lines>
                     <span class="line-mask"><span>Welcome <span class="editorial-highlight">back.</span></span></span>
                 </h1>
 
-                <p class="reveal mt-6 text-lg leading-relaxed text-brand-stone-dark" style="--reveal-delay:300ms">
+                <p class="reveal mt-6 text-lg leading-relaxed text-white/80" style="--reveal-delay:300ms">
                     Track deliveries, manage repeat prescriptions and keep your basket in one place.
                 </p>
 
@@ -30,20 +30,20 @@
                         ['Reorder repeats in one tap', 'M4 4v6h6M20 20v-6h-6M20 9A8 8 0 006 5.3M4 15a8 8 0 0014 3.7'],
                         ['Your basket and receipts, saved', 'M6 7h12l-1 13H7zM9 7a3 3 0 016 0'],
                     ] as $row)
-                        <div class="reveal flex items-center gap-4 border-b border-brand-forest/20 py-4">
-                            <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white/60 backdrop-blur">
+                        <div class="reveal flex items-center gap-4 border-b border-white/15 py-4">
+                            <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white/10 backdrop-blur">
                                 <svg class="h-5 w-5 text-brand-moss" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="{{ $row[1] }}"/></svg>
                             </span>
-                            <span class="text-[15px] font-medium text-brand-forest">{{ $row[0] }}</span>
+                            <span class="text-[15px] font-medium text-white">{{ $row[0] }}</span>
                         </div>
                     @endforeach
                 </div>
 
-                <div class="no-interact reveal mt-8 flex items-center gap-3 rounded-2xl border border-brand-forest/15 bg-white/60 p-4 backdrop-blur">
-                    <span class="flex h-10 w-10 items-center justify-center rounded-full bg-brand-forest text-xs font-semibold text-white">LP</span>
+                <div class="no-interact reveal mt-8 flex items-center gap-3 rounded-2xl border border-white/15 bg-white/10 p-4 backdrop-blur">
+                    <span class="flex h-10 w-10 items-center justify-center rounded-full bg-brand-moss text-xs font-semibold text-white">LP</span>
                     <span>
-                        <span class="block text-xs text-brand-stone-dark">Nominated NHS dispensing hub</span>
-                        <span class="block text-sm font-semibold text-brand-forest">Signed in as a patient of Lyng Pharmacy</span>
+                        <span class="block text-xs text-white/60">Nominated NHS dispensing hub</span>
+                        <span class="block text-sm font-semibold text-white">Signed in as a patient of Lyng Pharmacy</span>
                     </span>
                 </div>
             </div>
@@ -80,7 +80,7 @@
                         </div>
 
                         <button type="submit"
-                            class="w-full rounded-full bg-brand-primary px-7 py-3.5 text-sm font-semibold text-brand-forest transition-all duration-200 hover:-translate-y-0.5 hover:bg-brand-primary-hover hover:shadow-primary-glow active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-moss focus-visible:ring-offset-2">
+                            class="w-full rounded-full bg-brand-moss px-7 py-3.5 text-sm font-semibold text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-brand-moss-hover hover:shadow-moss-glow active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-moss focus-visible:ring-offset-2">
                             Sign in
                         </button>
                     </form>

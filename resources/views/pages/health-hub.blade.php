@@ -9,12 +9,12 @@
         <div class="max-w-3xl">
             <p class="reveal text-[11px] font-bold uppercase tracking-[0.14em] text-brand-moss">Health Hub</p>
 
-            <h1 class="mt-5 text-4xl leading-[1.05] text-brand-forest md:text-[66px]" data-lines>
+            <h1 class="mt-5 text-4xl leading-[1.05] text-white md:text-[66px]" data-lines>
                 <span class="line-mask"><span>Health advice you can</span></span>
                 <span class="line-mask"><span class="editorial-highlight">actually use.</span></span>
             </h1>
 
-            <p class="reveal mt-7 max-w-xl text-lg leading-relaxed text-brand-stone-dark" style="--reveal-delay:340ms">
+            <p class="reveal mt-7 max-w-xl text-lg leading-relaxed text-white/80" style="--reveal-delay:340ms">
                 Plain-English guidance from our pharmacists — seasonal, practical and free.
             </p>
         </div>
@@ -27,7 +27,7 @@
                 class="reveal tilt group grid overflow-hidden rounded-[28px] border border-brand-hairline bg-white shadow-editorial-card transition-all duration-[250ms] hover:-translate-y-1 hover:shadow-editorial-hover lg:grid-cols-2">
                 <img src="{{ asset('images/flu-vaccine.jpg') }}" alt="" class="h-72 w-full object-cover lg:h-full">
                 <div class="flex flex-col justify-center p-8 md:p-12">
-                    <x-chip tone="soft" class="self-start">{{ $featured['chip'] }}</x-chip>
+                    <x-chip tone="peach" class="self-start">{{ $featured['chip'] }}</x-chip>
                     <h2 class="mt-4 text-3xl leading-tight md:text-[36px]">
                         Flu jabs are back. <span class="editorial-highlight">Who should get one, and when.</span>
                     </h2>

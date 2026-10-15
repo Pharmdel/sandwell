@@ -66,7 +66,7 @@
             </a>
             <div class="flex items-center gap-3">
                 <a href="{{ config('pharmacy.phone_href') }}"
-                    class="hidden items-center gap-2 rounded-full bg-brand-primary px-5 py-2.5 text-sm font-medium text-brand-forest transition-all hover:bg-brand-primary-hover hover:shadow-primary-glow sm:inline-flex">
+                    class="hidden items-center gap-2 rounded-full bg-brand-moss px-5 py-2.5 text-sm font-medium text-white transition-all hover:bg-brand-moss-hover hover:shadow-moss-glow sm:inline-flex">
                     Call {{ config('pharmacy.phone') }}
                 </a>
                 <button type="button" data-menu-close aria-label="Close menu"
@@ -116,7 +116,7 @@
                         Check your eligibility in under a minute, then book across all six branches.
                     </p>
                     <a href="{{ route('services.show', 'flu-covid-vaccinations') }}"
-                        class="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-brand-primary px-6 py-3.5 text-sm font-semibold text-brand-forest transition-all hover:bg-brand-primary-hover hover:shadow-primary-glow">
+                        class="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-brand-moss px-6 py-3.5 text-sm font-semibold text-white transition-all hover:bg-brand-moss-hover hover:shadow-moss-glow">
                         Check eligibility
                         <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                             <path stroke-linecap="round" stroke-width="2" d="M5 12h14m-5-5 5 5-5 5" />

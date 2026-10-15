@@ -3,22 +3,22 @@
         <div class="max-w-3xl">
             <p class="reveal text-[11px] font-bold uppercase tracking-[0.14em] text-brand-moss">NHS services · Free at the point of care</p>
 
-            <h1 class="mt-5 text-4xl leading-[1.05] text-brand-forest md:text-[66px]" data-lines>
+            <h1 class="mt-5 text-4xl leading-[1.05] text-white md:text-[66px]" data-lines>
                 <span class="line-mask"><span>Free NHS care,</span></span>
                 <span class="line-mask"><span class="editorial-highlight">from your local pharmacy.</span></span>
             </h1>
 
-            <p class="reveal mt-7 max-w-xl text-lg leading-relaxed text-brand-stone-dark" style="--reveal-delay:340ms">
+            <p class="reveal mt-7 max-w-xl text-lg leading-relaxed text-white/80" style="--reveal-delay:340ms">
                 No GP appointment needed. Walk into any of our six branches or book online for same-day
                 pharmacist-led treatment, vaccinations and health checks.
             </p>
 
             <div class="reveal mt-10 flex flex-wrap gap-3" style="--reveal-delay:440ms">
-                <x-btn variant="dark" :href="route('book')" data-magnetic>Book an appointment</x-btn>
-                <x-btn :href="route('repeat-prescriptions')" variant="ghost" data-magnetic>Order repeat prescription</x-btn>
+                <x-btn :href="route('book')" data-magnetic>Book an appointment</x-btn>
+                <x-btn :href="route('repeat-prescriptions')" variant="light" data-magnetic>Order repeat prescription</x-btn>
             </div>
 
-            <div class="no-interact reveal mt-12 border-t border-brand-forest/20 pt-7" style="--reveal-delay:540ms">
+            <div class="no-interact reveal mt-12 border-t border-white/15 pt-7" style="--reveal-delay:540ms">
                 <x-chip tone="nhs">NHS England contracted</x-chip>
             </div>
         </div>

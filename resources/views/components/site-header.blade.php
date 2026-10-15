@@ -1,10 +1,11 @@
-@props(['overlay' => false])
+@props(['overlay' => false, 'overlayLight' => false])
 
 <header data-header @class([
     'fixed inset-x-0 top-0 z-40 border-b transition-all duration-500',
     'border-brand-hairline bg-brand-ivory/80 backdrop-blur-md',
     'is-overlay' => $overlay,
-    '[&.is-scrolled]:shadow-[0_1px_24px_-4px_rgb(15_41_15/0.1)]',
+    'is-overlay-light' => $overlayLight,
+    '[&.is-scrolled]:shadow-[0_1px_24px_-4px_rgb(37_41_85/0.1)]',
 ])>
     <div class="mx-auto flex h-20 max-w-[1280px] items-center justify-between px-6 sm:px-8">
         <a href="{{ route('home') }}"
@@ -29,7 +30,7 @@
             </button>
 
             <a href="{{ config('pharmacy.phone_href') }}" data-magnetic
-                class="header-call inline-flex items-center gap-2 rounded-full bg-brand-primary px-5 py-2.5 text-sm font-medium text-brand-forest transition-all duration-300 hover:bg-brand-primary-hover hover:shadow-primary-glow active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-moss">
+                class="inline-flex items-center gap-2 rounded-full bg-brand-moss px-5 py-2.5 text-sm font-medium text-white transition-all duration-300 hover:bg-brand-moss-hover hover:shadow-moss-glow active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-moss">
                 <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>

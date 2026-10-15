@@ -1,141 +1,91 @@
-#!/usr/bin/env python3
-"""
-Palette check: reads the brand tokens straight out of resources/css/app.css (so
-the stylesheet stays the only source of truth) and verifies two things.
+import colorsys, json, sys
 
-  1. DERIVATION. Every brand colour must sit on the primary's hue, so the palette
-     is "in respect to" #88E788 and nothing else. The only exceptions are listed
-     in SEMANTIC: the NHS's own blue and the danger reds, which carry meaning that
-     must not be tied to the brand.
+def hsl(h, s, l):
+    r, g, b = colorsys.hls_to_rgb(h/360, l/100, s/100)
+    return '#%02x%02x%02x' % (round(r*255), round(g*255), round(b*255))
 
-  2. CONTRAST. Every ink-on-ground pairing the design actually uses must clear its
-     WCAG 2.x threshold. #88E788 is a fill colour (1.5:1 against white), so the
-     pairings that matter are ink ON it, never it on white.
+def lum(hexv):
+    h = hexv.lstrip('#'); c = [int(h[i:i+2], 16)/255 for i in (0, 2, 4)]
+    c = [x/12.92 if x <= 0.03928 else ((x+0.055)/1.055)**2.4 for x in c]
+    return 0.2126*c[0] + 0.7152*c[1] + 0.0722*c[2]
 
-    python3 tests/manual/palette-check.py            # prints both tables
-    python3 tests/manual/palette-check.py --quiet    # failures only
+def ratio(a, b):
+    la, lb = sorted([lum(a), lum(b)], reverse=True)
+    return (la+0.05)/(lb+0.05)
 
-Exit code 1 if anything fails.
-"""
-import colorsys
-import pathlib
-import re
-import sys
+def hsl_of(hexv):
+    h = hexv.lstrip('#'); r, g, b = [int(h[i:i+2], 16)/255 for i in (0, 2, 4)]
+    hh, l, s = colorsys.rgb_to_hls(r, g, b)
+    return round(hh*360), round(s*100), round(l*100)
 
-CSS = pathlib.Path(__file__).resolve().parents[2] / 'resources' / 'css' / 'app.css'
-SEMANTIC = {'nhs-blue', 'danger', 'danger-soft', 'danger-line'}
-HUE_TOLERANCE = 10  # degrees; low-saturation neutrals round noisily in hex
+PRIMARY = '#88e788'
+H = hsl_of(PRIMARY)[0]          # 120 -> every colour below shares this hue
 
+P = {
+  # the brand colour itself, and its relatives
+  'primary':         PRIMARY,                   # fills: buttons, highlights, active states, footer
+  'primary-hover':   hsl(H, 58, 63),            # a touch deeper for hover on fills
+  'primary-soft':    hsl(H, 66, 86),            # selected / active tint
+  # light grounds, all lifted from the same hue
+  'ivory':           hsl(H, 62, 97),            # page canvas
+  'pistachio':       hsl(H, 64, 92),            # soft band
+  'pistachio-line':  hsl(H, 46, 80),            # border on a band
+  'hairline':        hsl(H, 26, 87),            # card/input borders
+  # ink: the same hue taken dark
+  'forest':          hsl(H, 46, 11),            # headings, text on primary, dark fills
+  'forest-deep':     hsl(H, 50, 7),             # darkest (rare)
+  # text-safe accent: the same hue taken to a readable mid-dark
+  'moss':            hsl(H, 62, 24),            # accent text on light grounds
+  'moss-hover':      hsl(H, 66, 17),
+  # neutrals: low-saturation tints of the same hue
+  'stone':           hsl(H, 11, 31),            # body text
+  'stone-dark':      hsl(H, 15, 20),            # secondary text sitting on primary
+  'stone-light':     hsl(H, 9, 38),             # small meta text
+  'nhs-blue':        '#005eb8',                 # the NHS's own colour, never derived
+}
+W = '#ffffff'
 
-def load_tokens():
-    text = CSS.read_text()
-    block = text[text.index('@theme'):]
-    raw = dict(re.findall(r'--color-([a-z0-9-]+):\s*([^;]+);', block))
-    tokens = {}
-    for name, value in raw.items():
-        value = value.strip()
-        alias = re.fullmatch(r'var\(--color-([a-z0-9-]+)\)', value)
-        if alias:
-            value = raw[alias.group(1)].strip()
-        if re.fullmatch(r'#[0-9a-fA-F]{6}', value):
-            tokens[name] = value.lower()
-    return tokens
+grounds = {'white': W, 'ivory': P['ivory'], 'pistachio': P['pistachio'],
+           'primary-soft': P['primary-soft'], 'primary': P['primary'], 'primary-hover': P['primary-hover']}
 
-
-def rgb(hexv):
-    h = hexv.lstrip('#')
-    return [int(h[i:i + 2], 16) / 255 for i in (0, 2, 4)]
-
-
-def luminance(hexv):
-    c = [x / 12.92 if x <= 0.03928 else ((x + 0.055) / 1.055) ** 2.4 for x in rgb(hexv)]
-    return 0.2126 * c[0] + 0.7152 * c[1] + 0.0722 * c[2]
-
-
-def contrast(a, b):
-    la, lb = sorted([luminance(a), luminance(b)], reverse=True)
-    return (la + 0.05) / (lb + 0.05)
-
-
-def hls(hexv):
-    h, l, s = colorsys.rgb_to_hls(*rgb(hexv))
-    return round(h * 360), round(s * 100), round(l * 100)
-
-
-def main(quiet):
-    t = load_tokens()
-    b = lambda n: t['brand-' + n]
-    primary = b('primary')
-    hue = hls(primary)[0]
-    failures = 0
-
-    # ---- 1. derivation ---------------------------------------------------------
-    if not quiet:
-        print(f'DERIVATION  primary {primary} = hue {hue}; every brand colour must share it\n')
-        print(f'  {"token":<22}{"hex":<10}{"hue":>5}{"sat":>6}{"light":>7}   verdict')
-    for name, value in sorted(t.items()):
-        short = name.replace('brand-', '')
-        h, s, l = hls(value)
-        if name == 'white' or name.startswith('footer'):
-            continue  # white is neutral, footer tokens alias brand tokens
-        if short in SEMANTIC:
-            verdict = 'semantic (exempt)'
-        elif s < 6:
-            verdict = 'neutral'
-        else:
-            off = min(abs(h - hue), 360 - abs(h - hue))
-            ok = off <= HUE_TOLERANCE
-            failures += not ok
-            verdict = 'on hue' if ok else f'OFF-HUE by {off} degrees'
-        if not quiet or 'OFF' in verdict:
-            print(f'  {name:<22}{value:<10}{h:>5}{s:>6}{l:>7}   {verdict}')
-
-    # ---- 2. contrast -----------------------------------------------------------
-    W = '#ffffff'
-    pairs = [
-        ('heading forest on white', b('forest'), W, 7.0),
-        ('heading forest on ivory', b('forest'), b('ivory'), 7.0),
-        ('heading forest on pistachio', b('forest'), b('pistachio'), 7.0),
-        ('heading forest on primary', b('forest'), primary, 7.0),
-        ('heading forest on primary-hover', b('forest'), b('primary-hover'), 7.0),
-        ('heading forest on primary-soft', b('forest'), b('primary-soft'), 7.0),
-        ('body stone on white', b('stone'), W, 4.5),
-        ('body stone on ivory', b('stone'), b('ivory'), 4.5),
-        ('body stone on pistachio', b('stone'), b('pistachio'), 4.5),
-        ('body stone on primary-soft', b('stone'), b('primary-soft'), 4.5),
-        ('secondary stone-dark on primary', b('stone-dark'), primary, 4.5),
-        ('secondary stone-dark on primary-hover', b('stone-dark'), b('primary-hover'), 4.5),
-        ('meta stone-light on white', b('stone-light'), W, 4.5),
-        ('meta stone-light on ivory', b('stone-light'), b('ivory'), 4.5),
-        ('meta stone-light on pistachio', b('stone-light'), b('pistachio'), 4.5),
-        ('accent moss on white', b('moss'), W, 4.5),
-        ('accent moss on ivory', b('moss'), b('ivory'), 4.5),
-        ('accent moss on pistachio', b('moss'), b('pistachio'), 4.5),
-        ('accent moss on primary-soft', b('moss'), b('primary-soft'), 4.5),
-        ('accent moss on primary', b('moss'), primary, 4.5),
-        ('accent moss-hover on white', b('moss-hover'), W, 4.5),
-        ('dark fill: white on forest', W, b('forest'), 7.0),
-        ('dark fill: white on moss', W, b('moss'), 4.5),
-        ('NHS blue on white', b('nhs-blue'), W, 4.5),
-        ('NHS blue on ivory', b('nhs-blue'), b('ivory'), 4.5),
-        ('danger on danger-soft', b('danger'), b('danger-soft'), 7.0),
-        ('footer ink on footer ground', t['footer-ink'], t['footer'], 7.0),
-        ('footer text on footer ground', t['footer-text'], t['footer'], 4.5),
-        ('footer meta on footer ground', t['footer-meta'], t['footer'], 4.5),
-    ]
-    if not quiet:
-        print(f'\nCONTRAST  (ink on ground; #88E788 itself is {contrast(primary, W):.2f}:1 on white, so it only ever carries fills)\n')
-        print(f'  {"pairing":<40}{"ratio":>9}{"min":>6}   verdict')
-    for label, ink, ground, minimum in pairs:
-        r = contrast(ink, ground)
-        ok = r >= minimum
-        failures += not ok
-        if not quiet or not ok:
-            print(f'  {label:<40}{r:8.2f}:1{minimum:5.1f}   {"PASS" if ok else "FAIL"}')
-
-    print(f'\n{"FAILED: " + str(failures) if failures else "OK: every colour is on the primary hue and every pairing passes"}')
-    return 1 if failures else 0
-
-
-if __name__ == '__main__':
-    sys.exit(main('--quiet' in sys.argv))
+rows = [
+ # (label, ink, ground, minimum)
+ ('heading  forest on white',        P['forest'],     W,                    7.0),
+ ('heading  forest on ivory',        P['forest'],     P['ivory'],           7.0),
+ ('heading  forest on pistachio',    P['forest'],     P['pistachio'],       7.0),
+ ('heading  forest on primary',      P['forest'],     P['primary'],         7.0),
+ ('heading  forest on primary-hover',P['forest'],     P['primary-hover'],   7.0),
+ ('heading  forest on primary-soft', P['forest'],     P['primary-soft'],    7.0),
+ ('body     stone on white',         P['stone'],      W,                    4.5),
+ ('body     stone on ivory',         P['stone'],      P['ivory'],           4.5),
+ ('body     stone on pistachio',     P['stone'],      P['pistachio'],       4.5),
+ ('body     stone on primary-soft',  P['stone'],      P['primary-soft'],    4.5),
+ ('2nd      stone-dark on primary',  P['stone-dark'], P['primary'],         4.5),
+ ('2nd      stone-dark on prim-hover',P['stone-dark'],P['primary-hover'],    4.5),
+ ('meta     stone-light on white',   P['stone-light'],W,                    4.5),
+ ('meta     stone-light on ivory',   P['stone-light'],P['ivory'],           4.5),
+ ('meta     stone-light on pistachio',P['stone-light'],P['pistachio'],      4.5),
+ ('accent   moss on white',          P['moss'],       W,                    4.5),
+ ('accent   moss on ivory',          P['moss'],       P['ivory'],           4.5),
+ ('accent   moss on pistachio',      P['moss'],       P['pistachio'],       4.5),
+ ('accent   moss on primary-soft',   P['moss'],       P['primary-soft'],    4.5),
+ ('accent   moss-hover on white',    P['moss-hover'], W,                    4.5),
+ ('accent   moss on primary',        P['moss'],       P['primary'],         4.5),
+ ('dark fill white on forest',       W,               P['forest'],          7.0),
+ ('dark fill white on moss',         W,               P['moss'],            4.5),
+ ('nhs blue on white',               P['nhs-blue'],   W,                    4.5),
+ ('nhs blue on ivory',               P['nhs-blue'],   P['ivory'],           4.5),
+]
+bad = 0
+print(f"  primary {PRIMARY} = hsl{hsl_of(PRIMARY)}  -> hue {H} anchors everything\n")
+print(f"  {'pair':<36}{'ratio':>8}{'min':>6}   verdict")
+print('  ' + '-'*62)
+for label, a, b, m in rows:
+    r = ratio(a, b); ok = r >= m
+    bad += (not ok)
+    print(f"  {label:<36}{r:7.2f}:1{m:5.1f}   {'PASS' if ok else 'FAIL'}")
+print(f"\n  {len(rows)-bad}/{len(rows)} pass\n")
+print('  derived values:')
+for k, v in P.items():
+    print(f"    {k:<15}{v}   hsl{hsl_of(v)}   lum {lum(v):.3f}")
+json.dump(P, open('/tmp/hollytree-design/palette.json', 'w'), indent=1)

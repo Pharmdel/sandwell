@@ -7,15 +7,15 @@
     <article>
         <x-page-hero :image="$article['image']" alt="">
             <div class="max-w-3xl">
-                <div class="reveal"><x-chip tone="primary">{{ $article['chip'] }}</x-chip></div>
+                <div class="reveal"><x-chip tone="orange">{{ $article['chip'] }}</x-chip></div>
 
-                <h1 class="mt-6 text-4xl leading-[1.08] text-brand-forest md:text-[58px]" data-lines>
+                <h1 class="mt-6 text-4xl leading-[1.08] text-white md:text-[58px]" data-lines>
                     <span class="line-mask"><span>{{ $article['title'] }}</span></span>
                 </h1>
 
-                <p class="reveal mt-7 max-w-xl text-xl leading-relaxed text-brand-stone-dark" style="--reveal-delay:300ms">{{ $article['blurb'] }}</p>
+                <p class="reveal mt-7 max-w-xl text-xl leading-relaxed text-white/80" style="--reveal-delay:300ms">{{ $article['blurb'] }}</p>
 
-                <p class="no-interact reveal mt-9 border-t border-brand-forest/20 pt-6 text-xs uppercase tracking-[0.1em] text-brand-stone-dark" style="--reveal-delay:400ms">
+                <p class="no-interact reveal mt-9 border-t border-white/15 pt-6 text-xs uppercase tracking-[0.1em] text-white/60" style="--reveal-delay:400ms">
                     By our pharmacy team
                     @if (! empty($article['reviewed'])) · {{ $article['reviewed'] }} @endif
                     @if (! empty($article['updated'])) · Updated {{ $article['updated'] }} @endif
@@ -39,10 +39,10 @@
             @endforeach
 
             @if (! empty($article['cta']))
-                <aside class="reveal mt-14 rounded-[24px] bg-brand-primary p-8 text-brand-forest md:p-10">
-                    <h2 class="text-[26px] leading-snug text-brand-forest">{{ $article['cta'][0] }}</h2>
-                    <p class="mt-3 text-sm text-brand-stone-dark">Free suitability check · Free consultation call · Nothing to pay until you begin treatment · {{ config('pharmacy.phone') }}</p>
-                    <x-btn variant="dark" :href="route('weight-loss')" class="mt-6">{{ $article['cta'][1] }}</x-btn>
+                <aside class="reveal mt-14 rounded-[24px] bg-brand-forest p-8 text-white md:p-10">
+                    <h2 class="text-[26px] leading-snug text-white">{{ $article['cta'][0] }}</h2>
+                    <p class="mt-3 text-sm text-white/75">Free suitability check · Free consultation call · Nothing to pay until you begin treatment · {{ config('pharmacy.phone') }}</p>
+                    <x-btn :href="route('weight-loss')" class="mt-6">{{ $article['cta'][1] }}</x-btn>
                 </aside>
             @endif
 

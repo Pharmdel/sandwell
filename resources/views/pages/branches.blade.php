@@ -3,17 +3,17 @@
         <div class="max-w-3xl">
             <p class="reveal text-[11px] font-bold uppercase tracking-[0.14em] text-brand-moss">Where to find us</p>
 
-            <h1 class="mt-5 text-4xl leading-[1.05] text-brand-forest md:text-[66px]" data-lines>
+            <h1 class="mt-5 text-4xl leading-[1.05] text-white md:text-[66px]" data-lines>
                 <span class="line-mask"><span>Six branches.</span></span>
                 <span class="line-mask"><span class="editorial-highlight">One standard of care.</span></span>
             </h1>
 
-            <p class="reveal mt-7 max-w-xl text-lg leading-relaxed text-brand-stone-dark" style="--reveal-delay:340ms">
+            <p class="reveal mt-7 max-w-xl text-lg leading-relaxed text-white/80" style="--reveal-delay:340ms">
                 Every branch is a separately registered NHS community pharmacy, run by the same team to
                 the same standards. Walk into whichever is closest.
             </p>
 
-            <div class="no-interact reveal mt-12 flex flex-wrap gap-x-6 gap-y-2 border-t border-brand-forest/20 pt-7 text-[11px] font-semibold uppercase tracking-[0.1em] text-brand-stone-dark" style="--reveal-delay:440ms">
+            <div class="no-interact reveal mt-12 flex flex-wrap gap-x-6 gap-y-2 border-t border-white/15 pt-7 text-[11px] font-semibold uppercase tracking-[0.1em] text-white/60" style="--reveal-delay:440ms">
                 <span>Open Mon–Sat</span>
                 <span>Free parking at most branches</span>
                 <span>Free delivery</span>
@@ -36,12 +36,12 @@
                         <div class="mt-5 flex flex-1 flex-col">
                             <div class="flex items-start justify-between gap-2">
                                 <h3 class="text-[26px] leading-tight">{{ $branch['name'] }}</h3>
-                                @if ($branch['hub'])<x-chip tone="soft">Dispensing hub</x-chip>@endif
+                                @if ($branch['hub'])<x-chip tone="peach">Dispensing hub</x-chip>@endif
                             </div>
                             <p class="mt-2 text-sm text-brand-stone">{{ $branch['address'] }}</p>
                             <p class="mt-1 text-sm text-brand-stone-light">{{ $branch['postcode'] }}</p>
                             <p class="mt-3 flex items-center gap-1.5 text-xs font-medium text-brand-moss">
-                                <span class="h-1.5 w-1.5 rounded-full bg-brand-moss"></span>
+                                <span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span>
                                 Open until {{ $branch['closes'] }}
                             </p>
                             <div class="mt-4 flex flex-wrap gap-1.5 border-t border-brand-hairline pt-4">
