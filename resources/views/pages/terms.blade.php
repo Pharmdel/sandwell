@@ -4,13 +4,13 @@
     <x-page-hero image="team.jpg" alt="The pharmacy team" size="short">
         <div class="max-w-3xl">
             <p class="reveal text-[11px] font-bold uppercase tracking-[0.14em] text-brand-moss">Legal</p>
-            <h1 class="mt-5 text-4xl leading-[1.05] text-brand-forest md:text-[62px]" data-lines>
+            <h1 class="mt-5 text-4xl leading-[1.05] text-white md:text-[62px]" data-lines>
                 <span class="line-mask"><span>Terms of <span class="editorial-highlight">service.</span></span></span>
             </h1>
-            <p class="reveal mt-6 max-w-xl text-lg leading-relaxed text-brand-stone-dark" style="--reveal-delay:300ms">
+            <p class="reveal mt-6 max-w-xl text-lg leading-relaxed text-white/80" style="--reveal-delay:300ms">
                 The terms that apply when you use our website and services.
             </p>
-            <p class="reveal mt-4 text-xs uppercase tracking-[0.1em] text-brand-stone-dark" style="--reveal-delay:380ms">Last updated: 16 August 2026</p>
+            <p class="reveal mt-4 text-xs uppercase tracking-[0.1em] text-white/60" style="--reveal-delay:380ms">Last updated: 16 August 2026</p>
         </div>
     </x-page-hero>
 

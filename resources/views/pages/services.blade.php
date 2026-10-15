@@ -21,12 +21,12 @@
 <x-layout title="All services" description="Every NHS and private service across Hollytree Pharmacy — Pharmacy First, vaccinations, contraception, blood pressure, weight loss and more." hero>
     <x-page-hero image="team.jpg" alt="The pharmacy team at the counter" size="short">
         <div class="max-w-3xl">
-            <x-eyebrow class="reveal !text-brand-moss">Everything we offer</x-eyebrow>
-            <h1 class="mt-4 text-4xl leading-[1.06] text-brand-forest md:text-[62px]" data-lines>
+            <x-eyebrow class="reveal !text-brand-moss-soft">Everything we offer</x-eyebrow>
+            <h1 class="mt-4 text-4xl leading-[1.06] text-white md:text-[62px]" data-lines>
                 <span class="line-mask"><span>All our services,</span></span>
                 <span class="line-mask"><span class="editorial-highlight">in one place.</span></span>
             </h1>
-            <p class="reveal mt-6 max-w-xl text-lg leading-relaxed text-brand-stone-dark" style="--reveal-delay:280ms">
+            <p class="reveal mt-6 max-w-xl text-lg leading-relaxed text-white/80" style="--reveal-delay:280ms">
                 NHS services free at the point of use, and private services booked with our pharmacist —
                 across all six branches.
             </p>

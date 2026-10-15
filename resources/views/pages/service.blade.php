@@ -9,14 +9,14 @@
         <div class="max-w-3xl">
             <span class="reveal inline-flex items-center gap-2.5 rounded-full bg-white/95 py-1.5 pl-1.5 pr-4 shadow-editorial-card backdrop-blur">
                 <span @class([
-                    'rounded-full px-3 py-1 text-[11px] font-bold uppercase tracking-[0.08em] text-brand-forest',
+                    'rounded-full px-3 py-1 text-[11px] font-bold uppercase tracking-[0.08em] text-white',
                     'bg-brand-nhs-blue' => $isNhs,
                     'bg-brand-moss' => ! $isNhs,
                 ])>{{ $isNhs ? 'NHS service' : 'Private service' }}</span>
                 <a href="{{ route('services') }}" class="text-xs font-semibold text-brand-forest hover:text-brand-moss sm:text-[13px]">All services</a>
             </span>
 
-            <h1 class="mt-6 text-4xl leading-[1.06] text-brand-forest md:text-[62px]" data-lines>
+            <h1 class="mt-6 text-4xl leading-[1.06] text-white md:text-[62px]" data-lines>
                 @php $h1 = $service['h1']; $hl = $service['highlight'] ?? null; @endphp
                 @if ($hl && str_contains($h1, $hl))
                     <span class="line-mask"><span>{{ str($h1)->before($hl) }}<span class="editorial-highlight">{{ $hl }}</span></span></span>
@@ -25,11 +25,11 @@
                 @endif
             </h1>
 
-            <p class="reveal mt-6 max-w-xl text-lg leading-relaxed text-brand-stone-dark" style="--reveal-delay:280ms">{{ $service['intro'] }}</p>
+            <p class="reveal mt-6 max-w-xl text-lg leading-relaxed text-white/80" style="--reveal-delay:280ms">{{ $service['intro'] }}</p>
 
             <ul class="no-interact reveal mt-8 flex flex-wrap gap-x-6 gap-y-2" style="--reveal-delay:380ms">
                 @foreach ($service['badges'] as $badge)
-                    <li class="flex items-center gap-2 text-sm text-brand-stone-dark">
+                    <li class="flex items-center gap-2 text-sm text-white/75">
                         <svg class="h-4 w-4 shrink-0 text-brand-moss" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
                         {{ $badge }}
                     </li>
@@ -197,7 +197,7 @@
                         </div>
 
                         <button type="button" data-flu-run
-                            class="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-brand-primary px-6 py-3.5 text-sm font-semibold text-brand-forest transition-all duration-300 hover:bg-brand-primary-hover hover:shadow-primary-glow active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-moss">
+                            class="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-brand-moss px-6 py-3.5 text-sm font-semibold text-white transition-all duration-300 hover:bg-brand-moss-hover hover:shadow-moss-glow active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-moss">
                             Check my eligibility
                         </button>
 

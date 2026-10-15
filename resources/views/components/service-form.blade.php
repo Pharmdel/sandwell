@@ -53,7 +53,7 @@
             </div>
 
             <button type="submit" data-magnetic
-                class="mt-7 inline-flex w-full items-center justify-center gap-2.5 rounded-full bg-brand-primary px-7 py-4 text-[15px] font-semibold text-brand-forest transition-all duration-300 hover:bg-brand-primary-hover hover:shadow-primary-glow active:scale-[0.98] disabled:opacity-60 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-moss focus-visible:ring-offset-2">
+                class="mt-7 inline-flex w-full items-center justify-center gap-2.5 rounded-full bg-brand-moss px-7 py-4 text-[15px] font-semibold text-white transition-all duration-300 hover:bg-brand-moss-hover hover:shadow-moss-glow active:scale-[0.98] disabled:opacity-60 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-moss focus-visible:ring-offset-2">
                 <span data-form-label>{{ $form['button'] }}</span>
                 <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-5-5 5 5-5 5"/></svg>
             </button>

@@ -34,19 +34,19 @@ if (root) {
 
     const labels = { sym: 'Symptoms', dur: 'How long', about: 'About you', pathway: 'Pathway', flags: 'Safety' };
     const opt = 'wl-opt flex w-full items-center gap-3 rounded-2xl border border-brand-hairline bg-white px-5 py-4 text-left text-[15px] font-medium text-brand-forest hover:border-brand-forest/50';
-    const btnP = 'inline-flex items-center justify-center gap-2 rounded-full bg-brand-primary px-7 py-3.5 text-sm font-semibold text-brand-forest transition-all hover:bg-brand-primary-hover disabled:cursor-not-allowed disabled:opacity-40';
+    const btnP = 'inline-flex items-center justify-center gap-2 rounded-full bg-brand-moss px-7 py-3.5 text-sm font-semibold text-white transition-all hover:bg-brand-moss-hover disabled:cursor-not-allowed disabled:opacity-40';
     const btnO = 'inline-flex items-center justify-center rounded-full border border-brand-forest px-6 py-3.5 text-sm font-semibold text-brand-forest transition-all hover:bg-brand-forest hover:text-white';
 
     function progress() {
         return `<ol class="mb-8 flex flex-wrap gap-2" aria-label="Progress">${steps().map((k, i) => {
             const on = i === state.step, done = i < state.step;
-            return `<li class="flex items-center gap-2 rounded-full px-3 py-1.5 text-xs font-semibold ${on ? 'bg-brand-forest text-white' : done ? 'bg-brand-pistachio text-brand-moss' : 'bg-brand-forest/5 text-brand-stone-light'}"><span>${done ? '✓' : i + 1}</span>${labels[k]}</li>`;
+            return `<li class="flex items-center gap-2 rounded-full px-3 py-1.5 text-xs font-semibold ${on ? 'bg-brand-forest text-white' : done ? 'bg-emerald-50 text-emerald-700' : 'bg-brand-forest/5 text-brand-stone-light'}"><span>${done ? '✓' : i + 1}</span>${labels[k]}</li>`;
         }).join('')}</ol>`;
     }
 
     function check(list, i, label, warn = false) {
         const on = list.includes(i);
-        return `<label class="${opt} ${warn ? 'border-brand-danger-line' : ''}" data-on="${on}"><input type="checkbox" class="h-4 w-4 accent-brand-moss" data-check="${i}" ${on ? 'checked' : ''}><span>${esc(label)}</span></label>`;
+        return `<label class="${opt} ${warn ? 'border-red-200' : ''}" data-on="${on}"><input type="checkbox" class="h-4 w-4 accent-brand-moss" data-check="${i}" ${on ? 'checked' : ''}><span>${esc(label)}</span></label>`;
     }
 
     function body() {
@@ -145,8 +145,8 @@ if (root) {
     }
 
     function card(kind, badge, title, html) {
-        const tones = { urgent: 'border-brand-danger-line bg-brand-danger-soft', no: 'border-brand-hairline bg-brand-ivory', maybe: 'border-brand-pistachio-line bg-brand-pistachio', yes: 'border-brand-pistachio-line bg-brand-pistachio' };
-        const badgeTone = { urgent: 'bg-brand-danger text-white', no: 'bg-brand-forest text-white', maybe: 'bg-brand-primary text-brand-forest', yes: 'bg-brand-moss text-white' };
+        const tones = { urgent: 'border-red-200 bg-red-50', no: 'border-brand-hairline bg-brand-ivory', maybe: 'border-brand-pistachio-line bg-brand-pistachio', yes: 'border-emerald-200 bg-emerald-50' };
+        const badgeTone = { urgent: 'bg-red-600 text-white', no: 'bg-brand-forest text-white', maybe: 'bg-brand-moss text-white', yes: 'bg-emerald-600 text-white' };
         return `<div class="rounded-[24px] border p-8 ${tones[kind]}"><span class="inline-block rounded-full px-3 py-1 text-[10px] font-bold uppercase tracking-[0.08em] ${badgeTone[kind]}">${badge}</span><h3 class="mt-4 text-2xl">${title}</h3><div class="mt-3 space-y-3 text-[15px] leading-relaxed text-brand-stone">${html}</div><button type="button" data-restart class="mt-6 text-sm font-semibold text-brand-forest underline decoration-brand-hairline underline-offset-4 hover:decoration-brand-moss">Start again</button></div>`;
     }
 
@@ -216,7 +216,7 @@ if (root) {
             });
             const data = await res.json().catch(() => ({}));
             if (!res.ok) throw new Error(data.errors ? Object.values(data.errors)[0][0] : data.message || 'Something went wrong.');
-            form.innerHTML = `<div class="rounded-[24px] border border-brand-pistachio-line bg-brand-pistachio p-8 text-center"><div class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-white text-brand-moss"><svg class="h-8 w-8" fill="none" stroke="currentColor" stroke-width="2.6" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M20 6L9 17l-5-5"/></svg></div><h3 class="mt-5 text-2xl">Sent to our pharmacist</h3><p class="mx-auto mt-3 max-w-md text-sm leading-relaxed text-brand-stone">We’ll be in touch shortly to arrange your consultation — usually the same day. If it’s urgent, call us on <b>${phone}</b> or pop in.</p></div>`;
+            form.innerHTML = `<div class="rounded-[24px] border border-emerald-200 bg-emerald-50 p-8 text-center"><div class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-white text-emerald-700"><svg class="h-8 w-8" fill="none" stroke="currentColor" stroke-width="2.6" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M20 6L9 17l-5-5"/></svg></div><h3 class="mt-5 text-2xl">Sent to our pharmacist</h3><p class="mx-auto mt-3 max-w-md text-sm leading-relaxed text-brand-stone">We’ll be in touch shortly to arrange your consultation — usually the same day. If it’s urgent, call us on <b>${phone}</b> or pop in.</p></div>`;
         } catch (err) {
             btn.disabled = false;
             btn.textContent = 'Send to our pharmacist';

@@ -16,7 +16,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="noindex">
-    <meta name="theme-color" content="#88e788">
+    <meta name="theme-color" content="#e9f3e0">
     <title>{{ trim($__env->yieldContent('title')) }} — Hollytree Pharmacy</title>
     <link rel="icon" href="{{ asset('images/logo-nav.png') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,8 +24,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
     @vite('resources/css/app.css')
 </head>
-<body class="bg-brand-primary font-sans antialiased">
-    <main class="grain relative flex min-h-screen flex-col bg-brand-primary [--highlight:#fff]">
+<body class="bg-brand-pistachio font-sans antialiased">
+    <main class="grain relative flex min-h-screen flex-col bg-brand-pistachio">
         <header class="mx-auto flex w-full max-w-[1280px] items-center px-6 py-6 sm:px-8">
             <a href="{{ url('/') }}" class="flex items-center gap-3.5 rounded-full focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-forest" aria-label="Hollytree Pharmacy — home">
                 <img src="{{ asset('images/logo-nav.png') }}" alt="" width="48" height="48" class="h-12 w-12">
@@ -47,7 +47,7 @@
 
             <div class="mt-10 flex flex-wrap gap-3">
                 <a href="{{ url('/') }}"
-                    class="inline-flex items-center justify-center rounded-full bg-brand-forest px-7 py-3.5 text-sm font-semibold text-white transition hover:bg-brand-moss focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-forest focus-visible:ring-offset-2 focus-visible:ring-offset-brand-primary">
+                    class="inline-flex items-center justify-center rounded-full bg-brand-forest px-7 py-3.5 text-sm font-semibold text-white transition hover:bg-brand-moss focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-forest focus-visible:ring-offset-2 focus-visible:ring-offset-brand-pistachio">
                     Back to the homepage
                 </a>
                 <a href="{{ $phoneHref }}"
